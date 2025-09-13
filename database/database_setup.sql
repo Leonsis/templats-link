@@ -87,7 +87,7 @@ Charset: utf8mb4
 Collation: utf8mb4_unicode_ci
 
 TABELAS CRIADAS:
-- users (usuários do sistema)
+- usuarios (usuários do sistema)
 - sessions (sessões do Laravel)
 - cache (cache do sistema)
 - cache_locks (locks de cache)
@@ -96,7 +96,7 @@ TABELAS CRIADAS:
 
 PRÓXIMOS PASSOS:
 1. Execute este script no seu banco de dados
-2. Execute o script users_table.sql para criar a tabela users
+2. Execute o script usuarios_table.sql para criar a tabela usuarios
 3. Configure o arquivo .env com as credenciais do banco
 4. Teste a conexão com o sistema de login
 */

@@ -7,7 +7,7 @@
 Execute os seguintes scripts SQL na ordem:
 
 1. **Primeiro:** `database_setup.sql` - Cria o banco e tabelas básicas
-2. **Segundo:** `users_table.sql` - Cria a tabela users e insere dados do admin
+2. **Segundo:** `usuarios_table.sql` - Cria a tabela usuarios e insere dados do admin
 
 ### 2. Configurar o Arquivo .env
 
@@ -26,6 +26,10 @@ DB_PORT=3306
 DB_DATABASE=templats_link
 DB_USERNAME=root
 DB_PASSWORD=
+
+# Configurações de Autenticação
+AUTH_GUARD=web
+AUTH_PROVIDER=usuarios
 ```
 
 ### 3. Gerar Chave da Aplicação
@@ -46,29 +50,49 @@ php artisan migrate:status
 
 ## 👤 Usuários Criados
 
-### Administrador
-- **Email:** admin@templats-link.com
-- **Senha:** admin123
-- **Função:** Administrador do sistema
+### 🔐 **CREDENCIAIS DE ACESSO**
 
-### Usuário Teste
-- **Email:** teste@templats-link.com
-- **Senha:** teste123
-- **Função:** Usuário de teste
+#### **Administrador do Sistema**
+
+- **Email:** `admin@templats-link.com`
+- **Senha:** `admin123`
+- **Tipo:** `admin`
+- **Status:** `ativo`
+- **Função:** Administrador completo do sistema
+
+#### **Usuário Teste**
+
+- **Email:** `teste@templats-link.com`
+- **Senha:** `teste123`
+- **Tipo:** `usuario`
+- **Status:** `ativo`
+- **Função:** Usuário comum para testes
+
+#### **Usuário Demo**
+
+- **Email:** `demo@templats-link.com`
+- **Senha:** `demo123`
+- **Tipo:** `usuario`
+- **Status:** `ativo`
+- **Função:** Usuário de demonstração
 
 ## 🔧 Estrutura das Tabelas
 
-### Tabela `users`
-- `id` - ID único do usuário
-- `name` - Nome do usuário
-- `email` - Email (único)
-- `email_verified_at` - Data de verificação do email
-- `password` - Senha hasheada
+### Tabela `usuarios`
+
+- `id` - ID único do usuário (auto increment)
+- `nome` - Nome completo do usuário
+- `email` - Email único do usuário
+- `senha` - Senha hasheada com bcrypt
+- `tipo` - Tipo do usuário (admin ou usuario)
+- `ativo` - Status do usuário (1 = ativo, 0 = inativo)
+- `email_verificado` - Data de verificação do email
 - `remember_token` - Token para "lembrar de mim"
-- `created_at` - Data de criação
-- `updated_at` - Data de atualização
+- `criado_em` - Data de criação do registro
+- `atualizado_em` - Data da última atualização
 
 ### Tabelas Auxiliares
+
 - `sessions` - Sessões do Laravel
 - `cache` - Cache do sistema
 - `cache_locks` - Locks de cache
@@ -100,6 +124,8 @@ php artisan route:list
 - Use senhas fortes em produção
 - Configure HTTPS em produção
 - Mantenha o arquivo .env seguro
+- Apenas usuários ativos podem fazer login
+- Sistema de autenticação configurado para tabela `usuarios`
 
 ## 📞 Suporte
 
@@ -109,3 +135,4 @@ Se encontrar problemas:
 2. Confirme as credenciais do banco no .env
 3. Verifique se o banco `templats_link` foi criado
 4. Execute os scripts SQL na ordem correta
+5. Teste o login com as credenciais do admin: `admin@templats-link.com` / `admin123`

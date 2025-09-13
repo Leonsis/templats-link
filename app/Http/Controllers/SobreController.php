@@ -11,6 +11,6 @@ class SobreController extends Controller
      */
     public function index()
     {
-        return view('sobre');
+        return view('main-Thema.sobre');
     }
 }

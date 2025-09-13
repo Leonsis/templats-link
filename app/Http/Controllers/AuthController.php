@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
+use App\Models\Usuario;
 
 class AuthController extends Controller
 {
@@ -14,7 +14,7 @@ class AuthController extends Controller
      */
     public function showLoginForm()
     {
-        return view('auth.login');
+        return view('main-Thema.auth.login');
     }
 
     /**
@@ -32,12 +32,17 @@ class AuthController extends Controller
             'password.min' => 'A senha deve ter pelo menos 6 caracteres.',
         ]);
 
-        $credentials = $request->only('email', 'password');
+        // Buscar usuário pelo email
+        $usuario = Usuario::where('email', $request->email)
+                         ->where('ativo', 1)
+                         ->first();
 
-        if (Auth::attempt($credentials, $request->filled('remember'))) {
+        if ($usuario && Hash::check($request->password, $usuario->senha)) {
+            // Login manual para usar a tabela usuarios
+            Auth::login($usuario, $request->filled('remember'));
             $request->session()->regenerate();
             
-            return redirect()->intended('/')->with('success', 'Login realizado com sucesso!');
+            return redirect()->intended('/dashboard')->with('success', 'Login realizado com sucesso!');
         }
 
         return back()->withErrors([

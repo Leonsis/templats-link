@@ -5,6 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SobreController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HeadController;
+use App\Http\Controllers\NavbarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +20,34 @@ use App\Http\Controllers\AuthController;
 |
 */
 
+// Rota para servir favicons
+Route::get('/favicon/{filename}', function ($filename) {
+    $path = storage_path('app/uploads/favicons/' . $filename);
+    
+    if (!file_exists($path)) {
+        abort(404);
+    }
+    
+    return response()->file($path, [
+        'Content-Type' => 'image/webp',
+        'Cache-Control' => 'public, max-age=31536000',
+    ]);
+})->name('favicon');
+
+// Rota para servir logos
+Route::get('/logo/{filename}', function ($filename) {
+    $path = storage_path('app/uploads/logos/' . $filename);
+    
+    if (!file_exists($path)) {
+        abort(404);
+    }
+    
+    return response()->file($path, [
+        'Content-Type' => 'image/' . pathinfo($filename, PATHINFO_EXTENSION),
+        'Cache-Control' => 'public, max-age=31536000',
+    ]);
+})->name('logo');
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/sobre', [SobreController::class, 'index'])->name('sobre');
 Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
@@ -26,3 +57,21 @@ Route::post('/contato', [ContatoController::class, 'enviar'])->name('contato.env
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Rotas protegidas (requerem login)
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/admin', [DashboardController::class, 'admin'])->name('admin')->middleware('can:admin');
+    
+    // Rotas do Head (apenas para admins)
+    Route::prefix('dashboard')->name('dashboard.')->group(function () {
+        Route::get('/head', [HeadController::class, 'index'])->name('head');
+        Route::put('/head', [HeadController::class, 'update'])->name('head.update');
+        Route::get('/head/images', [HeadController::class, 'getImages'])->name('head.images');
+        
+        // Rotas da Navbar
+        Route::get('/navbar', [NavbarController::class, 'index'])->name('navbar');
+        Route::put('/navbar', [NavbarController::class, 'update'])->name('navbar.update');
+        Route::get('/navbar/images', [NavbarController::class, 'getImages'])->name('navbar.images');
+    });
+});
