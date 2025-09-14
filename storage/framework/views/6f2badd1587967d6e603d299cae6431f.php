@@ -1,3 +1,6 @@
+
+
+
 <?php $__env->startSection('content'); ?>
 <!-- Page Header -->
 <section class="py-5 bg-primary text-white">

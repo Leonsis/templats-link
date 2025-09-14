@@ -4451,3 +4451,6 @@
 #56 C:\\xampp\\htdocs\\templats-link\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #57 {main}
 "} 
+[2025-09-14 12:37:24] local.INFO: Upload de tema iniciado {"nome_tema":"finazze","arquivo_zip":"assets.zip","tamanho_arquivo":12008441} 
+[2025-09-14 12:38:25] local.INFO: Upload de tema iniciado {"nome_tema":"finazze","arquivo_zip":"assets.zip","tamanho_arquivo":12008441} 
+[2025-09-14 13:08:38] local.INFO: Upload de tema iniciado {"nome_tema":"finazze","arquivo_zip":"assets.zip","tamanho_arquivo_zip":12008441,"arquivo_paginas":"finazze.zip","tamanho_arquivo_paginas":44731} 

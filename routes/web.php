@@ -8,6 +8,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HeadController;
 use App\Http\Controllers\NavbarController;
+use App\Http\Controllers\TemasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,5 +74,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/navbar', [NavbarController::class, 'index'])->name('navbar');
         Route::put('/navbar', [NavbarController::class, 'update'])->name('navbar.update');
         Route::get('/navbar/images', [NavbarController::class, 'getImages'])->name('navbar.images');
+        
+        // Rotas dos Temas
+        Route::get('/temas', [TemasController::class, 'index'])->name('temas');
+        Route::post('/temas', [TemasController::class, 'store'])->name('temas.store');
+        Route::delete('/temas/{nomeTema}', [TemasController::class, 'destroy'])->name('temas.destroy');
     });
 });

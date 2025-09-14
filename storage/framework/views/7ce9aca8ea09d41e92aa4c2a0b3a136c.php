@@ -1,3 +1,6 @@
+
+
+
 <?php $__env->startSection('content'); ?>
 <!-- Hero Section -->
 <section class="hero-section">
