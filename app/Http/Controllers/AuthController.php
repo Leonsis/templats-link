@@ -14,7 +14,8 @@ class AuthController extends Controller
      */
     public function showLoginForm()
     {
-        return view('main-Thema.auth.login');
+        $viewPath = \App\Helpers\ThemeHelper::getThemeViewPath('auth.login');
+        return view($viewPath);
     }
 
     /**

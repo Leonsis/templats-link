@@ -11,6 +11,7 @@ class SobreController extends Controller
      */
     public function index()
     {
-        return view('main-Thema.sobre');
+        $viewPath = \App\Helpers\ThemeHelper::getThemeViewPath('sobre');
+        return view($viewPath);
     }
 }

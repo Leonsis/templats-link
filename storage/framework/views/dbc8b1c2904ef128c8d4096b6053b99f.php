@@ -268,6 +268,11 @@ unset($__errorArgs, $__bag); ?>
                                 <tr>
                                     <td>
                                         <strong><?php echo e($tema['nome']); ?></strong>
+                                        <?php if($tema['is_main']): ?>
+                                            <span class="badge bg-primary ms-2">
+                                                <i class="fas fa-home"></i> Padrão
+                                            </span>
+                                        <?php endif; ?>
                                     </td>
                                     <td>
                                         <span class="badge bg-info"><?php echo e($tema['arquivos']); ?> arquivo(s)</span>
@@ -296,11 +301,33 @@ unset($__errorArgs, $__bag); ?>
                                         <?php endif; ?>
                                     </td>
                                     <td>
-                                        <button type="button" 
-                                                class="btn btn-sm btn-danger" 
-                                                onclick="confirmarRemocao('<?php echo e($tema['nome']); ?>')">
-                                            <i class="fas fa-trash"></i> Remover
-                                        </button>
+                                        <div class="d-flex gap-2">
+                                            <?php if($tema['ativo']): ?>
+                                                <span class="badge bg-success">
+                                                    <i class="fas fa-check-circle"></i> Ativo
+                                                </span>
+                                            <?php else: ?>
+                                                <form action="<?php echo e(route('dashboard.temas.select', $tema['nome'])); ?>" method="POST" class="d-inline">
+                                                    <?php echo csrf_field(); ?>
+                                                    <button type="submit" 
+                                                            class="btn btn-sm btn-success" 
+                                                            onclick="return confirm('Deseja selecionar o tema <?php echo e($tema['nome']); ?> como tema principal?')">
+                                                        <i class="fas fa-star"></i> Selecionar
+                                                    </button>
+                                                </form>
+                                            <?php endif; ?>
+                                            <?php if(!$tema['is_main']): ?>
+                                                <button type="button" 
+                                                        class="btn btn-sm btn-danger" 
+                                                        onclick="confirmarRemocao('<?php echo e($tema['nome']); ?>')">
+                                                    <i class="fas fa-trash"></i> Remover
+                                                </button>
+                                            <?php else: ?>
+                                                <span class="badge bg-info">
+                                                    <i class="fas fa-shield-alt"></i> Sistema
+                                                </span>
+                                            <?php endif; ?>
+                                        </div>
                                     </td>
                                 </tr>
                                 <?php if($tema['tem_paginas']): ?>

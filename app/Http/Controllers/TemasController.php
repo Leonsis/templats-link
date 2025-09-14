@@ -205,16 +205,24 @@ class TemasController extends Controller
 
     public function previewPage($nomeTema, $pagina)
     {
+        // Mapear nomes em português para inglês (arquivos reais)
+        $mapeamento = [
+            'home' => 'index',
+            'sobre' => 'about',
+            'contato' => 'contact'
+        ];
+        $arquivoReal = $mapeamento[$pagina] ?? $pagina;
+        
         $temaViewsPath = resource_path('views/temas/' . $nomeTema);
-        $arquivoBlade = $temaViewsPath . '/' . $pagina . '.blade.php';
+        $arquivoBlade = $temaViewsPath . '/' . $arquivoReal . '.blade.php';
         
         if (!File::exists($arquivoBlade)) {
             return response()->json(['error' => 'Página não encontrada'], 404);
         }
 
         try {
-            // Renderizar a view Blade
-            $conteudo = view('temas.' . $nomeTema . '.' . $pagina)->render();
+            // Renderizar a view Blade usando o nome do arquivo real
+            $conteudo = view('temas.' . $nomeTema . '.' . $arquivoReal)->render();
             
             return response($conteudo, 200, [
                 'Content-Type' => 'text/html; charset=utf-8'
@@ -226,6 +234,11 @@ class TemasController extends Controller
 
     public function destroy($nomeTema)
     {
+        // Não permitir remover o main-Thema
+        if ($nomeTema === 'main-Thema') {
+            return back()->withErrors(['tema' => 'Não é possível remover o tema padrão do sistema.']);
+        }
+        
         $temaPath = public_path('temas/' . $nomeTema);
         $temaViewsPath = resource_path('views/temas/' . $nomeTema);
         
@@ -250,11 +263,86 @@ class TemasController extends Controller
         }
     }
 
+    public function select($nomeTema)
+    {
+        try {
+            // Verificar se o tema existe
+            if ($nomeTema === 'main-Thema') {
+                // Para main-Thema, verificar se existe em views/main-Thema
+                $temaViewsPath = resource_path('views/main-Thema');
+                if (!File::exists($temaViewsPath)) {
+                    return back()->withErrors(['tema' => 'Tema main-Thema não encontrado!']);
+                }
+            } else {
+                // Para outros temas, verificar em public/temas e views/temas
+                $temaPath = public_path('temas/' . $nomeTema);
+                $temaViewsPath = resource_path('views/temas/' . $nomeTema);
+                
+                if (!File::exists($temaPath) || !File::exists($temaViewsPath)) {
+                    return back()->withErrors(['tema' => 'Tema não encontrado!']);
+                }
+            }
+            
+            // Salvar o tema selecionado em um arquivo de configuração
+            $configPath = config_path('tema_principal.php');
+            $configContent = "<?php\n\nreturn [\n    'tema_principal' => '{$nomeTema}',\n    'selecionado_em' => '" . now() . "',\n];\n";
+            
+            File::put($configPath, $configContent);
+            
+            return redirect()->route('dashboard.temas')->with('success', 'Tema "' . $nomeTema . '" selecionado como tema principal do sistema!');
+            
+        } catch (\Exception $e) {
+            return back()->withErrors(['tema' => 'Erro ao selecionar o tema: ' . $e->getMessage()]);
+        }
+    }
+
     private function getTemasList()
     {
         $temasPath = public_path('temas');
         $temas = [];
+        
+        // Verificar qual tema está ativo
+        $temaAtivo = null;
+        $configPath = config_path('tema_principal.php');
+        if (File::exists($configPath)) {
+            $config = include $configPath;
+            $temaAtivo = $config['tema_principal'] ?? null;
+        }
 
+        // Adicionar main-Thema à lista
+        $mainThemaPath = resource_path('views/main-Thema');
+        if (File::exists($mainThemaPath)) {
+            $mainThemaAssetsPath = public_path('assets'); // Assumindo que main-Thema usa assets globais
+            
+            // Contar páginas do main-Thema
+            $arquivosPaginas = collect(File::files($mainThemaPath))
+                ->filter(function($arquivo) {
+                    $nome = $arquivo->getFilename();
+                    // Contar apenas arquivos HTML e Blade na raiz (excluindo auth e layouts)
+                    return (str_ends_with($nome, '.html') || str_ends_with($nome, '.blade.php')) 
+                           && !str_contains($arquivo->getPathname(), 'auth') 
+                           && !str_contains($arquivo->getPathname(), 'layouts');
+                });
+            
+            $paginasDisponiveis = $arquivosPaginas->map(function($arquivo) {
+                return basename($arquivo->getFilename(), '.blade.php');
+            })->values()->toArray();
+            
+            $temas[] = [
+                'nome' => 'main-Thema',
+                'caminho' => $mainThemaPath,
+                'arquivos' => File::exists($mainThemaAssetsPath) ? count(File::allFiles($mainThemaAssetsPath)) : 0,
+                'tamanho' => File::exists($mainThemaAssetsPath) ? $this->getDirectorySize($mainThemaAssetsPath) : '0 B',
+                'criado_em' => date('d/m/Y H:i', filemtime($mainThemaPath)),
+                'tem_paginas' => count($paginasDisponiveis) > 0,
+                'arquivos_paginas' => count($paginasDisponiveis),
+                'paginas_disponiveis' => $paginasDisponiveis,
+                'ativo' => 'main-Thema' === $temaAtivo,
+                'is_main' => true
+            ];
+        }
+
+        // Adicionar temas instalados
         if (File::exists($temasPath)) {
             $diretorios = File::directories($temasPath);
             
@@ -281,7 +369,14 @@ class TemasController extends Controller
                     
                     // Coletar nomes das páginas para o dropdown
                     $paginasDisponiveis = $arquivosPaginas->map(function($arquivo) {
-                        return basename($arquivo->getFilename(), '.blade.php');
+                        $nome = basename($arquivo->getFilename(), '.blade.php');
+                        // Mapear nomes em inglês para português
+                        $mapeamento = [
+                            'index' => 'home',
+                            'about' => 'sobre',
+                            'contact' => 'contato'
+                        ];
+                        return $mapeamento[$nome] ?? $nome;
                     })->values()->toArray();
                 }
                 
@@ -293,7 +388,9 @@ class TemasController extends Controller
                     'criado_em' => date('d/m/Y H:i', filemtime($diretorio)),
                     'tem_paginas' => $temPaginas,
                     'arquivos_paginas' => count($paginasDisponiveis),
-                    'paginas_disponiveis' => $paginasDisponiveis
+                    'paginas_disponiveis' => $paginasDisponiveis,
+                    'ativo' => $nomeTema === $temaAtivo,
+                    'is_main' => false
                 ];
             }
         }

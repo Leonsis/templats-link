@@ -11,6 +11,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('main-Thema.home');
+        $viewPath = \App\Helpers\ThemeHelper::getThemeViewPath('home');
+        return view($viewPath);
     }
 }

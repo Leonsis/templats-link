@@ -11,7 +11,8 @@ class ContatoController extends Controller
      */
     public function index()
     {
-        return view('main-Thema.contato');
+        $viewPath = \App\Helpers\ThemeHelper::getThemeViewPath('contato');
+        return view($viewPath);
     }
 
     /**

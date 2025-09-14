@@ -170,6 +170,11 @@
                                 <tr>
                                     <td>
                                         <strong>{{ $tema['nome'] }}</strong>
+                                        @if($tema['is_main'])
+                                            <span class="badge bg-primary ms-2">
+                                                <i class="fas fa-home"></i> Padrão
+                                            </span>
+                                        @endif
                                     </td>
                                     <td>
                                         <span class="badge bg-info">{{ $tema['arquivos'] }} arquivo(s)</span>
@@ -198,11 +203,33 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button type="button" 
-                                                class="btn btn-sm btn-danger" 
-                                                onclick="confirmarRemocao('{{ $tema['nome'] }}')">
-                                            <i class="fas fa-trash"></i> Remover
-                                        </button>
+                                        <div class="d-flex gap-2">
+                                            @if($tema['ativo'])
+                                                <span class="badge bg-success">
+                                                    <i class="fas fa-check-circle"></i> Ativo
+                                                </span>
+                                            @else
+                                                <form action="{{ route('dashboard.temas.select', $tema['nome']) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    <button type="submit" 
+                                                            class="btn btn-sm btn-success" 
+                                                            onclick="return confirm('Deseja selecionar o tema {{ $tema['nome'] }} como tema principal?')">
+                                                        <i class="fas fa-star"></i> Selecionar
+                                                    </button>
+                                                </form>
+                                            @endif
+                                            @if(!$tema['is_main'])
+                                                <button type="button" 
+                                                        class="btn btn-sm btn-danger" 
+                                                        onclick="confirmarRemocao('{{ $tema['nome'] }}')">
+                                                    <i class="fas fa-trash"></i> Remover
+                                                </button>
+                                            @else
+                                                <span class="badge bg-info">
+                                                    <i class="fas fa-shield-alt"></i> Sistema
+                                                </span>
+                                            @endif
+                                        </div>
                                     </td>
                                 </tr>
                                 @if($tema['tem_paginas'])
