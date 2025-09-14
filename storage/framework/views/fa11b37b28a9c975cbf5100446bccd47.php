@@ -37,30 +37,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
-    <style>
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        .hero-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 100px 0;
-        }
-        .footer {
-            background-color: #343a40;
-            color: white;
-            padding: 40px 0;
-            
-        }
-        .card {
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-    </style>
+    <!-- CSS Principal -->
+    <link href="<?php echo e(asset('css/main.css')); ?>" rel="stylesheet">
     
     <?php echo $__env->yieldPushContent('styles'); ?>
 </head>

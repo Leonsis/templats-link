@@ -113,6 +113,13 @@
                                     <td>{{ $tema['tamanho'] }}</td>
                                     <td>{{ $tema['criado_em'] }}</td>
                                     <td>
+                                        @if($tema['tem_paginas'])
+                                            <a href="{{ route('dashboard.temas.preview', $tema['nome']) }}" 
+                                               class="btn btn-sm btn-info me-2" 
+                                               target="_blank">
+                                                <i class="fas fa-eye"></i> Preview
+                                            </a>
+                                        @endif
                                         <button type="button" 
                                                 class="btn btn-sm btn-danger" 
                                                 onclick="confirmarRemocao('{{ $tema['nome'] }}')">

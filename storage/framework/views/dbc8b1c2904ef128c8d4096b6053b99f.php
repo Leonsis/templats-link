@@ -155,6 +155,13 @@ unset($__errorArgs, $__bag); ?>
                                     <td><?php echo e($tema['tamanho']); ?></td>
                                     <td><?php echo e($tema['criado_em']); ?></td>
                                     <td>
+                                        <?php if($tema['tem_paginas']): ?>
+                                            <a href="<?php echo e(route('dashboard.temas.preview', $tema['nome'])); ?>" 
+                                               class="btn btn-sm btn-info me-2" 
+                                               target="_blank">
+                                                <i class="fas fa-eye"></i> Preview
+                                            </a>
+                                        <?php endif; ?>
                                         <button type="button" 
                                                 class="btn btn-sm btn-danger" 
                                                 onclick="confirmarRemocao('<?php echo e($tema['nome']); ?>')">

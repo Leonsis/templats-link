@@ -121,6 +121,67 @@ class TemasController extends Controller
         }
     }
 
+    public function preview($nomeTema)
+    {
+        $temaPath = public_path('temas/' . $nomeTema);
+        $temaViewsPath = resource_path('views/temas/' . $nomeTema);
+        
+        if (!File::exists($temaPath) && !File::exists($temaViewsPath)) {
+            return back()->withErrors(['tema' => 'Tema não encontrado.']);
+        }
+
+        // Verificar se existem páginas do tema
+        if (!File::exists($temaViewsPath)) {
+            return back()->withErrors(['tema' => 'Este tema não possui páginas para preview.']);
+        }
+
+        // Listar arquivos HTML disponíveis no tema
+        $arquivosHtml = File::glob($temaViewsPath . '/*.html');
+        
+        if (empty($arquivosHtml)) {
+            return back()->withErrors(['tema' => 'Nenhuma página HTML encontrada neste tema.']);
+        }
+
+        // Pegar o primeiro arquivo HTML como página principal
+        $paginaPrincipal = basename($arquivosHtml[0], '.html');
+        
+        // Ler o conteúdo HTML
+        $conteudoHtml = File::get($arquivosHtml[0]);
+        
+        // Preparar dados para a view
+        $dadosTema = [
+            'nome' => $nomeTema,
+            'pagina_principal' => $paginaPrincipal,
+            'conteudo_html' => $conteudoHtml,
+            'assets_path' => '/temas/' . $nomeTema . '/assets',
+            'arquivos_disponiveis' => array_map(function($arquivo) {
+                return basename($arquivo, '.html');
+            }, $arquivosHtml)
+        ];
+
+        return view('dashboard.temas.preview', compact('dadosTema'));
+    }
+
+    public function previewPage($nomeTema, $pagina)
+    {
+        $temaViewsPath = resource_path('views/temas/' . $nomeTema);
+        $arquivoHtml = $temaViewsPath . '/' . $pagina . '.html';
+        
+        if (!File::exists($arquivoHtml)) {
+            return response()->json(['error' => 'Página não encontrada'], 404);
+        }
+
+        $conteudoHtml = File::get($arquivoHtml);
+        
+        // Processar o HTML para ajustar os caminhos dos assets
+        $assetsPath = '/temas/' . $nomeTema . '/assets';
+        $conteudoHtml = str_replace('assets/', $assetsPath . '/', $conteudoHtml);
+        
+        return response($conteudoHtml, 200, [
+            'Content-Type' => 'text/html; charset=utf-8'
+        ]);
+    }
+
     public function destroy($nomeTema)
     {
         $temaPath = public_path('temas/' . $nomeTema);
