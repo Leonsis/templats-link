@@ -92,8 +92,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" 
                                    id="arquivo_paginas" 
-                                   name="arquivo_paginas" 
-                                   required>
+                                   name="arquivo_paginas">
                             <?php $__errorArgs = ['arquivo_paginas'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -105,7 +104,134 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             <small class="form-text text-muted">
-                                Templates Blade (Máx: 10MB)
+                                Páginas HTML/Blade (Opcional - Máx: 10MB)
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Campos para código dos arquivos Blade -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="codigo_head" class="form-label">Código do head.blade.php</label>
+                            <textarea class="form-control <?php $__errorArgs = ['codigo_head'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" 
+                                      id="codigo_head" 
+                                      name="codigo_head" 
+                                      rows="8" 
+                                      placeholder="Cole aqui o código do arquivo head.blade.php"><?php echo e(old('codigo_head')); ?></textarea>
+                            <?php $__errorArgs = ['codigo_head'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            <small class="form-text text-muted">
+                                Código HTML para o cabeçalho (meta tags, CSS, etc.)
+                            </small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="codigo_nav" class="form-label">Código do nav.blade.php</label>
+                            <textarea class="form-control <?php $__errorArgs = ['codigo_nav'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" 
+                                      id="codigo_nav" 
+                                      name="codigo_nav" 
+                                      rows="8" 
+                                      placeholder="Cole aqui o código do arquivo nav.blade.php"><?php echo e(old('codigo_nav')); ?></textarea>
+                            <?php $__errorArgs = ['codigo_nav'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            <small class="form-text text-muted">
+                                Código HTML para a navegação
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="codigo_footer" class="form-label">Código do footer.blade.php</label>
+                            <textarea class="form-control <?php $__errorArgs = ['codigo_footer'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" 
+                                      id="codigo_footer" 
+                                      name="codigo_footer" 
+                                      rows="8" 
+                                      placeholder="Cole aqui o código do arquivo footer.blade.php"><?php echo e(old('codigo_footer')); ?></textarea>
+                            <?php $__errorArgs = ['codigo_footer'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            <small class="form-text text-muted">
+                                Código HTML para o rodapé
+                            </small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="codigo_scripts" class="form-label">Código do scripts.blade.php</label>
+                            <textarea class="form-control <?php $__errorArgs = ['codigo_scripts'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" 
+                                      id="codigo_scripts" 
+                                      name="codigo_scripts" 
+                                      rows="8" 
+                                      placeholder="Cole aqui o código do arquivo scripts.blade.php"><?php echo e(old('codigo_scripts')); ?></textarea>
+                            <?php $__errorArgs = ['codigo_scripts'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            <small class="form-text text-muted">
+                                Código JavaScript e scripts
                             </small>
                         </div>
                     </div>
@@ -133,6 +259,7 @@ unset($__errorArgs, $__bag); ?>
                                 <th>Páginas</th>
                                 <th>Tamanho</th>
                                 <th>Instalado em</th>
+                                <th>Preview</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -149,19 +276,26 @@ unset($__errorArgs, $__bag); ?>
                                         <?php if($tema['tem_paginas']): ?>
                                             <span class="badge bg-success"><?php echo e($tema['arquivos_paginas']); ?> página(s)</span>
                                         <?php else: ?>
-                                            <span class="badge bg-warning">Sem páginas</span>
+                                            <span class="badge bg-secondary">Sem páginas</span>
                                         <?php endif; ?>
                                     </td>
                                     <td><?php echo e($tema['tamanho']); ?></td>
                                     <td><?php echo e($tema['criado_em']); ?></td>
                                     <td>
                                         <?php if($tema['tem_paginas']): ?>
-                                            <a href="<?php echo e(route('dashboard.temas.preview', $tema['nome'])); ?>" 
-                                               class="btn btn-sm btn-info me-2" 
-                                               target="_blank">
-                                                <i class="fas fa-eye"></i> Preview
-                                            </a>
+                                            <button type="button" 
+                                                    class="btn btn-sm btn-outline-info" 
+                                                    data-bs-toggle="collapse" 
+                                                    data-bs-target="#pagesAccordion<?php echo e($loop->index); ?>"
+                                                    aria-expanded="false" 
+                                                    aria-controls="pagesAccordion<?php echo e($loop->index); ?>">
+                                                <i class="fas fa-eye"></i> Ver Páginas
+                                            </button>
+                                        <?php else: ?>
+                                            <span class="text-muted">Sem páginas</span>
                                         <?php endif; ?>
+                                    </td>
+                                    <td>
                                         <button type="button" 
                                                 class="btn btn-sm btn-danger" 
                                                 onclick="confirmarRemocao('<?php echo e($tema['nome']); ?>')">
@@ -169,6 +303,27 @@ unset($__errorArgs, $__bag); ?>
                                         </button>
                                     </td>
                                 </tr>
+                                <?php if($tema['tem_paginas']): ?>
+                                    <tr class="accordion-row">
+                                        <td colspan="7" class="p-0">
+                                            <div class="collapse" id="pagesAccordion<?php echo e($loop->index); ?>">
+                                                <div class="card card-body border-0 bg-light">
+                                                    <div class="pages-buttons">
+                                                        <?php $__currentLoopData = $tema['paginas_disponiveis']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pagina): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <a href="<?php echo e(route('dashboard.temas.preview.page', [$tema['nome'], $pagina])); ?>" 
+                                                               target="_blank"
+                                                               class="btn btn-outline-primary btn-sm d-flex align-items-center">
+                                                                <i class="fas fa-file-alt me-2"></i>
+                                                                <?php echo e(ucfirst($pagina)); ?>
+
+                                                            </a>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endif; ?>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </tbody>
                     </table>
@@ -219,6 +374,19 @@ function confirmarRemocao(nomeTema) {
     var modal = new bootstrap.Modal(document.getElementById('confirmModal'));
     modal.show();
 }
+
+// Inicializar accordions
+document.addEventListener('DOMContentLoaded', function() {
+    // Garantir que todos os accordions funcionem
+    var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'));
+    var collapseList = collapseElementList.map(function (collapseEl) {
+        return new bootstrap.Collapse(collapseEl, {
+            toggle: false
+        });
+    });
+    
+    console.log('Accordions inicializados:', collapseList.length);
+});
 </script>
 <?php $__env->stopPush(); ?>
 

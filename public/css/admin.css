@@ -25,6 +25,127 @@ body {
     overflow-x: hidden;
 }
 
+/* Garantir que dropdowns funcionem corretamente */
+.dropdown-menu {
+    z-index: 1050 !important;
+    max-height: 300px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 0.375rem !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    background-color: #fff !important;
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    min-width: 160px !important;
+    max-width: 250px !important;
+    margin-top: 2px !important;
+}
+
+.dropdown-menu.show {
+    display: block !important;
+}
+
+.btn-group .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    min-width: 160px !important;
+    max-width: 250px !important;
+    margin-top: 2px !important;
+}
+
+/* Evitar overflow na tabela */
+.table-responsive {
+    overflow: visible !important;
+    position: relative !important;
+}
+
+.table {
+    position: relative !important;
+}
+
+.table td {
+    position: relative !important;
+    overflow: visible !important;
+    vertical-align: middle !important;
+}
+
+.table tbody tr {
+    position: relative !important;
+}
+
+/* Garantir que dropdowns não quebrem o layout */
+.dropdown {
+    position: relative !important;
+    display: inline-block !important;
+}
+
+.btn-group {
+    position: relative !important;
+    display: inline-block !important;
+}
+
+/* Forçar visibilidade do dropdown quando ativo */
+.dropdown-menu.show {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Garantir que o dropdown seja visível */
+.dropdown-menu {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Garantir que containers não interfiram com dropdowns */
+.admin-card {
+    overflow: visible !important;
+}
+
+.admin-card .card-body {
+    overflow: visible !important;
+}
+
+.admin-card .table-responsive {
+    overflow: visible !important;
+}
+
+/* Estilos para o accordion de páginas */
+.accordion-row {
+    border: none !important;
+}
+
+.accordion-row td {
+    border: none !important;
+    padding: 0 !important;
+}
+
+.collapse .card {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background-color: #f8f9fa !important;
+}
+
+.collapse .card-body {
+    padding: 1rem !important;
+}
+
+/* Botões das páginas em linha */
+.pages-buttons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+}
+
+.pages-buttons .btn {
+    white-space: nowrap !important;
+    min-width: auto !important;
+}
+
 /* Sidebar */
 .sidebar {
     position: fixed;

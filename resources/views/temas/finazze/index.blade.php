@@ -1,272 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Finazze - Business & Finance  HTML Templete</title>
+@extends('temas.finazze.layouts.app')
 
-     <!--=====FAB ICON=======-->
-    <link rel="shortcut icon" href="assets/img/logo/fav-logo1.png" type="image/x-icon">
-
-    <!--===== CSS LINK =======-->
-    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/aos.css">
-    <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/plugins/owlcarousel.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/sidebar.css">
-    <link rel="stylesheet" href="assets/css/plugins/slick-slider.css">
-    <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
-    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-
-    <!--=====  JS SCRIPT LINK =======-->
-    <script src="assets/js/plugins/jquery-3-7-1.min.js"></script>
-</head>
-<body>
-
-<!--===== PRELOADER STARTS =======-->
-<div class="preloader">
-  <div class="loader"></div>
-</div>
-<!--===== PRELOADER ENDS =======-->
-
-<!--===== PROGRESS STARTS=======-->
-<div class="paginacontainer">
-     <div class="progress-wrap">
-       <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
-       </svg>
-     </div>
-   </div>
- <!--===== PROGRESS ENDS=======-->
-
-<!--=====HEADER START=======-->
-<header class="homepage1-body">
-  <div id="vl-header-sticky" class="vl-header-area vl-transparent-header">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-lg-2 col-md-6 col-6">
-                  <div class="vl-logo">
-                      <a href="index.html"><img src="assets/img/logo/logo1.png" alt=""></a>
-                  </div>
-              </div>
-              <div class="col-lg-7 d-none d-lg-block">
-                  <div class="vl-main-menu text-center">
-                      <nav class="vl-mobile-menu-active">
-                          <ul>
-                              <li class="has-dropdown">
-                                  <a href="index.html#">Home <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
-                                  <div class="vl-mega-menu">
-                                      <div class="vl-home-menu">                    
-                                          <div class="row gx-3 row-cols-1 row-cols-md-1 row-cols-lg-5">
-                                              <div class="col">
-                                                      <div class="vl-home-thumb">
-                                                          <div class="img1">
-                                                            <img src="assets/img/all-images/demo/demo-img1.png" alt="">
-                                                          </div>
-                                                         <a href="index.html">Finazze  - Homepage 01</a>
-                                                         <div class="btn-area1">
-                                                          <a href="index.html" class="vl-btn1">View Demo</a>
-
-                                                         </div>
-                                                         <div class="space20 d-lg-none d-block"></div>
-                                                      </div>
-                                              </div>
-                                              <div class="col">
-                                                      <div class="vl-home-thumb">
-                                                        <div class="img1">
-                                                          <img src="assets/img/all-images/demo/demo-img2.png" alt="">
-                                                        </div>
-                                                        <a href="index2.html">Finazze  - Homepage 02</a>
-                                                        <div class="btn-area1">
-                                                          <a href="index2.html" class="vl-btn1">View Demo</a>
-
-                                                         </div>
-                                                        <div class="space20 d-lg-none d-block"></div>
-                                                      </div>
-                                              </div>
-                                              <div class="col ">
-                                                      <div class="vl-home-thumb">
-                                                        <div class="img1">
-                                                          <img src="assets/img/all-images/demo/demo-img3.png" alt="">
-                                                        </div>
-                                                        <a href="index3.html">Finazze  - Homepage 03</a>
-                                                        <div class="btn-area1">
-                                                          <a href="index3.html" class="vl-btn1">View Demo</a>
-
-                                                         </div>
-                                                        <div class="space20 d-lg-none d-block"></div>
-                                                      </div>
-                                              </div>
-                                              <div class="col ">
-                                                      <div class="vl-home-thumb">
-                                                        <div class="img1">
-                                                          <img src="assets/img/all-images/demo/demo-img4.png" alt="">
-                                                        </div>
-                                                        <a href="index4.html">Finazze  - Homepage 04</a>
-                                                        <div class="btn-area1">
-                                                          <a href="index4.html" class="vl-btn1">View Demo</a>
-
-                                                         </div>
-                                                        <div class="space20 d-lg-none d-block"></div>
-                                                      </div>
-                                              </div>
-
-                                              <div class="col ">
-                                                    <div class="vl-home-thumb">
-                                                      <div class="img1">
-                                                        <img src="assets/img/all-images/demo/demo-img5.png" alt="">
-                                                      </div>
-                                                      <a href="index5.html">Finazze  - Homepage 05</a>
-                                                      <div class="btn-area1">
-                                                        <a href="index5.html" class="vl-btn1">View Demo</a>
-                                                       </div>
-                                                    </div>
-                                            </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </li>
-                              <li class="has-dropdown">
-                                <a href="index.html#">Pages <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
-                                  <ul class="sub-menu">
-                                      <li><a href="about.html">About Us</a></li>
-                                      <li><a href="team.html">Our Team</a></li>
-                                      <li><a href="pricing.html">Pricing Plan</a></li>
-                                      <li><a href="testimonial.html">Testimonials</a></li>
-                                      <li><a href="contact.html">Contact Us</a></li>
-                                      <li><a href="faq.html">FAQ's</a></li>
-                                      <li><a href="404.html">404</a></li>
-                                  </ul>
-                              </li>
-                              <li><a href="index.html#">Services <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
-                                <ul class="sub-menu">
-                                  <li><a href="service.html">Our Service</a></li>
-                                  <li><a href="index.html#" class="span-arrow">Service Details <span><i class="fa-solid fa-angle-right d-lg-block d-none"></i></span></a>
-                                    <ul class="sub-menu menu1">
-                                      <li><a href="service-left.html">Service Left</a></li>
-                                      <li><a href="service-right.html">Service Right</a></li>
-                                      <li><a href="service-single.html">Service Single</a></li>
-                                    </ul>
-                                  </li>
-                              </ul>
-                              </li>
-                              <li><a href="index.html#">Project <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
-                                <ul class="sub-menu">
-                                  <li><a href="project.html">Our Project</a></li>
-                                  <li><a href="index.html#" class="span-arrow">Project  Details <span><i class="fa-solid fa-angle-right d-lg-block d-none"></i></span></a>
-                                    <ul class="sub-menu menu1">
-                                      <li><a href="project-left.html">Project Left</a></li>
-                                      <li><a href="project-right.html">Project Right</a></li>
-                                      <li><a href="project-single.html">Project Single</a></li>
-                                  </ul>
-                                  </li>
-                              </ul>
-                              </li>
-                              <li><a href="index.html#">Blogs <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
-                                <ul class="sub-menu">
-                                  <li><a href="blog.html">Our Blog</a></li>
-                                  <li><a href="index.html#" class="span-arrow">Blog Details <span><i class="fa-solid fa-angle-right d-lg-block d-none"></i></span></a>
-                                    <ul class="sub-menu menu1">
-                                      <li><a href="blog-left.html">Blog Left</a></li>
-                                      <li><a href="blog-right.html">Blog Right</a></li>
-                                      <li><a href="blog-single.html">Blog Single</a></li>
-                                  </ul>
-                                  </li>
-                              </ul>
-                              </li>
-
-                              <li><a href="contact.html">Contact Us</a></li>
-                          </ul>
-                      </nav>
-                  </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-6">
-                <div class="vl-hero-btn d-none d-lg-block text-end">
-                  <div class="head-btn">
-                    <div class="search-icon header__search header-search-btn">
-                      <a href="index.html#"><img src="assets/img/icons/search1.svg" alt=""></a>
-                    </div>
-                    <span class="vl-btn-wrap text-end">
-                     <span class="icons">
-                      <a href="tel:+4909233255"><img src="assets/img/icons/phone1.svg" alt=""></a>
-                     </span>
-                     <span class="text">
-                      <span>Hotline 24/7</span>
-                      <a href="tel:+4909233255">+4930 9233255</a>
-                     </span>
-                    </span>
-                  </div>
-                </div>
-                  <div class="vl-header-action-item d-block d-lg-none">
-                      <button type="button" class="vl-offcanvas-toggle">
-                        <i class="fa-solid fa-bars-staggered"></i>
-                      </button>
-                   </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</header>
- <!--=====HEADER END =======-->
-
-  <!--===== MOBILE HEADER STARTS =======-->
-<div class="homepage1-body">
-  <div class="vl-offcanvas">
-    <div class="vl-offcanvas-wrapper">
-        <div class="vl-offcanvas-header d-flex justify-content-between align-items-center mb-90">
-            <div class="vl-offcanvas-logo">
-                <a href="index.html"><img src="assets/img/logo/logo1.png" alt=""></a>
-            </div>
-            <div class="vl-offcanvas-close">
-               <button class="vl-offcanvas-close-toggle"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-        </div>
-
-        <div class="vl-offcanvas-menu d-lg-none mb-40">
-            <nav></nav>
-        </div>
-
-        <div class="space20"></div>
-        <div class="vl-offcanvas-info">
-            <h3 class="vl-offcanvas-sm-title">Contact Us</h3>
-            <div class="space20"></div>
-            <span><a href="index.html#"> <i class="fa-regular fa-envelope"></i> +57 9954 6476</a></span>
-            <span><a href="index.html#"><i class="fa-solid fa-phone"></i> hello@exdos.com</a></span>
-            <span><a href="index.html#"><i class="fa-solid fa-location-dot"></i> Bhemeara,Kushtia</a></span>
-        </div>
-        <div class="space20"></div>
-        <div class="vl-offcanvas-social">
-            <h3 class="vl-offcanvas-sm-title">Follow Us</h3>
-            <div class="space20"></div>
-            <a href="index.html#"><i class="fab fa-facebook-f"></i></a>
-            <a href="index.html#"><i class="fab fa-twitter"></i></a>
-            <a href="index.html#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="index.html#"><i class="fab fa-instagram"></i></a>
-         </div>
-
-    </div>
-</div>
-<div class="vl-offcanvas-overlay"></div>
-</div>
-<!--===== MOBILE HEADER STARTS =======-->
-
-<!--===== SIDEBAR STARTS=======-->
-<div class="header-search-form-wrapper">
-  <div class="tx-search-close tx-close"><i class="fa-solid fa-xmark"></i></div>
-  <div class="header-search-container">
-      <form role="search" class="search-form">
-      <input type="search"  class="search-field" placeholder="Search …" value="" name="s">
-      <button type="submit" class="search-submit"><img src="assets/img/icons/search1.svg" alt=""></button>
-      </form>
-  </div>
-</div>
-<div class="body-overlay"></div>
-<!--===== SIDEBAR ENDS STARTS=======-->
-
+@section('content')
 <!--===== HERO AREA STARTS =======-->
-<div class="hero1-section-area" style="background-image: url(assets/img/all-images/bg/hero-bg1.png); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div class="hero1-section-area" style="background-image: url({{ asset('temas/finazze/assets/img/all-images/bg/hero-bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6">
@@ -279,20 +15,20 @@
           <div class="space32"></div>
           <div class="btn-area1">
             <a href="service.html" class="vl-btn1">Explore Our Services</a>
-            <a href="contact.html" class="vl-btn1 btn2">Join Us Today</a>
+            <a href="{{ route('contato') }}" class="vl-btn1 btn2">Join Us Today</a>
           </div>
         </div>
       </div>
       <div class="col-lg-6" data-aos="zoon-in" data-aos-duration="1000">
         <div class="hero-images-area">
           <div class="img1">
-            <img src="assets/img/all-images/hero/hero-img1.png" alt="">
+            <img src="{{ asset('temas/finazze/assets/img/all-images/hero/hero-img1.png') }}"" alt="">
           </div>
-          <img src="assets/img/elements/elements1.png" alt="" class="elements1">
-          <img src="assets/img/elements/elements2.png" alt="" class="elements2  aniamtion-key-4">
-          <img src="assets/img/elements/elements3.png" alt="" class="elements3  aniamtion-key-1">
-          <img src="assets/img/elements/elements4.png" alt="" class="elements4  aniamtion-key-2">
-          <img src="assets/img/elements/elements5.png" alt="" class="elements5 keyframe5">
+          <img src="{{ asset('temas/finazze/assets/img/elements/elements1.png') }}"" alt="" class="elements1">
+          <img src="{{ asset('temas/finazze/assets/img/elements/elements2.png') }}"" alt="" class="elements2  aniamtion-key-4">
+          <img src="{{ asset('temas/finazze/assets/img/elements/elements3.png') }}"" alt="" class="elements3  aniamtion-key-1">
+          <img src="{{ asset('temas/finazze/assets/img/elements/elements4.png') }}"" alt="" class="elements4  aniamtion-key-2">
+          <img src="{{ asset('temas/finazze/assets/img/elements/elements5.png') }}"" alt="" class="elements5 keyframe5">
         </div>
       </div>
     </div>
@@ -308,9 +44,9 @@
       <div class="col-lg-6">
         <div class="about-images-area">
           <div class="img1 reveal">
-            <img src="assets/img/all-images/about/about-img1.png" alt="">
+            <img src="{{ asset('temas/finazze/assets/img/all-images/about/about-img1.png') }}"" alt="">
           </div>
-          <img src="assets/img/elements/elements6.png" alt="" class="elements6 aniamtion-key-1">
+          <img src="{{ asset('temas/finazze/assets/img/elements/elements6.png') }}"" alt="" class="elements6 aniamtion-key-1">
         </div>
       </div>
       <div class="col-lg-5">
@@ -323,7 +59,7 @@
           <div class="space32"></div>
           <div class="pera-box" data-aos="fade-left" data-aos-duration="1000">
             <div class="icons">
-              <img src="assets/img/icons/about-icon.svg" alt="">
+              <img src="{{ asset('temas/finazze/assets/img/icons/about-icon.svg') }}"" alt="">
             </div>
             <div class="text">
               <a href="service.html">Financial Solution</a>
@@ -333,7 +69,7 @@
           </div>
           <div class="space32"></div>
           <div class="btn-area1" data-aos="fade-left" data-aos-duration="1100">
-            <a href="about.html" class="vl-btn1">Learn More</a>
+            <a href="{{ route('sobre') }}" class="vl-btn1">Learn More</a>
           </div>
         </div>
       </div>
@@ -343,7 +79,7 @@
 <!--===== ABOUT AREA ENDS =======-->
 
 <!--===== SERVICE AREA STARTS =======-->
-<div class="service1-section-area sp1" style="background-image: url(assets/img/all-images/bg/bg2.png); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div class="service1-section-area sp1" style="background-image: url({{ asset('temas/finazze/assets/img/all-images/bg/bg2.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
   <div class="container">
     <div class="row">
       <div class="col-lg-5">
@@ -360,14 +96,14 @@
         <div class="service-single-slider owl-carousel">
           <div class="service-boxarea">
             <div class="img1">
-              <img src="assets/img/all-images/service/service-img1.png" alt="">
+              <img src="{{ asset('temas/finazze/assets/img/all-images/service/service-img1.png') }}"" alt="">
               <div class="arrow">
                 <a href="service-single.html"><i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
             <div class="content-area">
               <div class="icons">
-                <img src="assets/img/icons/service1.svg" alt="">
+                <img src="{{ asset('temas/finazze/assets/img/icons/service1.svg') }}"" alt="">
               </div>
               <div class="space24"></div>
               <a href="service-single.html">Investment Management</a>
@@ -376,14 +112,14 @@
 
           <div class="service-boxarea">
             <div class="img1">
-              <img src="assets/img/all-images/service/service-img2.png" alt="">
+              <img src="{{ asset('temas/finazze/assets/img/all-images/service/service-img2.png') }}"" alt="">
               <div class="arrow">
                 <a href="service-single.html"><i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
             <div class="content-area">
               <div class="icons">
-                <img src="assets/img/icons/service2.svg" alt="">
+                <img src="{{ asset('temas/finazze/assets/img/icons/service2.svg') }}"" alt="">
               </div>
               <div class="space24"></div>
               <a href="service-single.html">Budgeting And Forecasting </a>
@@ -392,14 +128,14 @@
 
           <div class="service-boxarea">
             <div class="img1">
-              <img src="assets/img/all-images/service/service-img3.png" alt="">
+              <img src="{{ asset('temas/finazze/assets/img/all-images/service/service-img3.png') }}"" alt="">
               <div class="arrow">
                 <a href="service-single.html"><i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
             <div class="content-area">
               <div class="icons">
-                <img src="assets/img/icons/service3.svg" alt="">
+                <img src="{{ asset('temas/finazze/assets/img/icons/service3.svg') }}"" alt="">
               </div>
               <div class="space24"></div>
               <a href="service-single.html">Financial Growth</a>
@@ -407,14 +143,14 @@
           </div>
           <div class="service-boxarea">
             <div class="img1">
-              <img src="assets/img/all-images/service/service-img1.png" alt="">
+              <img src="{{ asset('temas/finazze/assets/img/all-images/service/service-img1.png') }}"" alt="">
               <div class="arrow">
                 <a href="service-single.html"><i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
             <div class="content-area">
               <div class="icons">
-                <img src="assets/img/icons/service3.svg" alt="">
+                <img src="{{ asset('temas/finazze/assets/img/icons/service3.svg') }}"" alt="">
               </div>
               <div class="space24"></div>
               <a href="service-single.html">Mergers & Acquisitions </a>
@@ -514,9 +250,9 @@
         <div class="all-images">
           <div class="images-area">
             <div class="img1 reveal">
-              <img src="assets/img/all-images/project/project-img1.png" alt="">
+              <img src="{{ asset('temas/finazze/assets/img/all-images/project/project-img1.png') }}"" alt="">
             </div>
-            <img src="assets/img/elements/elements7.png" alt="" class="elements7 aniamtion-key-1">
+            <img src="{{ asset('temas/finazze/assets/img/elements/elements7.png') }}"" alt="" class="elements7 aniamtion-key-1">
           </div>
         </div>
       </div>
@@ -526,7 +262,7 @@
 <!--===== PROJECT AREA ENDS =======-->
 
 <!--===== TESTIMONIAL AREA STARTS =======-->
-<div class="testimonial1-section-area sp1" style="background-image: url(assets/img/all-images/bg/bg1.png); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div class="testimonial1-section-area sp1" style="background-image: url({{ asset('temas/finazze/assets/img/all-images/bg/bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 m-auto">
@@ -550,7 +286,7 @@
                     <li><i class="fa-solid fa-star"></i></li>
                   </ul>
                   <div class="quoto">
-                      <img src="assets/img/icons/quito1.svg" alt="">
+                      <img src="{{ asset('temas/finazze/assets/img/icons/quito1.svg') }}"" alt="">
                   </div>
               </div>
               <div class="space16"></div>
@@ -559,7 +295,7 @@
                 <div class="verical-boxarea">
                   <div class="images-area">
                     <div class="img1">
-                        <img src="assets/img/all-images/testimonial/testimonial-img1.png" alt="">
+                        <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
                     </div>
                     <div class="text">
                         <a href="team.html">Alexy Queen</a>
@@ -593,7 +329,7 @@
                           <li><i class="fa-solid fa-star"></i></li>
                         </ul>
                         <div class="quoto">
-                            <img src="assets/img/icons/quito1.svg" alt="">
+                            <img src="{{ asset('temas/finazze/assets/img/icons/quito1.svg') }}"" alt="">
                         </div>
                     </div>
                     <div class="space16"></div>
@@ -602,7 +338,7 @@
                       <div class="verical-boxarea">
                         <div class="images-area">
                           <div class="img1">
-                              <img src="assets/img/all-images/testimonial/testimonial-img2.png" alt="">
+                              <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img2.png') }}"" alt="">
                           </div>
                           <div class="text">
                               <a href="team.html">Alexy Queen</a>
@@ -636,7 +372,7 @@
                         <li><i class="fa-solid fa-star"></i></li>
                       </ul>
                       <div class="quoto">
-                          <img src="assets/img/icons/quito1.svg" alt="">
+                          <img src="{{ asset('temas/finazze/assets/img/icons/quito1.svg') }}"" alt="">
                       </div>
                   </div>
                   <div class="space16"></div>
@@ -645,7 +381,7 @@
                     <div class="verical-boxarea">
                       <div class="images-area">
                         <div class="img1">
-                            <img src="assets/img/all-images/testimonial/testimonial-img3.png" alt="">
+                            <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img3.png') }}"" alt="">
                         </div>
                         <div class="text">
                             <a href="team.html">Alexy Queen</a>
@@ -679,7 +415,7 @@
                       <li><i class="fa-solid fa-star"></i></li>
                     </ul>
                     <div class="quoto">
-                        <img src="assets/img/icons/quito1.svg" alt="">
+                        <img src="{{ asset('temas/finazze/assets/img/icons/quito1.svg') }}"" alt="">
                     </div>
                 </div>
                 <div class="space16"></div>
@@ -688,7 +424,7 @@
                   <div class="verical-boxarea">
                     <div class="images-area">
                       <div class="img1">
-                          <img src="assets/img/all-images/testimonial/testimonial-img1.png" alt="">
+                          <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
                       </div>
                       <div class="text">
                           <a href="team.html">Alexy Queen</a>
@@ -719,7 +455,7 @@
           <div class="slider-boxarea">
             <div class="slider-box">
               <div class="img1">
-                <img src="assets/img/all-images/testimonial/testimonial-img1.png" alt="">
+                <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
               </div>
               <div class="content">
                 <a href="index.html#">Alex Henderson</a>
@@ -729,7 +465,7 @@
             </div>
             <div class="slider-box">
               <div class="img1">
-                <img src="assets/img/all-images/testimonial/testimonial-img2.png" alt="">
+                <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img2.png') }}"" alt="">
               </div>
               <div class="content">
                 <a href="index.html#">Alexy Queen</a>
@@ -739,7 +475,7 @@
             </div>
             <div class="slider-box">
               <div class="img1">
-                <img src="assets/img/all-images/testimonial/testimonial-img3.png" alt="">
+                <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img3.png') }}"" alt="">
               </div>
               <div class="content">
                 <a href="index.html#">Antonio Rudiger</a>
@@ -750,7 +486,7 @@
   
             <div class="slider-box">
               <div class="img1">
-                <img src="assets/img/all-images/testimonial/testimonial-img1.png" alt="">
+                <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
               </div>
               <div class="content">
                 <a href="index.html#">Alex Henderson</a>
@@ -791,7 +527,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="800">
         <div class="team-boxarea">
           <div class="img1">
-            <img src="assets/img/all-images/team/team-img1.png" alt="">
+            <img src="{{ asset('temas/finazze/assets/img/all-images/team/team-img1.png') }}"" alt="">
             <ul>
               <li><a href="index.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="index.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -811,7 +547,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="900">
         <div class="team-boxarea">
           <div class="img1">
-            <img src="assets/img/all-images/team/team-img2.png" alt="">
+            <img src="{{ asset('temas/finazze/assets/img/all-images/team/team-img2.png') }}"" alt="">
             <ul>
               <li><a href="index.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="index.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -831,7 +567,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="1000">
         <div class="team-boxarea">
           <div class="img1">
-            <img src="assets/img/all-images/team/team-img3.png" alt="">
+            <img src="{{ asset('temas/finazze/assets/img/all-images/team/team-img3.png') }}"" alt="">
             <ul>
               <li><a href="index.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="index.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -851,7 +587,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="1100">
         <div class="team-boxarea">
           <div class="img1">
-            <img src="assets/img/all-images/team/team-img4.png" alt="">
+            <img src="{{ asset('temas/finazze/assets/img/all-images/team/team-img4.png') }}"" alt="">
             <ul>
               <li><a href="index.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="index.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -999,7 +735,7 @@
       <div class="col-lg-6 col-md-6" data-aos="fade-left" data-aos-duration="900">
         <div class="vl-blog-1-item">
            <div class="vl-blog-1-thumb image-anime">
-              <img src="assets/img/all-images/blog/blog-img1.png" alt="">
+              <img src="{{ asset('temas/finazze/assets/img/all-images/blog/blog-img1.png') }}"" alt="">
            </div>
            <div class="vl-blog-1-content">
             <div class="vl-blog-meta">
@@ -1038,7 +774,7 @@
      <div class="col-lg-6 col-md-6" data-aos="fade-left" data-aos-duration="1000">
         <div class="vl-blog-1-item">
            <div class="vl-blog-1-thumb image-anime">
-              <img src="assets/img/all-images/blog/blog-img2.png" alt="">
+              <img src="{{ asset('temas/finazze/assets/img/all-images/blog/blog-img2.png') }}"" alt="">
            </div>
            <div class="vl-blog-1-content">
             <div class="vl-blog-meta">
@@ -1087,158 +823,16 @@
           <h2 class="text-anime-style-3">Empowering Businesses, One Step at a Time</h2>
           <div class="space32"></div>
           <div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
-            <a href="contact.html" class="vl-btn1">Schedule a Consultation</a>
-            <a href="contact.html" class="vl-btn1 btn2">Start Your Journey</a>
+            <a href="{{ route('contato') }}" class="vl-btn1">Schedule a Consultation</a>
+            <a href="{{ route('contato') }}" class="vl-btn1 btn2">Start Your Journey</a>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="img1">
-    <img src="assets/img/all-images/cta/cta-img1.png" alt="">
+    <img src="{{ asset('temas/finazze/assets/img/all-images/cta/cta-img1.png') }}"" alt="">
   </div>
 </div>
 <!--===== CTA AREA ENDS =======-->
-
-<!--===== FOOTER AREA STARTS =======-->
-<div class="vl-footer1-section-area sp8">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-6">
-        <div class="footer-logo1">
-          <img src="assets/img/logo/logo1.png" alt="">
-          <div class="space24"></div>
-          <p>We are committed to providing  with the highest level of service expertise  business and finance if you have any.</p>
-          <div class="space24"></div>
-          <ul>
-            <li><a href="index.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
-            <li><a href="index.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li><a href="index.html#"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="index.html#" class="m-0"><i class="fa-brands fa-youtube"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="space30 d-md-none d-block"></div>
-        <div class="vl-footer-widget first-padding">
-          <h3>Quick Links</h3>
-          <div class="space4"></div>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="service.html">Our Services</a></li>
-            <li><a href="project.html">Case Studies</a></li>
-             <li><a href="pricing.html">Pricing Plan</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-      </div> 
-      <div class="col-lg-3 col-md-6">
-        <div class="vl-footer-widget">
-          <div class="space30 d-lg-none d-block"></div>
-          <h3>Contact Us</h3>
-          <ul>
-            <li><a href="tel:+11234567890"><img src="assets/img/icons/phn1.svg" alt="">+1 123 456 7890</a></li>
-            <li><a href="index.html#"><img src="assets/img/icons/location1.svg" alt="">421 Allen, Mexico 4233</a></li>
-            <li><a href="https://html.vikinglab.agency/finazze/renevagency@com"><img src="assets/img/icons/email1.svg" alt="">finazzeconsult@com</a></li>
-            <li><a href="index.html#"><img src="assets/img/icons/global1.svg" alt="">finazzeconsult.com</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-        <div class="vl-footer-widget">
-          <div class="space30 d-lg-none d-block"></div>
-          <h3>Instagram Post</h3>
-          <div class="space8"></div>
-          <div class="row">
-            <div class="col-lg-4 col-4">
-              <div class="footer-img">
-                <img src="assets/img/all-images/footer/footer-img1.png" alt="">
-                <div class="icons">
-                  <a href="index.html#"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-4">
-              <div class="footer-img">
-                <img src="assets/img/all-images/footer/footer-img2.png" alt="">
-                <div class="icons">
-                  <a href="index.html#"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-4">
-              <div class="footer-img">
-                <img src="assets/img/all-images/footer/footer-img3.png" alt="">
-                <div class="icons">
-                  <a href="index.html#"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-4">
-              <div class="footer-img">
-                <img src="assets/img/all-images/footer/footer-img4.png" alt="">
-                <div class="icons">
-                  <a href="index.html#"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-4">
-              <div class="footer-img">
-                <img src="assets/img/all-images/footer/footer-img5.png" alt="">
-                <div class="icons">
-                  <a href="index.html#"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-4">
-              <div class="footer-img">
-                <img src="assets/img/all-images/footer/footer-img6.png" alt="">
-                <div class="icons">
-                  <a href="index.html#"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="space60"></div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="vl-copyright-area">
-          <p>© Copyright 2025 - Finazze. All Right Reserved</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--===== FOOTER AREA ENDS =======-->
-
-<!--===== JS SCRIPT LINK =======-->
-<script src="assets/js/plugins/bootstrap.min.js"></script>
-<script src="assets/js/plugins/fontawesome.js"></script>
-<script src="assets/js/plugins/aos.js"></script>
-<script src="assets/js/plugins/counter.js"></script>
-<script src="assets/js/plugins/gsap.min.js"></script>
-<script src="assets/js/plugins/ScrollTrigger.min.js"></script>
-<script src="assets/js/plugins/Splitetext.js"></script>
-<script src="assets/js/plugins/SmoothScroll.js"></script>
-<script src="assets/js/plugins/sidebar.js"></script>
-<script src="assets/js/plugins/magnific-popup.js"></script>
-<script src="assets/js/plugins/mobilemenu.js"></script>
-<script src="assets/js/plugins/owlcarousel.min.js"></script>
-<script src="assets/js/plugins/nice-select.js"></script>
-<script src="assets/js/plugins/waypoints.js"></script>
-<script src="assets/js/plugins/slick-slider.js"></script>
-<script src="assets/js/plugins/circle-progress.js"></script>
-<script src="assets/js/plugins/swiper.js"></script>
-<script src="assets/js/main.js"></script>
-
-</body>
-</html>
+@endsection

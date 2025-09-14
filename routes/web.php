@@ -79,7 +79,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/temas', [TemasController::class, 'index'])->name('temas');
         Route::post('/temas', [TemasController::class, 'store'])->name('temas.store');
         Route::get('/temas/{nomeTema}/preview', [TemasController::class, 'preview'])->name('temas.preview');
-        Route::get('/temas/{nomeTema}/preview/page/{pagina}', [TemasController::class, 'previewPage'])->name('temas.preview.page');
+        Route::get('/temas/{nomeTema}/preview/{pagina}', [TemasController::class, 'previewPage'])->name('temas.preview.page');
         Route::delete('/temas/{nomeTema}', [TemasController::class, 'destroy'])->name('temas.destroy');
     });
 });
