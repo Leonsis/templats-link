@@ -28,10 +28,7 @@ class HeadController extends Controller
         
         // Definir páginas disponíveis
         $paginas = [
-            'home' => 'Página Inicial',
-            'sobre' => 'Sobre Nós',
-            'contato' => 'Contato',
-            'login' => 'Login'
+            // Páginas removidas conforme solicitado: Página Inicial, Sobre Nós, Contato, Login
         ];
         
         return view('dashboard.head.index', compact('allConfigs', 'paginas'));
