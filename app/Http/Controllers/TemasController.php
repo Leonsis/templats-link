@@ -314,6 +314,24 @@ class TemasController extends Controller
         }
     }
 
+    public function editHome()
+    {
+        // Redirecionar para a página home do site
+        return redirect()->route('home');
+    }
+
+    public function editAbout()
+    {
+        // Redirecionar para a página sobre do site
+        return redirect()->route('sobre');
+    }
+
+    public function editContact()
+    {
+        // Redirecionar para a página contato do site
+        return redirect()->route('contato');
+    }
+
     private function getTemasList()
     {
         $temasPath = public_path('temas');

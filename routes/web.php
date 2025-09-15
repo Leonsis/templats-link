@@ -82,5 +82,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/temas/{nomeTema}/preview/{pagina}', [TemasController::class, 'previewPage'])->name('temas.preview.page');
         Route::post('/temas/{nomeTema}/select', [TemasController::class, 'select'])->name('temas.select');
         Route::delete('/temas/{nomeTema}', [TemasController::class, 'destroy'])->name('temas.destroy');
+        
+        // Rotas de edição de páginas dos temas
+        Route::get('/temas/home/edit', [TemasController::class, 'editHome'])->name('temas.home.edit');
+        Route::get('/temas/about/edit', [TemasController::class, 'editAbout'])->name('temas.about.edit');
+        Route::get('/temas/contact/edit', [TemasController::class, 'editContact'])->name('temas.contact.edit');
+        
+        // Rota de serviços (placeholder)
+        Route::get('/servico', function() {
+            return redirect()->route('dashboard.temas')->with('info', 'Página de serviços em desenvolvimento.');
+        })->name('servico.index');
     });
 });
