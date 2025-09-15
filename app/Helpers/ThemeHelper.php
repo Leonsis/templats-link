@@ -39,13 +39,22 @@ class ThemeHelper
             return "main-Thema.{$viewName}";
         }
         
-        // Para outros temas, mapear nomes em português para inglês
-        $mapeamento = [
-            'home' => 'index',
-            'sobre' => 'about',
-            'contato' => 'contact'
-        ];
-        $arquivoReal = $mapeamento[$viewName] ?? $viewName;
+        $temaViewsPath = resource_path('views/temas/' . $temaAtivo);
+        
+        // Primeiro, tentar com o nome original da página
+        $arquivoBlade = $temaViewsPath . '/' . $viewName . '.blade.php';
+        
+        // Se não existir, tentar com o mapeamento
+        if (!File::exists($arquivoBlade)) {
+            $mapeamento = [
+                'home' => 'index',
+                'sobre' => 'about',
+                'contato' => 'contact'
+            ];
+            $arquivoReal = $mapeamento[$viewName] ?? $viewName;
+        } else {
+            $arquivoReal = $viewName;
+        }
         
         // Usar o caminho temas.nomeTema.arquivoReal
         return "temas.{$temaAtivo}.{$arquivoReal}";

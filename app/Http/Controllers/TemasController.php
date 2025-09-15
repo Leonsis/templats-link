@@ -213,17 +213,24 @@ class TemasController extends Controller
             $temaViewsPath = resource_path('views/main-Thema');
             $viewPath = 'main-Thema.' . $pagina;
         } else {
-            // Mapear nomes em português para inglês (arquivos reais)
-            $mapeamento = [
-                'home' => 'index',
-                'sobre' => 'about',
-                'contato' => 'contact'
-            ];
-            $arquivoReal = $mapeamento[$pagina] ?? $pagina;
-            
             $temaViewsPath = resource_path('views/temas/' . $nomeTema);
-            $arquivoBlade = $temaViewsPath . '/' . $arquivoReal . '.blade.php';
-            $viewPath = 'temas.' . $nomeTema . '.' . $arquivoReal;
+            
+            // Primeiro, tentar com o nome original da página
+            $arquivoBlade = $temaViewsPath . '/' . $pagina . '.blade.php';
+            $viewPath = 'temas.' . $nomeTema . '.' . $pagina;
+            
+            // Se não existir, tentar com o mapeamento
+            if (!File::exists($arquivoBlade)) {
+                $mapeamento = [
+                    'home' => 'index',
+                    'sobre' => 'about',
+                    'contato' => 'contact'
+                ];
+                $arquivoReal = $mapeamento[$pagina] ?? $pagina;
+                
+                $arquivoBlade = $temaViewsPath . '/' . $arquivoReal . '.blade.php';
+                $viewPath = 'temas.' . $nomeTema . '.' . $arquivoReal;
+            }
         }
         
         if ($nomeTema !== 'main-Thema') {
