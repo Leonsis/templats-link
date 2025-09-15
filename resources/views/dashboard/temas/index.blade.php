@@ -303,6 +303,24 @@ function confirmarRemocao(nomeTema) {
     modal.show();
 }
 
+function linkarPaginas(nomeTema) {
+    // Definir URLs das páginas de edição
+    const paginas = {
+        'home': '{{ route("dashboard.temas.home.edit") }}',
+        'about': '{{ route("dashboard.temas.about.edit") }}',
+        'contact': '{{ route("dashboard.temas.contact.edit") }}',
+        'servico': '{{ route("dashboard.servico.index") }}'
+    };
+    
+    // Abrir cada página em uma nova aba
+    Object.keys(paginas).forEach(function(pagina) {
+        window.open(paginas[pagina], '_blank');
+    });
+    
+    // Mostrar mensagem de sucesso
+    alert('Páginas abertas em novas abas para edição!');
+}
+
 // Inicializar accordions
 document.addEventListener('DOMContentLoaded', function() {
     // Garantir que todos os accordions funcionem
