@@ -140,7 +140,10 @@ class TemasController extends Controller
             // Converter HTML para Blade e ajustar tema
             $this->converterHtmlParaBlade($temaViewsPath, $nomeTema);
             
-            $mensagem = 'Tema "' . $nomeTema . '" instalado com sucesso! Assets processados, estrutura Blade criada, links atualizados e HTML convertido para Blade.';
+            // Linkar formulários dinamicamente ao tema
+            $this->linkarFormulariosAoTema($temaViewsPath, $nomeTema);
+            
+            $mensagem = 'Tema "' . $nomeTema . '" instalado com sucesso! Assets processados, estrutura Blade criada, links atualizados, HTML convertido para Blade e formulários linkados dinamicamente.';
             if ($arquivoPaginas) {
                 $mensagem .= ' Páginas processadas e rotas dinâmicas criadas.';
             }
@@ -313,6 +316,11 @@ class TemasController extends Controller
             $configContent = "<?php\n\nreturn [\n    'tema_principal' => '{$nomeTema}',\n    'selecionado_em' => '" . now() . "',\n];\n";
             
             File::put($configPath, $configContent);
+            
+            // Se não for main-Thema, verificar se os formulários estão linkados
+            if ($nomeTema !== 'main-Thema') {
+                $this->verificarELinkarFormularios($temaViewsPath, $nomeTema);
+            }
             
             return redirect()->route('dashboard.temas')->with('success', 'Tema "' . $nomeTema . '" selecionado como tema principal do sistema!');
             
@@ -858,5 +866,201 @@ class TemasController extends Controller
         // Salvar arquivo de rotas
         $conteudo = "<?php\n\n// Rotas dinâmicas para temas\nreturn " . var_export($rotasExistentes, true) . ";\n";
         File::put($rotasPath, $conteudo);
+    }
+
+    /**
+     * Linkar formulários dinamicamente ao tema
+     */
+    private function linkarFormulariosAoTema($temaViewsPath, $nomeTema)
+    {
+        try {
+            // Modificar arquivo head.blade.php
+            $this->modificarArquivoHead($temaViewsPath, $nomeTema);
+            
+            // Modificar arquivo nav.blade.php
+            $this->modificarArquivoNav($temaViewsPath, $nomeTema);
+            
+            // Modificar arquivo footer.blade.php
+            $this->modificarArquivoFooter($temaViewsPath, $nomeTema);
+            
+            \Log::info("Formulários linkados dinamicamente ao tema {$nomeTema}");
+            
+        } catch (\Exception $e) {
+            \Log::error("Erro ao linkar formulários ao tema {$nomeTema}: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Modificar arquivo head.blade.php para usar configurações dinâmicas
+     */
+    private function modificarArquivoHead($temaViewsPath, $nomeTema)
+    {
+        $headPath = $temaViewsPath . '/inc/head.blade.php';
+        
+        if (File::exists($headPath)) {
+            $conteudo = File::get($headPath);
+            
+            // Substituir title estático por dinâmico
+            $conteudo = preg_replace(
+                '/<title>.*?<\/title>/s',
+                '<title>{{ \\App\\Helpers\\HeadHelper::getMetaTitle($currentPage ?? \'global\') }}</title>',
+                $conteudo
+            );
+            
+            // Adicionar meta tags dinâmicas após o title
+            $metaTags = '
+     <meta name="description" content="{{ \\App\\Helpers\\HeadHelper::getMetaDescription($currentPage ?? \'global\') }}">
+     <meta name="keywords" content="{{ \\App\\Helpers\\HeadHelper::getMetaKeywords($currentPage ?? \'global\') }}">';
+            
+            $conteudo = preg_replace(
+                '/(<title>.*?<\/title>)/s',
+                '$1' . $metaTags,
+                $conteudo
+            );
+            
+            // Substituir favicon estático por dinâmico
+            $conteudo = preg_replace(
+                '/<link rel="shortcut icon"[^>]*>/',
+                '@if(\\App\\Helpers\\HeadHelper::getFavicon($currentPage ?? \'global\'))
+        <link rel="shortcut icon" href="{{ \\App\\Helpers\\HeadHelper::getFavicon($currentPage ?? \'global\') }}" type="image/x-icon">
+    @else
+        <link rel="shortcut icon" href="{{ asset(\'temas/' . $nomeTema . '/assets/img/logo/fav-logo1.png\') }}" type="image/x-icon">
+    @endif',
+                $conteudo
+            );
+            
+            // Adicionar GTM head
+            $gtmHead = '
+    <!--===== GTM HEAD =======-->
+    @if(\\App\\Helpers\\HeadHelper::getGtmHead($currentPage ?? \'global\'))
+        {!! \\App\\Helpers\\HeadHelper::getGtmHead($currentPage ?? \'global\') !!}
+    @endif';
+            
+            $conteudo = preg_replace(
+                '/(<link rel="shortcut icon"[^>]*>)/s',
+                '$1' . $gtmHead,
+                $conteudo
+            );
+            
+            File::put($headPath, $conteudo);
+        }
+    }
+
+    /**
+     * Modificar arquivo nav.blade.php para usar logo dinâmico
+     */
+    private function modificarArquivoNav($temaViewsPath, $nomeTema)
+    {
+        $navPath = $temaViewsPath . '/inc/nav.blade.php';
+        
+        if (File::exists($navPath)) {
+            $conteudo = File::get($navPath);
+            
+            // Substituir logo estático por dinâmico
+            $conteudo = preg_replace(
+                '/<img src="[^"]*logo[^"]*"[^>]*>/',
+                '@if(\\App\\Helpers\\HeadHelper::getLogo())
+                              <img src="{{ \\App\\Helpers\\HeadHelper::getLogo() }}" alt="{{ \\App\\Helpers\\HeadHelper::getMetaTitle(\'global\') }}">
+                          @else
+                              <img src="{{ asset(\'temas/' . $nomeTema . '/assets/img/logo/logo1.png\') }}" alt="' . $nomeTema . '">
+                          @endif',
+                $conteudo
+            );
+            
+            // Substituir links estáticos por rotas Laravel
+            $conteudo = preg_replace('/href="index\.html"/', 'href="{{ route(\'home\') }}"', $conteudo);
+            $conteudo = preg_replace('/href="about\.html"/', 'href="{{ route(\'sobre\') }}"', $conteudo);
+            $conteudo = preg_replace('/href="contact\.html"/', 'href="{{ route(\'contato\') }}"', $conteudo);
+            
+            File::put($navPath, $conteudo);
+        }
+    }
+
+    /**
+     * Modificar arquivo footer.blade.php para usar configurações dinâmicas
+     */
+    private function modificarArquivoFooter($temaViewsPath, $nomeTema)
+    {
+        $footerPath = $temaViewsPath . '/inc/footer.blade.php';
+        
+        if (File::exists($footerPath)) {
+            $conteudo = File::get($footerPath);
+            
+            // Substituir logo footer estático por dinâmico
+            $conteudo = preg_replace(
+                '/<img src="[^"]*logo[^"]*"[^>]*>/',
+                '@if(\\App\\Helpers\\HeadHelper::getLogoFooter())
+              <img src="{{ \\App\\Helpers\\HeadHelper::getLogoFooter() }}" alt="{{ \\App\\Helpers\\HeadHelper::getMetaTitle(\'global\') }}">
+          @else
+              <img src="{{ asset(\'temas/' . $nomeTema . '/assets/img/logo/logo1.png\') }}" alt="' . $nomeTema . '">
+          @endif',
+                $conteudo
+            );
+            
+            // Substituir descrição estática por dinâmica
+            $conteudo = preg_replace(
+                '/<p>.*?<\/p>/s',
+                '<p>{{ \\App\\Helpers\\HeadHelper::getDescricaoFooter() ?: \'We are committed to providing with the highest level of service expertise business and finance if you have any.\' }}</p>',
+                $conteudo,
+                1 // Apenas a primeira ocorrência
+            );
+            
+            // Substituir redes sociais estáticas por dinâmicas
+            $redesSociais = '
+            @php $redesSociais = \\App\\Helpers\\HeadHelper::getRedesSociais(); @endphp
+            @if($redesSociais[\'facebook\'])
+                <li><a href="{{ $redesSociais[\'facebook\'] }}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+            @endif
+            @if($redesSociais[\'linkedin\'])
+                <li><a href="{{ $redesSociais[\'linkedin\'] }}" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            @endif
+            @if($redesSociais[\'instagram\'])
+                <li><a href="{{ $redesSociais[\'instagram\'] }}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            @endif
+            @if($redesSociais[\'youtube\'])
+                <li><a href="{{ $redesSociais[\'youtube\'] }}" target="_blank" class="m-0"><i class="fa-brands fa-youtube"></i></a></li>
+            @endif';
+            
+            $conteudo = preg_replace(
+                '/<ul>\s*<li><a href="[^"]*"><i class="fa-brands fa-facebook-f"><\/i><\/a><\/li>.*?<\/ul>/s',
+                '<ul>' . $redesSociais . '</ul>',
+                $conteudo
+            );
+            
+            // Substituir copyright estático por dinâmico
+            $conteudo = preg_replace(
+                '/<p>© Copyright[^<]*<\/p>/',
+                '<p>{{ \\App\\Helpers\\HeadHelper::getCopyrightFooter() ?: \'© Copyright 2025 - ' . $nomeTema . '. All Right Reserved\' }}</p>',
+                $conteudo
+            );
+            
+            File::put($footerPath, $conteudo);
+        }
+    }
+
+    /**
+     * Verificar se os formulários estão linkados e linkar se necessário
+     */
+    private function verificarELinkarFormularios($temaViewsPath, $nomeTema)
+    {
+        try {
+            $headPath = $temaViewsPath . '/inc/head.blade.php';
+            
+            // Verificar se o arquivo head já está linkado (contém HeadHelper)
+            if (File::exists($headPath)) {
+                $conteudo = File::get($headPath);
+                
+                // Se não contém HeadHelper, significa que não está linkado
+                if (strpos($conteudo, 'HeadHelper') === false) {
+                    \Log::info("Formulários não estão linkados ao tema {$nomeTema}. Linkando automaticamente...");
+                    $this->linkarFormulariosAoTema($temaViewsPath, $nomeTema);
+                } else {
+                    \Log::info("Formulários já estão linkados ao tema {$nomeTema}");
+                }
+            }
+            
+        } catch (\Exception $e) {
+            \Log::error("Erro ao verificar linkagem dos formulários para o tema {$nomeTema}: " . $e->getMessage());
+        }
     }
 }

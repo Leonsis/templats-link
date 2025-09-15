@@ -5,21 +5,32 @@
 @section('content')
 <div class="content-area">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1><i class="fas fa-palette"></i> Gerenciar Temas</h1>
+        <div>
+            <h1 class="mb-2"><i class="fas fa-palette text-primary"></i> Gerenciar Temas</h1>
+            <p class="text-muted mb-0">Instale, configure e gerencie os temas do seu site</p>
+        </div>
+        <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#helpModal">
+                <i class="fas fa-question-circle me-2"></i>Ajuda
+            </button>
+        </div>
     </div>
 
     <!-- Formulário de Upload -->
     <div class="admin-card mb-4">
         <div class="card-header">
-            <h5 class="mb-0"><i class="fas fa-upload"></i> Instalar Novo Tema</h5>
+            <h5 class="mb-0"><i class="fas fa-upload text-primary"></i> Instalar Novo Tema</h5>
+            <small class="text-muted">Faça upload dos arquivos do tema para instalá-lo no sistema</small>
         </div>
         <div class="card-body">
-            <form action="{{ route('dashboard.temas.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('dashboard.temas.store') }}" method="POST" enctype="multipart/form-data" id="themeForm">
                 @csrf
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label for="nome_tema" class="form-label">Nome do Tema</label>
+                            <label for="nome_tema" class="form-label">
+                                <i class="fas fa-tag me-1"></i>Nome do Tema
+                            </label>
                             <input type="text" 
                                    class="form-control @error('nome_tema') is-invalid @enderror" 
                                    id="nome_tema" 
@@ -31,38 +42,44 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                             <small class="form-text text-muted">
-                                Use apenas letras, números, hífens e underscores
+                                <i class="fas fa-info-circle me-1"></i>Use apenas letras, números, hífens e underscores
                             </small>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label for="arquivo_zip" class="form-label">Arquivo ZIP dos Assets</label>
+                            <label for="arquivo_zip" class="form-label">
+                                <i class="fas fa-file-archive me-1"></i>Arquivo ZIP dos Assets
+                            </label>
                             <input type="file" 
                                    class="form-control @error('arquivo_zip') is-invalid @enderror" 
                                    id="arquivo_zip" 
                                    name="arquivo_zip" 
+                                   accept=".zip"
                                    required>
                             @error('arquivo_zip')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                             <small class="form-text text-muted">
-                                CSS, JS, imagens, etc. (Máx: 10MB)
+                                <i class="fas fa-info-circle me-1"></i>CSS, JS, imagens, etc. (Máx: 10MB)
                             </small>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label for="arquivo_paginas" class="form-label">Arquivo ZIP das Páginas</label>
+                            <label for="arquivo_paginas" class="form-label">
+                                <i class="fas fa-file-code me-1"></i>Arquivo ZIP das Páginas
+                            </label>
                             <input type="file" 
                                    class="form-control @error('arquivo_paginas') is-invalid @enderror" 
                                    id="arquivo_paginas" 
-                                   name="arquivo_paginas">
+                                   name="arquivo_paginas"
+                                   accept=".zip">
                             @error('arquivo_paginas')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                             <small class="form-text text-muted">
-                                Páginas HTML/Blade (Opcional - Máx: 10MB)
+                                Páginas HTML/Blade (Máx: 10MB)
                             </small>
                         </div>
                     </div>
@@ -138,9 +155,14 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-admin">
-                    <i class="fas fa-upload"></i> Instalar Tema
-                </button>
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-outline-secondary" onclick="resetForm()">
+                        <i class="fas fa-undo me-2"></i>Limpar
+                    </button>
+                    <button type="submit" class="btn btn-primary btn-admin" id="submitBtn">
+                        <i class="fas fa-upload me-2"></i>Instalar Tema
+                    </button>
+                </div>
             </form>
         </div>
     </div>
@@ -148,7 +170,8 @@
     <!-- Lista de Temas Instalados -->
     <div class="admin-card">
         <div class="card-header">
-            <h5 class="mb-0"><i class="fas fa-list"></i> Temas Instalados</h5>
+            <h5 class="mb-0"><i class="fas fa-list text-primary"></i> Temas Instalados</h5>
+            <small class="text-muted">Gerencie os temas instalados no sistema</small>
         </div>
         <div class="card-body">
             @if(count($temas) > 0)
@@ -191,19 +214,21 @@
                                     <td>
                                         @if($tema['tem_paginas'])
                                             <button type="button" 
-                                                    class="btn btn-sm btn-outline-info" 
+                                                    class="btn btn-sm btn-outline-info preview-btn" 
                                                     data-bs-toggle="collapse" 
                                                     data-bs-target="#pagesAccordion{{ $loop->index }}"
                                                     aria-expanded="false" 
-                                                    aria-controls="pagesAccordion{{ $loop->index }}">
-                                                <i class="fas fa-eye"></i> Ver Páginas
+                                                    aria-controls="pagesAccordion{{ $loop->index }}"
+                                                    title="Ver páginas do tema">
+                                                <i class="fas fa-eye"></i>
+                                                <span class="btn-text">Ver Páginas</span>
                                             </button>
                                         @else
-                                            <span class="text-muted">Sem páginas</span>
+                                            <span class="text-muted no-pages">Sem páginas</span>
                                         @endif
                                     </td>
                                     <td>
-                                        <div class="d-flex gap-2">
+                                        <div class="d-flex flex-wrap gap-1 align-items-center">
                                             @if($tema['ativo'])
                                                 <span class="badge bg-success">
                                                     <i class="fas fa-check-circle"></i> Ativo
@@ -219,11 +244,11 @@
                                                 </form>
                                             @endif
                                             @if(!$tema['is_main'])
-                                        <button type="button" 
-                                                class="btn btn-sm btn-danger" 
-                                                onclick="confirmarRemocao('{{ $tema['nome'] }}')">
-                                            <i class="fas fa-trash"></i> Remover
-                                        </button>
+                                                <button type="button" 
+                                                        class="btn btn-sm btn-danger" 
+                                                        onclick="confirmarRemocao('{{ $tema['nome'] }}')">
+                                                    <i class="fas fa-trash"></i> Remover
+                                                </button>
                                             @else
                                                 <span class="badge bg-info">
                                                     <i class="fas fa-shield-alt"></i> Sistema
@@ -257,12 +282,61 @@
                     </table>
                 </div>
             @else
-                <div class="text-center py-4">
-                    <i class="fas fa-folder-open fa-3x text-muted mb-3"></i>
-                    <h5 class="text-muted">Nenhum tema instalado</h5>
-                    <p class="text-muted">Faça upload de um tema usando o formulário acima.</p>
+                <div class="text-center py-5">
+                    <div class="empty-state">
+                        <i class="fas fa-palette fa-3x text-muted mb-3"></i>
+                        <h5 class="text-muted mb-2">Nenhum tema instalado</h5>
+                        <p class="text-muted mb-4">Faça upload de um tema usando o formulário acima para começar.</p>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#helpModal">
+                            <i class="fas fa-question-circle me-2"></i>Como instalar um tema?
+                        </button>
+                    </div>
                 </div>
             @endif
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Ajuda -->
+<div class="modal fade" id="helpModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-question-circle text-primary me-2"></i>Como Instalar um Tema</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-file-archive text-info me-2"></i>Arquivo ZIP dos Assets</h6>
+                        <p class="text-muted">Este arquivo deve conter:</p>
+                        <ul class="text-muted">
+                            <li>Arquivos CSS</li>
+                            <li>Arquivos JavaScript</li>
+                            <li>Imagens e ícones</li>
+                            <li>Fontes</li>
+                            <li>Outros recursos estáticos</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-file-code text-success me-2"></i>Arquivo ZIP das Páginas</h6>
+                        <p class="text-muted">Este arquivo deve conter:</p>
+                        <ul class="text-muted">
+                            <li>Arquivos HTML/Blade</li>
+                            <li>Páginas como home, sobre, contato</li>
+                            <li>Estrutura de pastas organizada</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="alert alert-info">
+                    <h6><i class="fas fa-lightbulb me-2"></i>Dica Importante</h6>
+                    <p class="mb-0">Após a instalação, o sistema automaticamente linkará os formulários de configuração ao tema, permitindo personalizar logos, cores e textos diretamente do painel administrativo.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendi</button>
+            </div>
         </div>
     </div>
 </div>
@@ -295,6 +369,17 @@
 
 @push('scripts')
 <script>
+// Função para resetar o formulário
+function resetForm() {
+    document.getElementById('themeForm').reset();
+    // Limpar previews de arquivos se existirem
+    const fileInputs = document.querySelectorAll('input[type="file"]');
+    fileInputs.forEach(input => {
+        input.value = '';
+    });
+}
+
+// Função para confirmar remoção
 function confirmarRemocao(nomeTema) {
     document.getElementById('temaNome').textContent = nomeTema;
     document.getElementById('deleteForm').action = '{{ route("dashboard.temas.destroy", ":nomeTema") }}'.replace(':nomeTema', nomeTema);
@@ -321,7 +406,7 @@ function linkarPaginas(nomeTema) {
     alert('Páginas abertas em novas abas para edição!');
 }
 
-// Inicializar accordions
+// Inicializar funcionalidades
 document.addEventListener('DOMContentLoaded', function() {
     // Garantir que todos os accordions funcionem
     var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'));
@@ -331,7 +416,65 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    console.log('Accordions inicializados:', collapseList.length);
+    // Adicionar loading ao formulário
+    const form = document.getElementById('themeForm');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    if (form && submitBtn) {
+        form.addEventListener('submit', function() {
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Instalando...';
+            submitBtn.disabled = true;
+        });
+    }
+    
+    // Adicionar drag and drop para arquivos
+    const fileInputs = document.querySelectorAll('input[type="file"]');
+    fileInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const label = this.previousElementSibling;
+                if (label && label.classList.contains('form-label')) {
+                    const icon = label.querySelector('i');
+                    if (icon) {
+                        icon.className = 'fas fa-check-circle text-success me-1';
+                    }
+                }
+            }
+        });
+    });
+    
+    // Auto-hide alerts após 5 segundos
+    setTimeout(function() {
+        const alerts = document.querySelectorAll('.alert');
+        alerts.forEach(function(alert) {
+            const bsAlert = new bootstrap.Alert(alert);
+            bsAlert.close();
+        });
+    }, 5000);
+    
+    // Melhorar botões de preview
+    const previewButtons = document.querySelectorAll('.preview-btn');
+    previewButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const target = this.getAttribute('data-bs-target');
+            const collapse = document.querySelector(target);
+            
+            if (collapse) {
+                // Adicionar loading state
+                const icon = this.querySelector('i');
+                const originalClass = icon.className;
+                icon.className = 'fas fa-spinner fa-spin';
+                
+                // Restaurar ícone após animação
+                setTimeout(() => {
+                    icon.className = originalClass;
+                }, 500);
+            }
+        });
+    });
+    
+    console.log('Admin Panel inicializado com sucesso!');
 });
 </script>
 @endpush

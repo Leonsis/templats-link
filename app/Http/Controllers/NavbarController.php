@@ -23,10 +23,18 @@ class NavbarController extends Controller
     
     public function index()
     {
-        // Buscar configurações da navbar
-        $navbarConfigs = HeadHelper::getNavbarConfigs();
+        // Obter tema ativo
+        $temaAtivo = \App\Helpers\ThemeHelper::getActiveTheme();
         
-        return view('dashboard.navbar.index', compact('navbarConfigs'));
+        // Se não for main-Thema, criar configurações específicas do tema se não existirem
+        if ($temaAtivo !== 'main-Thema') {
+            $this->criarConfiguracoesTemaSeNecessario($temaAtivo);
+        }
+        
+        // Buscar configurações da navbar para o tema ativo
+        $navbarConfigs = HeadHelper::getNavbarConfigs($temaAtivo);
+        
+        return view('dashboard.navbar.index', compact('navbarConfigs', 'temaAtivo'));
     }
     
     public function getImages()
@@ -214,14 +222,20 @@ class NavbarController extends Controller
                 }
             }
             
+            // Obter tema ativo
+            $temaAtivo = \App\Helpers\ThemeHelper::getActiveTheme();
+            
+            // Adicionar tema aos dados
+            $updateData['tema'] = $temaAtivo;
+            
             DB::table('head_configs')->updateOrInsert(
-                ['pagina' => 'global'],
+                ['pagina' => 'global', 'tema' => $temaAtivo],
                 $updateData
             );
             
             // Limpar cache do helper
             if (method_exists(HeadHelper::class, 'clearCache')) {
-                HeadHelper::clearCache('global');
+                HeadHelper::clearCache('global', $temaAtivo);
             }
             
             if ($request->has('save_logo')) {
@@ -234,6 +248,34 @@ class NavbarController extends Controller
             
         } catch (\Exception $e) {
             return redirect()->route('dashboard.navbar')->with('error', 'Erro ao atualizar configurações: ' . $e->getMessage());
+        }
+    }
+    
+    private function criarConfiguracoesTemaSeNecessario($tema)
+    {
+        // Verificar se já existe configuração específica do tema para global
+        $existe = DB::table('head_configs')
+            ->where('pagina', 'global')
+            ->where('tema', $tema)
+            ->exists();
+        
+        if (!$existe) {
+            // Buscar configuração global para usar como base
+            $configGlobal = DB::table('head_configs')
+                ->where('pagina', 'global')
+                ->where('tema', 'global')
+                ->first();
+            
+            if ($configGlobal) {
+                // Criar configuração específica do tema baseada na global
+                $configTema = (array) $configGlobal;
+                $configTema['tema'] = $tema;
+                $configTema['created_at'] = now();
+                $configTema['updated_at'] = now();
+                unset($configTema['id']); // Remove o ID para criar novo registro
+                
+                DB::table('head_configs')->insert($configTema);
+            }
         }
     }
 }

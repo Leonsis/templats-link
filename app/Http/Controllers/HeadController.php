@@ -23,15 +23,23 @@ class HeadController extends Controller
     
     public function index()
     {
-        // Buscar todas as configurações de páginas
-        $allConfigs = HeadHelper::getAllConfigs();
+        // Obter tema ativo
+        $temaAtivo = \App\Helpers\ThemeHelper::getActiveTheme();
+        
+        // Se não for main-Thema, criar configurações específicas do tema se não existirem
+        if ($temaAtivo !== 'main-Thema') {
+            $this->criarConfiguracoesTemaSeNecessario($temaAtivo);
+        }
+        
+        // Buscar todas as configurações de páginas para o tema ativo
+        $allConfigs = HeadHelper::getAllConfigs($temaAtivo);
         
         // Definir páginas disponíveis
         $paginas = [
             // Páginas removidas conforme solicitado: Página Inicial, Sobre Nós, Contato, Login
         ];
         
-        return view('dashboard.head.index', compact('allConfigs', 'paginas'));
+        return view('dashboard.head.index', compact('allConfigs', 'paginas', 'temaAtivo'));
     }
     
     public function update(Request $request)
@@ -101,14 +109,20 @@ class HeadController extends Controller
                 }
             }
             
+            // Obter tema ativo
+            $temaAtivo = \App\Helpers\ThemeHelper::getActiveTheme();
+            
+            // Adicionar tema aos dados
+            $updateData['tema'] = $temaAtivo;
+            
             DB::table('head_configs')->updateOrInsert(
-                ['pagina' => $request->pagina],
+                ['pagina' => $request->pagina, 'tema' => $temaAtivo],
                 $updateData
             );
             
             // Limpar cache do helper
             if (method_exists(HeadHelper::class, 'clearCache')) {
-                HeadHelper::clearCache($request->pagina);
+                HeadHelper::clearCache($request->pagina, $temaAtivo);
             }
             
             $paginaNome = $this->getPaginaNome($request->pagina);
@@ -186,5 +200,37 @@ class HeadController extends Controller
         ];
         
         return $nomes[$pagina] ?? ucfirst($pagina);
+    }
+    
+    private function criarConfiguracoesTemaSeNecessario($tema)
+    {
+        $paginas = ['global', 'home', 'sobre', 'contato', 'login'];
+        
+        foreach ($paginas as $pagina) {
+            // Verificar se já existe configuração específica do tema
+            $existe = DB::table('head_configs')
+                ->where('pagina', $pagina)
+                ->where('tema', $tema)
+                ->exists();
+            
+            if (!$existe) {
+                // Buscar configuração global para usar como base
+                $configGlobal = DB::table('head_configs')
+                    ->where('pagina', $pagina)
+                    ->where('tema', 'global')
+                    ->first();
+                
+                if ($configGlobal) {
+                    // Criar configuração específica do tema baseada na global
+                    $configTema = (array) $configGlobal;
+                    $configTema['tema'] = $tema;
+                    $configTema['created_at'] = now();
+                    $configTema['updated_at'] = now();
+                    unset($configTema['id']); // Remove o ID para criar novo registro
+                    
+                    DB::table('head_configs')->insert($configTema);
+                }
+            }
+        }
     }
 }

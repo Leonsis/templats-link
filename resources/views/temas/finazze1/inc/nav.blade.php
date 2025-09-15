@@ -21,7 +21,11 @@
           <div class="row align-items-center">
               <div class="col-lg-2 col-md-6 col-6">
                   <div class="vl-logo">
-                      <a href="index.html"><img src="{{ asset('temas/finazze1/assets/img/logo/logo1.png') }}" alt=""></a>
+                      <a href="{{ route('home') }}">@if(\App\Helpers\HeadHelper::getLogo())
+                              <img src="{{ \App\Helpers\HeadHelper::getLogo() }}" alt="{{ \App\Helpers\HeadHelper::getMetaTitle('global') }}">
+                          @else
+                              <img src="{{ asset('temas/finazze1/assets/img/logo/logo1.png') }}" alt="finazze1">
+                          @endif</a>
                   </div>
               </div>
               <div class="col-lg-7 d-none d-lg-block">
@@ -38,9 +42,9 @@
                                                           <div class="img1">
                                                             <img src="{{ asset('temas/finazze1/assets/img/all-images/demo/demo-img1.png') }}" alt="">
                                                           </div>
-                                                         <a href="index.html">Finazze  - Homepage 01</a>
+                                                         <a href="{{ route('home') }}">Finazze  - Homepage 01</a>
                                                          <div class="btn-area1">
-                                                          <a href="index.html" class="vl-btn1">View Demo</a>
+                                                          <a href="{{ route('home') }}" class="vl-btn1">View Demo</a>
 
                                                          </div>
                                                          <div class="space20 d-lg-none d-block"></div>
@@ -104,11 +108,11 @@
                               <li class="has-dropdown">
                                 <a href="index.html#">Pages <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
                                   <ul class="sub-menu">
-                                      <li><a href="about.html">About Us</a></li>
+                                      <li><a href="{{ route('sobre') }}">About Us</a></li>
                                       <li><a href="team.html">Our Team</a></li>
                                       <li><a href="pricing.html">Pricing Plan</a></li>
                                       <li><a href="testimonial.html">Testimonials</a></li>
-                                      <li><a href="contact.html">Contact Us</a></li>
+                                      <li><a href="{{ route('contato') }}">Contact Us</a></li>
                                       <li><a href="faq.html">FAQ's</a></li>
                                       <li><a href="404.html">404</a></li>
                                   </ul>
@@ -150,7 +154,7 @@
                               </ul>
                               </li>
 
-                              <li><a href="contact.html">Contact Us</a></li>
+                              <li><a href="{{ route('contato') }}">Contact Us</a></li>
                           </ul>
                       </nav>
                   </div>
@@ -190,7 +194,11 @@
     <div class="vl-offcanvas-wrapper">
         <div class="vl-offcanvas-header d-flex justify-content-between align-items-center mb-90">
             <div class="vl-offcanvas-logo">
-                <a href="index.html"><img src="{{ asset('temas/finazze1/assets/img/logo/logo1.png') }}" alt=""></a>
+                <a href="{{ route('home') }}">@if(\App\Helpers\HeadHelper::getLogo())
+                              <img src="{{ \App\Helpers\HeadHelper::getLogo() }}" alt="{{ \App\Helpers\HeadHelper::getMetaTitle('global') }}">
+                          @else
+                              <img src="{{ asset('temas/finazze1/assets/img/logo/logo1.png') }}" alt="finazze1">
+                          @endif</a>
             </div>
             <div class="vl-offcanvas-close">
                <button class="vl-offcanvas-close-toggle"><i class="fa-solid fa-xmark"></i></button>

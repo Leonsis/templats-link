@@ -13,6 +13,17 @@
                 </h1>
             </div>
 
+            <!-- Informações do Tema Ativo -->
+            <div class="alert alert-info mb-4">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-palette me-2"></i>
+                    <div>
+                        <strong>Tema Ativo:</strong> {{ $temaAtivo }}
+                        <small class="text-muted ms-2">As configurações serão aplicadas especificamente para este tema.</small>
+                    </div>
+                </div>
+            </div>
+
             @if(session('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <i class="fas fa-check-circle me-2"></i>

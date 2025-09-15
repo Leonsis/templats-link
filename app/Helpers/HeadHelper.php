@@ -8,16 +8,36 @@ class HeadHelper
 {
     private static $configsCache = [];
     
-    public static function getConfigs($pagina = 'global')
+    public static function getConfigs($pagina = 'global', $tema = null)
     {
-        if (!isset(self::$configsCache[$pagina])) {
+        // Se não especificado, usar o tema ativo
+        if (!$tema) {
+            $tema = \App\Helpers\ThemeHelper::getActiveTheme();
+        }
+        
+        $cacheKey = "{$tema}_{$pagina}";
+        
+        if (!isset(self::$configsCache[$cacheKey])) {
             try {
-                $configs = DB::table('head_configs')->where('pagina', $pagina)->first();
+                // Primeiro, tentar buscar configurações específicas do tema
+                $configs = DB::table('head_configs')
+                    ->where('pagina', $pagina)
+                    ->where('tema', $tema)
+                    ->first();
                 
+                // Se não encontrar configurações específicas do tema, buscar configurações globais
                 if (!$configs) {
-                    // Configurações padrão se não existirem
+                    $configs = DB::table('head_configs')
+                        ->where('pagina', $pagina)
+                        ->where('tema', 'global')
+                        ->first();
+                }
+                
+                // Se ainda não encontrar, usar configurações padrão
+                if (!$configs) {
                     $configs = (object) [
                         'pagina' => $pagina,
+                        'tema' => $tema,
                         'meta_title' => 'Templats Link - Templates e Desenvolvimento Web',
                         'meta_description' => 'Plataforma completa para templates, soluções web e desenvolvimento de sites profissionais.',
                         'meta_keywords' => 'templates, desenvolvimento web, sites, laravel, php',
@@ -26,12 +46,13 @@ class HeadHelper
                     ];
                 }
                 
-                self::$configsCache[$pagina] = $configs;
+                self::$configsCache[$cacheKey] = $configs;
                 
             } catch (\Exception $e) {
                 // Fallback para configurações padrão em caso de erro
-                self::$configsCache[$pagina] = (object) [
+                self::$configsCache[$cacheKey] = (object) [
                     'pagina' => $pagina,
+                    'tema' => $tema,
                     'meta_title' => 'Templats Link - Templates e Desenvolvimento Web',
                     'meta_description' => 'Plataforma completa para templates, soluções web e desenvolvimento de sites profissionais.',
                     'meta_keywords' => 'templates, desenvolvimento web, sites, laravel, php',
@@ -41,13 +62,21 @@ class HeadHelper
             }
         }
         
-        return self::$configsCache[$pagina];
+        return self::$configsCache[$cacheKey];
     }
     
-    public static function getAllConfigs()
+    public static function getAllConfigs($tema = null)
     {
         try {
-            return DB::table('head_configs')->orderBy('pagina')->get();
+            if (!$tema) {
+                $tema = \App\Helpers\ThemeHelper::getActiveTheme();
+            }
+            
+            return DB::table('head_configs')
+                ->where('tema', $tema)
+                ->orWhere('tema', 'global')
+                ->orderBy('pagina')
+                ->get();
         } catch (\Exception $e) {
             return collect();
         }
@@ -97,9 +126,9 @@ class HeadHelper
         return '';
     }
     
-    public static function getNavbarConfigs()
+    public static function getNavbarConfigs($tema = null)
     {
-        return self::getConfigs('global');
+        return self::getConfigs('global', $tema);
     }
     
     public static function getLogo()
@@ -227,10 +256,18 @@ class HeadHelper
         return str_replace('{ano}', date('Y'), $copyright);
     }
     
-    public static function clearCache($pagina = null)
+    public static function clearCache($pagina = null, $tema = null)
     {
-        if ($pagina) {
-            unset(self::$configsCache[$pagina]);
+        if ($pagina && $tema) {
+            $cacheKey = "{$tema}_{$pagina}";
+            unset(self::$configsCache[$cacheKey]);
+        } elseif ($pagina) {
+            // Limpar cache para todas as páginas que começam com o nome da página
+            foreach (self::$configsCache as $key => $value) {
+                if (strpos($key, "_{$pagina}") !== false) {
+                    unset(self::$configsCache[$key]);
+                }
+            }
         } else {
             self::$configsCache = [];
         }

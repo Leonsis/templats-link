@@ -4,16 +4,28 @@
     <div class="row">
       <div class="col-lg-3 col-md-6">
         <div class="footer-logo1">
-          <img src="{{ asset('temas/finazze1/assets/img/logo/logo1.png') }}" alt="">
+          @if(\App\Helpers\HeadHelper::getLogoFooter())
+              <img src="{{ \App\Helpers\HeadHelper::getLogoFooter() }}" alt="{{ \App\Helpers\HeadHelper::getMetaTitle('global') }}">
+          @else
+              <img src="{{ asset('temas/finazze1/assets/img/logo/logo1.png') }}" alt="finazze1">
+          @endif
           <div class="space24"></div>
-          <p>We are committed to providing  with the highest level of service expertise  business and finance if you have any.</p>
+          <p>{{ \App\Helpers\HeadHelper::getDescricaoFooter() ?: 'We are committed to providing with the highest level of service expertise business and finance if you have any.' }}</p>
           <div class="space24"></div>
           <ul>
-            <li><a href="index.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
-            <li><a href="index.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li><a href="index.html#"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="index.html#" class="m-0"><i class="fa-brands fa-youtube"></i></a></li>
-          </ul>
+            @php $redesSociais = \App\Helpers\HeadHelper::getRedesSociais(); @endphp
+            @if($redesSociais['facebook'])
+                <li><a href="{{ $redesSociais['facebook'] }}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+            @endif
+            @if($redesSociais['linkedin'])
+                <li><a href="{{ $redesSociais['linkedin'] }}" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            @endif
+            @if($redesSociais['instagram'])
+                <li><a href="{{ $redesSociais['instagram'] }}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            @endif
+            @if($redesSociais['youtube'])
+                <li><a href="{{ $redesSociais['youtube'] }}" target="_blank" class="m-0"><i class="fa-brands fa-youtube"></i></a></li>
+            @endif</ul>
         </div>
       </div>
       <div class="col-lg-3 col-md-6">
@@ -110,7 +122,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="vl-copyright-area">
-          <p>© Copyright 2025 - Finazze. All Right Reserved</p>
+          <p>{{ \App\Helpers\HeadHelper::getCopyrightFooter() ?: '© Copyright 2025 - finazze1. All Right Reserved' }}</p>
         </div>
       </div>
     </div>
