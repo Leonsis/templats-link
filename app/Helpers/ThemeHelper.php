@@ -56,6 +56,13 @@ class ThemeHelper
      */
     public static function themeExists($nomeTema)
     {
+        // Tratar main-Thema de forma especial
+        if ($nomeTema === 'main-Thema') {
+            $temaViewsPath = resource_path('views/main-Thema');
+            return File::exists($temaViewsPath);
+        }
+        
+        // Para outros temas, verificar em public/temas e views/temas
         $temaPath = public_path('temas/' . $nomeTema);
         $temaViewsPath = resource_path('views/temas/' . $nomeTema);
         

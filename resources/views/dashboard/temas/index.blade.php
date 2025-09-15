@@ -219,11 +219,11 @@
                                                 </form>
                                             @endif
                                             @if(!$tema['is_main'])
-                                                <button type="button" 
-                                                        class="btn btn-sm btn-danger" 
-                                                        onclick="confirmarRemocao('{{ $tema['nome'] }}')">
-                                                    <i class="fas fa-trash"></i> Remover
-                                                </button>
+                                        <button type="button" 
+                                                class="btn btn-sm btn-danger" 
+                                                onclick="confirmarRemocao('{{ $tema['nome'] }}')">
+                                            <i class="fas fa-trash"></i> Remover
+                                        </button>
                                             @else
                                                 <span class="badge bg-info">
                                                     <i class="fas fa-shield-alt"></i> Sistema

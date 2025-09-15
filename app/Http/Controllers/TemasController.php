@@ -120,6 +120,9 @@ class TemasController extends Controller
                     
                     // Deletar o arquivo ZIP das páginas após descompactação
                     File::delete($zipPathPaginas);
+                    
+                    // Verificar e criar rotas dinamicamente
+                    $this->criarRotasDinamicas($nomeTema, $temaViewsPath);
                 } else {
                     // Se falhou ao abrir o ZIP das páginas, limpar os diretórios criados
                     File::deleteDirectory($temaPath);
@@ -139,7 +142,7 @@ class TemasController extends Controller
             
             $mensagem = 'Tema "' . $nomeTema . '" instalado com sucesso! Assets processados, estrutura Blade criada, links atualizados e HTML convertido para Blade.';
             if ($arquivoPaginas) {
-                $mensagem .= ' Páginas processadas.';
+                $mensagem .= ' Páginas processadas e rotas dinâmicas criadas.';
             }
             
             return redirect()->route('dashboard.temas')->with('success', $mensagem);
@@ -157,16 +160,16 @@ class TemasController extends Controller
 
     public function preview($nomeTema)
     {
-        $temaPath = public_path('temas/' . $nomeTema);
-        $temaViewsPath = resource_path('views/temas/' . $nomeTema);
-        
-        if (!File::exists($temaPath) && !File::exists($temaViewsPath)) {
-            return back()->withErrors(['tema' => 'Tema não encontrado.']);
+        // Tratar main-Thema de forma especial
+        if ($nomeTema === 'main-Thema') {
+            $temaViewsPath = resource_path('views/main-Thema');
+        } else {
+            $temaPath = public_path('temas/' . $nomeTema);
+            $temaViewsPath = resource_path('views/temas/' . $nomeTema);
         }
-
-        // Verificar se existem páginas do tema
+        
         if (!File::exists($temaViewsPath)) {
-            return back()->withErrors(['tema' => 'Este tema não possui páginas para preview.']);
+            return back()->withErrors(['tema' => 'Tema não encontrado.']);
         }
 
         // Listar arquivos Blade disponíveis no tema
@@ -205,24 +208,39 @@ class TemasController extends Controller
 
     public function previewPage($nomeTema, $pagina)
     {
-        // Mapear nomes em português para inglês (arquivos reais)
-        $mapeamento = [
-            'home' => 'index',
-            'sobre' => 'about',
-            'contato' => 'contact'
-        ];
-        $arquivoReal = $mapeamento[$pagina] ?? $pagina;
+        // Tratar main-Thema de forma especial
+        if ($nomeTema === 'main-Thema') {
+            $temaViewsPath = resource_path('views/main-Thema');
+            $viewPath = 'main-Thema.' . $pagina;
+        } else {
+            // Mapear nomes em português para inglês (arquivos reais)
+            $mapeamento = [
+                'home' => 'index',
+                'sobre' => 'about',
+                'contato' => 'contact'
+            ];
+            $arquivoReal = $mapeamento[$pagina] ?? $pagina;
+            
+            $temaViewsPath = resource_path('views/temas/' . $nomeTema);
+            $arquivoBlade = $temaViewsPath . '/' . $arquivoReal . '.blade.php';
+            $viewPath = 'temas.' . $nomeTema . '.' . $arquivoReal;
+        }
         
-        $temaViewsPath = resource_path('views/temas/' . $nomeTema);
-        $arquivoBlade = $temaViewsPath . '/' . $arquivoReal . '.blade.php';
-        
-        if (!File::exists($arquivoBlade)) {
-            return response()->json(['error' => 'Página não encontrada'], 404);
+        if ($nomeTema !== 'main-Thema') {
+            if (!File::exists($arquivoBlade)) {
+                return response()->json(['error' => 'Página não encontrada'], 404);
+            }
+        } else {
+            // Para main-Thema, verificar se a página existe
+            $arquivoBlade = $temaViewsPath . '/' . $pagina . '.blade.php';
+            if (!File::exists($arquivoBlade)) {
+                return response()->json(['error' => 'Página não encontrada'], 404);
+            }
         }
 
         try {
-            // Renderizar a view Blade usando o nome do arquivo real
-            $conteudo = view('temas.' . $nomeTema . '.' . $arquivoReal)->render();
+            // Renderizar a view Blade
+            $conteudo = view($viewPath)->render();
             
             return response($conteudo, 200, [
                 'Content-Type' => 'text/html; charset=utf-8'
@@ -739,5 +757,81 @@ class TemasController extends Controller
         );
         
         return $conteudo;
+    }
+
+    /**
+     * Criar rotas dinamicamente para páginas que não possuem rotas existentes
+     */
+    private function criarRotasDinamicas($nomeTema, $temaViewsPath)
+    {
+        try {
+            // Obter todas as páginas do tema
+            $paginas = collect(File::files($temaViewsPath))
+                ->filter(function($arquivo) {
+                    $nome = $arquivo->getFilename();
+                    return str_ends_with($nome, '.blade.php') && 
+                           !str_contains($arquivo->getPathname(), 'inc') &&
+                           !str_contains($arquivo->getPathname(), 'layouts');
+                })
+                ->map(function($arquivo) {
+                    return basename($arquivo->getFilename(), '.blade.php');
+                });
+
+            // Rotas existentes (mapeamento de nomes)
+            $rotasExistentes = [
+                'index' => 'home',
+                'about' => 'sobre', 
+                'contact' => 'contato'
+            ];
+
+            // Verificar quais páginas precisam de rotas
+            $paginasSemRota = $paginas->filter(function($pagina) use ($rotasExistentes) {
+                return !array_key_exists($pagina, $rotasExistentes);
+            });
+
+            if ($paginasSemRota->count() > 0) {
+                // Criar arquivo de rotas dinâmicas
+                $this->criarArquivoRotasDinamicas($nomeTema, $paginasSemRota);
+                
+                \Log::info("Rotas dinâmicas criadas para tema {$nomeTema}: " . $paginasSemRota->implode(', '));
+            }
+
+        } catch (\Exception $e) {
+            \Log::error("Erro ao criar rotas dinâmicas: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Criar arquivo de rotas dinâmicas
+     */
+    private function criarArquivoRotasDinamicas($nomeTema, $paginas)
+    {
+        $rotasPath = base_path('routes/temas_dinamicas.php');
+        
+        // Ler rotas existentes se o arquivo existir
+        $rotasExistentes = [];
+        if (File::exists($rotasPath)) {
+            $conteudo = File::get($rotasPath);
+            $rotasExistentes = eval('return ' . substr($conteudo, strpos($conteudo, '[')) . ';');
+        }
+
+        // Adicionar novas rotas para o tema
+        foreach ($paginas as $pagina) {
+            $rota = "/{$pagina}";
+            $nomeRota = $pagina;
+            
+            // Evitar duplicatas
+            if (!isset($rotasExistentes[$nomeTema][$nomeRota])) {
+                $rotasExistentes[$nomeTema][$nomeRota] = [
+                    'rota' => $rota,
+                    'pagina' => $pagina,
+                    'criado_em' => now()->toDateTimeString()
+                ];
+            }
+        }
+
+        // Salvar arquivo de rotas
+        $conteudo = "<?php\n\n// Rotas dinâmicas para temas\nreturn " . var_export($rotasExistentes, true) . ";\n";
+        File::put($rotasPath, $conteudo);
     }
 }
