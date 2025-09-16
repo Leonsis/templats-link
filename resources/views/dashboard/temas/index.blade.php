@@ -234,11 +234,13 @@
                                                     <i class="fas fa-check-circle"></i> Ativo
                                                 </span>
                                             @else
-                                                <form action="{{ route('dashboard.temas.select', $tema['nome']) }}" method="POST" class="d-inline">
+                                                <form action="{{ route('dashboard.temas.select', $tema['nome']) }}" method="POST" class="d-inline" id="selectForm{{ $loop->index }}">
                                                     @csrf
                                                     <button type="submit" 
-                                                            class="btn btn-sm btn-success" 
-                                                            onclick="return confirm('Deseja selecionar o tema {{ $tema['nome'] }} como tema principal?')">
+                                                            class="btn btn-sm btn-success select-theme-btn" 
+                                                            data-tema="{{ $tema['nome'] }}"
+                                                            data-index="{{ $loop->index }}"
+                                                            onclick="return selectTheme('{{ $tema['nome'] }}', {{ $loop->index }})">
                                                         <i class="fas fa-star"></i> Selecionar
                                                     </button>
                                                 </form>
@@ -386,6 +388,51 @@ function confirmarRemocao(nomeTema) {
     
     var modal = new bootstrap.Modal(document.getElementById('confirmModal'));
     modal.show();
+}
+
+// Função para selecionar tema com melhor tratamento de erros
+function selectTheme(nomeTema, index) {
+    if (!confirm('Deseja selecionar o tema "' + nomeTema + '" como tema principal?')) {
+        return false;
+    }
+    
+    const form = document.getElementById('selectForm' + index);
+    const button = form.querySelector('.select-theme-btn');
+    const originalText = button.innerHTML;
+    
+    // Mostrar loading
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Selecionando...';
+    button.disabled = true;
+    
+    // Enviar formulário
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.text();
+        }
+        throw new Error('Erro na requisição: ' + response.status);
+    })
+    .then(data => {
+        // Sucesso - recarregar a página para mostrar mudanças
+        window.location.reload();
+    })
+    .catch(error => {
+        console.error('Erro ao selecionar tema:', error);
+        alert('Erro ao selecionar o tema. Verifique o console para mais detalhes.');
+        
+        // Restaurar botão
+        button.innerHTML = originalText;
+        button.disabled = false;
+    });
+    
+    return false; // Prevenir envio padrão do formulário
 }
 
 function linkarPaginas(nomeTema) {

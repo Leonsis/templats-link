@@ -294,11 +294,15 @@ class TemasController extends Controller
     public function select($nomeTema)
     {
         try {
+            // Log da tentativa de seleção
+            \Log::info("Tentativa de seleção do tema: {$nomeTema}");
+            
             // Verificar se o tema existe
             if ($nomeTema === 'main-Thema') {
                 // Para main-Thema, verificar se existe em views/main-Thema
                 $temaViewsPath = resource_path('views/main-Thema');
                 if (!File::exists($temaViewsPath)) {
+                    \Log::error("Tema main-Thema não encontrado em: {$temaViewsPath}");
                     return back()->withErrors(['tema' => 'Tema main-Thema não encontrado!']);
                 }
             } else {
@@ -306,8 +310,14 @@ class TemasController extends Controller
                 $temaPath = public_path('temas/' . $nomeTema);
                 $temaViewsPath = resource_path('views/temas/' . $nomeTema);
                 
-                if (!File::exists($temaPath) || !File::exists($temaViewsPath)) {
-                    return back()->withErrors(['tema' => 'Tema não encontrado!']);
+                if (!File::exists($temaPath)) {
+                    \Log::error("Assets do tema não encontrados em: {$temaPath}");
+                    return back()->withErrors(['tema' => 'Assets do tema não encontrados!']);
+                }
+                
+                if (!File::exists($temaViewsPath)) {
+                    \Log::error("Views do tema não encontradas em: {$temaViewsPath}");
+                    return back()->withErrors(['tema' => 'Views do tema não encontradas!']);
                 }
             }
             
@@ -315,16 +325,46 @@ class TemasController extends Controller
             $configPath = config_path('tema_principal.php');
             $configContent = "<?php\n\nreturn [\n    'tema_principal' => '{$nomeTema}',\n    'selecionado_em' => '" . now() . "',\n];\n";
             
-            File::put($configPath, $configContent);
+            // Tentar salvar o arquivo com diferentes abordagens
+            $saved = false;
+            
+            // Primeira tentativa: salvar diretamente
+            if (File::put($configPath, $configContent)) {
+                $saved = true;
+            } else {
+                // Segunda tentativa: criar arquivo temporário e mover
+                $tempPath = storage_path('app/temp_tema_principal.php');
+                if (File::put($tempPath, $configContent)) {
+                    if (File::move($tempPath, $configPath)) {
+                        $saved = true;
+                    } else {
+                        File::delete($tempPath);
+                    }
+                }
+            }
+            
+            if (!$saved) {
+                \Log::error("Erro ao salvar configuração do tema em: {$configPath}");
+                return back()->withErrors(['tema' => 'Erro ao salvar configuração do tema! Verifique as permissões da pasta config.']);
+            }
+            
+            \Log::info("Configuração do tema salva com sucesso: {$nomeTema}");
             
             // Se não for main-Thema, verificar se os formulários estão linkados
             if ($nomeTema !== 'main-Thema') {
                 $this->verificarELinkarFormularios($temaViewsPath, $nomeTema);
             }
             
+            // Limpar cache para garantir que as mudanças sejam aplicadas
+            \Artisan::call('config:clear');
+            \Artisan::call('view:clear');
+            
+            \Log::info("Tema selecionado com sucesso: {$nomeTema}");
+            
             return redirect()->route('dashboard.temas')->with('success', 'Tema "' . $nomeTema . '" selecionado como tema principal do sistema!');
             
         } catch (\Exception $e) {
+            \Log::error("Erro ao selecionar tema {$nomeTema}: " . $e->getMessage());
             return back()->withErrors(['tema' => 'Erro ao selecionar o tema: ' . $e->getMessage()]);
         }
     }
