@@ -156,4 +156,4 @@
     <?php echo $__env->yieldPushContent('scripts'); ?>
 </body>
 </html>
-<?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/templats-link/resources/views/dashboard/layouts/admin.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\templats-link\resources\views/dashboard/layouts/admin.blade.php ENDPATH**/ ?>

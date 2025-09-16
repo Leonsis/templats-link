@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'Gerenciar Temas'); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -623,4 +625,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <?php $__env->stopPush(); ?>
 
-<?php echo $__env->make('dashboard.layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/templats-link/resources/views/dashboard/temas/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('dashboard.layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\templats-link\resources\views/dashboard/temas/index.blade.php ENDPATH**/ ?>
