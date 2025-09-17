@@ -26,25 +26,36 @@ class ReloadDynamicRoutes extends Command
      */
     public function handle()
     {
-        $rotasPath = base_path('routes/temas_dinamicas.php');
-        
-        if (!File::exists($rotasPath)) {
-            $this->info('Nenhum arquivo de rotas dinâmicas encontrado.');
-            return;
-        }
+        try {
+            $rotasDinamicas = \DB::table('rotas_dinamicas')
+                ->where('ativo', 1)
+                ->orderBy('tema')
+                ->orderBy('pagina')
+                ->get();
 
-        $rotasDinamicas = include $rotasPath;
-        $totalRotas = 0;
+            if ($rotasDinamicas->isEmpty()) {
+                $this->info('Nenhuma rota dinâmica encontrada no banco de dados.');
+                return;
+            }
 
-        foreach ($rotasDinamicas as $nomeTema => $rotas) {
-            $this->info("Tema: {$nomeTema}");
-            foreach ($rotas as $nomeRota => $config) {
-                $this->line("  - {$config['rota']} → {$config['pagina']}.blade.php");
+            $totalRotas = 0;
+            $temaAtual = '';
+
+            foreach ($rotasDinamicas as $rotaDinamica) {
+                if ($temaAtual !== $rotaDinamica->tema) {
+                    $temaAtual = $rotaDinamica->tema;
+                    $this->info("Tema: {$temaAtual}");
+                }
+                
+                $this->line("  - {$rotaDinamica->rota} → {$rotaDinamica->pagina}.blade.php");
                 $totalRotas++;
             }
-        }
 
-        $this->info("Total de rotas dinâmicas: {$totalRotas}");
-        $this->info('Rotas dinâmicas recarregadas com sucesso!');
+            $this->info("Total de rotas dinâmicas: {$totalRotas}");
+            $this->info('Rotas dinâmicas carregadas com sucesso!');
+            
+        } catch (\Exception $e) {
+            $this->error("Erro ao carregar rotas dinâmicas: " . $e->getMessage());
+        }
     }
 }

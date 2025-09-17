@@ -1,15 +1,13 @@
-@extends('temas.finazze1.layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <!--===== HERO AREA STARTS =======-->
-<div class="inner-pages-section-area" style="background-image: url({{ asset('temas/finazze1/assets/img/all-images/bg/hero-bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div class="inner-pages-section-area" style="background-image: url(<?php echo e(asset('temas/finazze1/assets/img/all-images/bg/hero-bg1.png')); ?>); background-position: center; background-repeat: no-repeat; background-size: cover;">
   <div class="container">
     <div class="row">
         <div class="col-lg-12 m-auto">
             <div class="inner-header text-center">
             <h2>Contact Us</h2>
             <div class="space24"></div>
-            <a href="{{ route('home') }}">Home <i class="fa-solid fa-angle-right"></i> <span>Contact Us</span></a>
+            <a href="<?php echo e(route('home')); ?>">Home <i class="fa-solid fa-angle-right"></i> <span>Contact Us</span></a>
             </div>
         </div>
     </div>
@@ -159,16 +157,18 @@
           <h2 class="text-anime-style-3">Empowering Businesses, One Step at a Time</h2>
           <div class="space32"></div>
           <div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
-            <a href="{{ route('contato') }}" class="vl-btn1">Schedule a Consultation</a>
-            <a href="{{ route('contato') }}" class="vl-btn1 btn2">Start Your Journey</a>
+            <a href="<?php echo e(route('contato')); ?>" class="vl-btn1">Schedule a Consultation</a>
+            <a href="<?php echo e(route('contato')); ?>" class="vl-btn1 btn2">Start Your Journey</a>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="img1">
-    <img src="{{ asset('temas/finazze1/assets/img/all-images/cta/cta-img1.png') }}"" alt="">
+    <img src="<?php echo e(asset('temas/finazze1/assets/img/all-images/cta/cta-img1.png')); ?>"" alt="">
   </div>
 </div>
 <!--===== CTA AREA ENDS =======-->
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('temas.finazze1.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\templats-link\resources\views/temas/finazze1/Contato.blade.php ENDPATH**/ ?>

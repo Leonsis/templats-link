@@ -1,8 +1,8 @@
-@extends('temas.finazze1.layouts.app')
+@extends('temas.finazze.layouts.app')
 
 @section('content')
 <!--===== HERO AREA STARTS =======-->
-<div class="inner-pages-section-area" style="background-image: url({{ asset('temas/finazze1/assets/img/all-images/bg/hero-bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div class="inner-pages-section-area" style="background-image: url({{ asset('temas/finazze/assets/img/all-images/bg/hero-bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
   <div class="container">
     <div class="row">
         <div class="col-lg-12 m-auto">
@@ -31,7 +31,7 @@
             <div class="space32"></div>
             <div class="pera-box" data-aos="fade-left" data-aos-duration="1000">
               <div class="icons">
-                <img src="{{ asset('temas/finazze1/assets/img/icons/about-icon.svg') }}"" alt="">
+                <img src="{{ asset('temas/finazze/assets/img/icons/about-icon.svg') }}"" alt="">
               </div>
               <div class="text">
                 <a href="service.html">Financial Solution</a>
@@ -42,7 +42,7 @@
             <div class="space32"></div>
             <div class="pera-box" data-aos="fade-left" data-aos-duration="1000">
               <div class="icons">
-                <img src="{{ asset('temas/finazze1/assets/img/icons/about-icon2.svg') }}"" alt="">
+                <img src="{{ asset('temas/finazze/assets/img/icons/about-icon2.svg') }}"" alt="">
               </div>
               <div class="text">
                 <a href="service.html">Financial Solution</a>
@@ -61,18 +61,18 @@
             <div class="row">
               <div class="col-lg-9">
                   <div class="img2 reveal">
-                      <img src="{{ asset('temas/finazze1/assets/img/all-images/about/about-img9.png') }}"" alt="">
+                      <img src="{{ asset('temas/finazze/assets/img/all-images/about/about-img9.png') }}"" alt="">
                     </div>
               </div>
               <div class="col-lg-3">
                   <div class="img2 reveal">
-                      <img src="{{ asset('temas/finazze1/assets/img/all-images/about/about-img10.png') }}"" alt="">
+                      <img src="{{ asset('temas/finazze/assets/img/all-images/about/about-img10.png') }}"" alt="">
                     </div>
               </div>
               <div class="col-lg-12">
                   <div class="space30"></div>
                   <div class="img1 reveal">
-                      <img src="{{ asset('temas/finazze1/assets/img/all-images/about/about-img11.png') }}"" alt="">
+                      <img src="{{ asset('temas/finazze/assets/img/all-images/about/about-img11.png') }}"" alt="">
                     </div>
               </div>
             </div>
@@ -89,12 +89,12 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="about-images-area">
-            <img src="{{ asset('temas/finazze1/assets/img/elements/elements40.png') }}"" alt="" class="elements18">
+            <img src="{{ asset('temas/finazze/assets/img/elements/elements40.png') }}"" alt="" class="elements18">
             <div class="img1 text-end reveal">
-              <img src="{{ asset('temas/finazze1/assets/img/all-images/about/about-img4.png') }}"" alt="">
+              <img src="{{ asset('temas/finazze/assets/img/all-images/about/about-img4.png') }}"" alt="">
             </div>
             <div class="img2">
-              <img src="{{ asset('temas/finazze1/assets/img/all-images/about/about-img5.png') }}"" alt="">
+              <img src="{{ asset('temas/finazze/assets/img/all-images/about/about-img5.png') }}"" alt="">
             </div>
           </div>
         </div>
@@ -161,19 +161,19 @@
                     <ul class="nav nav-pills" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
                           <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-                            <span class="icon"><img src="{{ asset('temas/finazze1/assets/img/icons/mission-icon1.svg') }}"" alt=""></span>
+                            <span class="icon"><img src="{{ asset('temas/finazze/assets/img/icons/mission-icon1.svg') }}"" alt=""></span>
                             <span class="text">Our Vision</span>
                           </button>
                         </li>
                         <li class="nav-item" role="presentation">
                           <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <span class="icon"><img src="{{ asset('temas/finazze1/assets/img/icons/mission-icon2.svg') }}"" alt=""></span>
+                            <span class="icon"><img src="{{ asset('temas/finazze/assets/img/icons/mission-icon2.svg') }}"" alt=""></span>
                             <span class="text">Our Mission</span>
                           </button>
                         </li>
                         <li class="nav-item" role="presentation">
                           <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
-                            <span class="icon"><img src="{{ asset('temas/finazze1/assets/img/icons/mission-icon3.svg') }}"" alt=""></span>
+                            <span class="icon"><img src="{{ asset('temas/finazze/assets/img/icons/mission-icon3.svg') }}"" alt=""></span>
                             <span class="text">Our Finazze</span>
                           </button>
                         </li>
@@ -191,10 +191,10 @@
                                         <p>Our vision is to become a global leader in financial consulting, recognized for transforming businesses through strategic, data-driven solutions. We aim to foster a future businesses of all sizes can access the financial expertise.</p>
                                         <div class="space16"></div>
                                         <ul>
-                                            <li><img src="{{ asset('temas/finazze1/assets/img/icons/check1.svg') }}"" alt=""> Client-Focused Solutions and Results</li>
-                                            <li><img src="{{ asset('temas/finazze1/assets/img/icons/check1.svg') }}"" alt=""> Flexible, Value Driven Approach</li>
-                                            <li><img src="{{ asset('temas/finazze1/assets/img/icons/check1.svg') }}"" alt=""> Warning of updated legal risks for customers</li>
-                                            <li><img src="{{ asset('temas/finazze1/assets/img/icons/check1.svg') }}"" alt=""> A team of experienced and highly specialized</li>
+                                            <li><img src="{{ asset('temas/finazze/assets/img/icons/check1.svg') }}"" alt=""> Client-Focused Solutions and Results</li>
+                                            <li><img src="{{ asset('temas/finazze/assets/img/icons/check1.svg') }}"" alt=""> Flexible, Value Driven Approach</li>
+                                            <li><img src="{{ asset('temas/finazze/assets/img/icons/check1.svg') }}"" alt=""> Warning of updated legal risks for customers</li>
+                                            <li><img src="{{ asset('temas/finazze/assets/img/icons/check1.svg') }}"" alt=""> A team of experienced and highly specialized</li>
                                         </ul>
                                         <div class="space32"></div>
                                         <div class="btn-area1">
@@ -205,7 +205,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="img1">
-                                        <img src="{{ asset('temas/finazze1/assets/img/all-images/others/mission-img1.png') }}"" alt="">
+                                        <img src="{{ asset('temas/finazze/assets/img/all-images/others/mission-img1.png') }}"" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -221,10 +221,10 @@
                                         <p>Our vision is to become a global leader in financial consulting, recognized for transforming businesses through strategic, data-driven solutions. We aim to foster a future businesses of all sizes can access the financial expertise.</p>
                                         <div class="space16"></div>
                                         <ul>
-                                            <li><img src="{{ asset('temas/finazze1/assets/img/icons/check1.svg') }}"" alt=""> Client-Focused Solutions and Results</li>
-                                            <li><img src="{{ asset('temas/finazze1/assets/img/icons/check1.svg') }}"" alt=""> Flexible, Value Driven Approach</li>
-                                            <li><img src="{{ asset('temas/finazze1/assets/img/icons/check1.svg') }}"" alt=""> Warning of updated legal risks for customers</li>
-                                            <li><img src="{{ asset('temas/finazze1/assets/img/icons/check1.svg') }}"" alt=""> A team of experienced and highly specialized</li>
+                                            <li><img src="{{ asset('temas/finazze/assets/img/icons/check1.svg') }}"" alt=""> Client-Focused Solutions and Results</li>
+                                            <li><img src="{{ asset('temas/finazze/assets/img/icons/check1.svg') }}"" alt=""> Flexible, Value Driven Approach</li>
+                                            <li><img src="{{ asset('temas/finazze/assets/img/icons/check1.svg') }}"" alt=""> Warning of updated legal risks for customers</li>
+                                            <li><img src="{{ asset('temas/finazze/assets/img/icons/check1.svg') }}"" alt=""> A team of experienced and highly specialized</li>
                                         </ul>
                                         <div class="space32"></div>
                                         <div class="btn-area1">
@@ -235,7 +235,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="img1">
-                                        <img src="{{ asset('temas/finazze1/assets/img/all-images/others/mission-img1.png') }}"" alt="">
+                                        <img src="{{ asset('temas/finazze/assets/img/all-images/others/mission-img1.png') }}"" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -251,10 +251,10 @@
                                         <p>Our vision is to become a global leader in financial consulting, recognized for transforming businesses through strategic, data-driven solutions. We aim to foster a future businesses of all sizes can access the financial expertise.</p>
                                         <div class="space16"></div>
                                         <ul>
-                                            <li><img src="{{ asset('temas/finazze1/assets/img/icons/check1.svg') }}"" alt=""> Client-Focused Solutions and Results</li>
-                                            <li><img src="{{ asset('temas/finazze1/assets/img/icons/check1.svg') }}"" alt=""> Flexible, Value Driven Approach</li>
-                                            <li><img src="{{ asset('temas/finazze1/assets/img/icons/check1.svg') }}"" alt=""> Warning of updated legal risks for customers</li>
-                                            <li><img src="{{ asset('temas/finazze1/assets/img/icons/check1.svg') }}"" alt=""> A team of experienced and highly specialized</li>
+                                            <li><img src="{{ asset('temas/finazze/assets/img/icons/check1.svg') }}"" alt=""> Client-Focused Solutions and Results</li>
+                                            <li><img src="{{ asset('temas/finazze/assets/img/icons/check1.svg') }}"" alt=""> Flexible, Value Driven Approach</li>
+                                            <li><img src="{{ asset('temas/finazze/assets/img/icons/check1.svg') }}"" alt=""> Warning of updated legal risks for customers</li>
+                                            <li><img src="{{ asset('temas/finazze/assets/img/icons/check1.svg') }}"" alt=""> A team of experienced and highly specialized</li>
                                         </ul>
                                         <div class="space32"></div>
                                         <div class="btn-area1">
@@ -265,7 +265,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="img1">
-                                        <img src="{{ asset('temas/finazze1/assets/img/all-images/others/mission-img1.png') }}"" alt="">
+                                        <img src="{{ asset('temas/finazze/assets/img/all-images/others/mission-img1.png') }}"" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -310,7 +310,7 @@
                         <div class="author-images-area">
                             <div class="images">
                                 <div class="img1">
-                                    <img src="{{ asset('temas/finazze1/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
+                                    <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
                                 </div>
                                 <div class="text">
                                     <a href="team.html">Gabriel Krajcik</a>
@@ -340,7 +340,7 @@
                         <div class="author-images-area">
                             <div class="images">
                                 <div class="img1">
-                                    <img src="{{ asset('temas/finazze1/assets/img/all-images/testimonial/testi-img2.png') }}"" alt="">
+                                    <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img2.png') }}"" alt="">
                                 </div>
                                 <div class="text">
                                     <a href="team.html">Sylvia Kohler</a>
@@ -370,7 +370,7 @@
                         <div class="author-images-area">
                             <div class="images">
                                 <div class="img1">
-                                    <img src="{{ asset('temas/finazze1/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
+                                    <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
                                 </div>
                                 <div class="text">
                                     <a href="team.html">Homer Kilback</a>
@@ -400,7 +400,7 @@
                         <div class="author-images-area">
                             <div class="images">
                                 <div class="img1">
-                                    <img src="{{ asset('temas/finazze1/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
+                                    <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
                                 </div>
                                 <div class="text">
                                     <a href="team.html">Gabriel Krajcik</a>
@@ -430,7 +430,7 @@
                         <div class="author-images-area">
                             <div class="images">
                                 <div class="img1">
-                                    <img src="{{ asset('temas/finazze1/assets/img/all-images/testimonial/testi-img2.png') }}"" alt="">
+                                    <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img2.png') }}"" alt="">
                                 </div>
                                 <div class="text">
                                     <a href="team.html">Sylvia Kohler</a>
@@ -460,7 +460,7 @@
                         <div class="author-images-area">
                             <div class="images">
                                 <div class="img1">
-                                    <img src="{{ asset('temas/finazze1/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
+                                    <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
                                 </div>
                                 <div class="text">
                                     <a href="team.html">Homer Kilback</a>
@@ -490,7 +490,7 @@
                         <div class="author-images-area">
                             <div class="images">
                                 <div class="img1">
-                                    <img src="{{ asset('temas/finazze1/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
+                                    <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
                                 </div>
                                 <div class="text">
                                     <a href="team.html">Gabriel Krajcik</a>
@@ -520,7 +520,7 @@
                         <div class="author-images-area">
                             <div class="images">
                                 <div class="img1">
-                                    <img src="{{ asset('temas/finazze1/assets/img/all-images/testimonial/testi-img2.png') }}"" alt="">
+                                    <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img2.png') }}"" alt="">
                                 </div>
                                 <div class="text">
                                     <a href="team.html">Sylvia Kohler</a>
@@ -550,7 +550,7 @@
                         <div class="author-images-area">
                             <div class="images">
                                 <div class="img1">
-                                    <img src="{{ asset('temas/finazze1/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
+                                    <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
                                 </div>
                                 <div class="text">
                                     <a href="team.html">Homer Kilback</a>
@@ -589,7 +589,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="800">
         <div class="team-boxarea">
           <div class="img1">
-            <img src="{{ asset('temas/finazze1/assets/img/all-images/team/team-img1.png') }}"" alt="">
+            <img src="{{ asset('temas/finazze/assets/img/all-images/team/team-img1.png') }}"" alt="">
             <ul>
               <li><a href="about.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="about.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -609,7 +609,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="900">
         <div class="team-boxarea">
           <div class="img1">
-            <img src="{{ asset('temas/finazze1/assets/img/all-images/team/team-img2.png') }}"" alt="">
+            <img src="{{ asset('temas/finazze/assets/img/all-images/team/team-img2.png') }}"" alt="">
             <ul>
               <li><a href="about.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="about.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -629,7 +629,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="1000">
         <div class="team-boxarea">
           <div class="img1">
-            <img src="{{ asset('temas/finazze1/assets/img/all-images/team/team-img3.png') }}"" alt="">
+            <img src="{{ asset('temas/finazze/assets/img/all-images/team/team-img3.png') }}"" alt="">
             <ul>
               <li><a href="about.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="about.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -649,7 +649,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="1100">
         <div class="team-boxarea">
           <div class="img1">
-            <img src="{{ asset('temas/finazze1/assets/img/all-images/team/team-img4.png') }}"" alt="">
+            <img src="{{ asset('temas/finazze/assets/img/all-images/team/team-img4.png') }}"" alt="">
             <ul>
               <li><a href="about.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="about.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -687,7 +687,7 @@
     </div>
   </div>
   <div class="img1">
-    <img src="{{ asset('temas/finazze1/assets/img/all-images/cta/cta-img1.png') }}"" alt="">
+    <img src="{{ asset('temas/finazze/assets/img/all-images/cta/cta-img1.png') }}"" alt="">
   </div>
 </div>
 <!--===== CTA AREA ENDS =======-->

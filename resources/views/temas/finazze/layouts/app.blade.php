@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-@include('temas.finazze1.inc.head')
+@include('temas.finazze.inc.head')
 @php
     // Detectar página atual baseada na rota
     $currentPage = 'global';
@@ -21,15 +21,15 @@
         {!! \App\Helpers\HeadHelper::getGtmBody($currentPage) !!}
     @endif
     
-    @include('temas.finazze1.inc.nav')
+    @include('temas.finazze.inc.nav')
 
     <!-- Main Content -->
     <main>
         @yield('content')
     </main>
 
-    @include('temas.finazze1.inc.footer')
+    @include('temas.finazze.inc.footer')
 
-    @include('temas.finazze1.inc.scripts')
+    @include('temas.finazze.inc.scripts')
 </body>
 </html>
