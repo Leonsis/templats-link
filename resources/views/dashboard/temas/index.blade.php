@@ -4,14 +4,14 @@
 
 @section('content')
 <div class="content-area">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 gap-3">
+        <div class="flex-grow-1">
             <h1 class="mb-2"><i class="fas fa-palette text-primary"></i> Gerenciar Temas</h1>
             <p class="text-muted mb-0">Instale, configure e gerencie os temas do seu site</p>
         </div>
-        <div class="d-flex gap-2">
+        <div class="d-flex gap-2 flex-shrink-0">
             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#helpModal">
-                <i class="fas fa-question-circle me-2"></i>Ajuda
+                <i class="fas fa-question-circle me-2"></i><span class="d-none d-sm-inline">Ajuda</span>
             </button>
         </div>
     </div>
@@ -26,7 +26,7 @@
             <form action="{{ route('dashboard.temas.store') }}" method="POST" enctype="multipart/form-data" id="themeForm">
                 @csrf
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-12 col-md-4">
                         <div class="mb-3">
                             <label for="nome_tema" class="form-label">
                                 <i class="fas fa-tag me-1"></i>Nome do Tema
@@ -46,7 +46,7 @@
                             </small>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-12 col-md-4">
                         <div class="mb-3">
                             <label for="arquivo_zip" class="form-label">
                                 <i class="fas fa-file-archive me-1"></i>Arquivo ZIP dos Assets
@@ -65,7 +65,7 @@
                             </small>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-12 col-md-4">
                         <div class="mb-3">
                             <label for="arquivo_paginas" class="form-label">
                                 <i class="fas fa-file-code me-1"></i>Arquivo ZIP das Páginas

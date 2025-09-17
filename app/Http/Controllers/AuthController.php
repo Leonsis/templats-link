@@ -14,8 +14,8 @@ class AuthController extends Controller
      */
     public function showLoginForm()
     {
-        $viewPath = \App\Helpers\ThemeHelper::getThemeViewPath('auth.login');
-        return view($viewPath);
+        // Login sempre usa main-Thema, independente do tema selecionado
+        return view('main-Thema.auth.login');
     }
 
     /**

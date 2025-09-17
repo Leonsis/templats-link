@@ -27,7 +27,7 @@
                         @method('PUT')
                         
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-12 col-lg-8">
                                 <div class="mb-4">
                                     <label for="meta_title" class="form-label">
                                         <i class="fas fa-tag me-2"></i>Meta Title
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                             
-                            <div class="col-md-4">
+                            <div class="col-12 col-lg-4 mt-4 mt-lg-0">
                                 <div class="card bg-light">
                                     <div class="card-header">
                                         <h6 class="mb-0">
@@ -128,8 +128,8 @@
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-end">
-                            <a href="{{ route('dashboard.theme-pages') }}" class="btn btn-outline-secondary me-2">
+                        <div class="d-flex flex-column flex-sm-row justify-content-end gap-2">
+                            <a href="{{ route('dashboard.theme-pages') }}" class="btn btn-outline-secondary">
                                 <i class="fas fa-times me-2"></i>Cancelar
                             </a>
                             <button type="submit" class="btn btn-primary">

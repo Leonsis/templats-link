@@ -27,7 +27,7 @@
                                     $temConfiguracao = $configuracao && ($configuracao->meta_title || $configuracao->meta_description || $configuracao->meta_keywords);
                                 @endphp
                                 
-                                <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="col-12 col-sm-6 col-lg-4 mb-4">
                                     <div class="card h-100 border-0 shadow-sm">
                                         <div class="card-body">
                                             <div class="d-flex align-items-center mb-3">

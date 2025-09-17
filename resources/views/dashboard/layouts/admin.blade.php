@@ -136,8 +136,64 @@
     <script>
         // Mobile sidebar toggle
         document.getElementById('mobileToggle').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.toggle('show');
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('show');
+            
+            // Adicionar overlay quando sidebar está aberto
+            if (sidebar.classList.contains('show')) {
+                createOverlay();
+            } else {
+                removeOverlay();
+            }
         });
+
+        // Criar overlay para mobile
+        function createOverlay() {
+            if (!document.getElementById('sidebar-overlay')) {
+                const overlay = document.createElement('div');
+                overlay.id = 'sidebar-overlay';
+                overlay.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 1040;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                `;
+                document.body.appendChild(overlay);
+                
+                // Animar overlay
+                setTimeout(() => {
+                    overlay.style.opacity = '1';
+                }, 10);
+                
+                // Fechar sidebar ao clicar no overlay
+                overlay.addEventListener('click', closeSidebar);
+            }
+        }
+
+        // Remover overlay
+        function removeOverlay() {
+            const overlay = document.getElementById('sidebar-overlay');
+            if (overlay) {
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    if (overlay.parentNode) {
+                        overlay.parentNode.removeChild(overlay);
+                    }
+                }, 300);
+            }
+        }
+
+        // Fechar sidebar
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.remove('show');
+            removeOverlay();
+        }
 
         // Close sidebar when clicking outside on mobile
         document.addEventListener('click', function(e) {
@@ -147,8 +203,24 @@
             if (window.innerWidth <= 768 && 
                 !sidebar.contains(e.target) && 
                 !toggle.contains(e.target)) {
-                sidebar.classList.remove('show');
+                closeSidebar();
             }
+        });
+
+        // Fechar sidebar ao redimensionar para desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeSidebar();
+            }
+        });
+
+        // Fechar sidebar ao navegar
+        document.querySelectorAll('.menu-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    setTimeout(closeSidebar, 100);
+                }
+            });
         });
 
         // Auto-hide alerts
@@ -159,6 +231,43 @@
                 bsAlert.close();
             });
         }, 5000);
+
+        // Melhorar acessibilidade
+        document.addEventListener('keydown', function(e) {
+            // Fechar sidebar com ESC
+            if (e.key === 'Escape') {
+                closeSidebar();
+            }
+        });
+
+        // Melhorar performance em mobile
+        if (window.innerWidth <= 768) {
+            // Lazy load de imagens
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        // Melhorar formulários em mobile
+        if (window.innerWidth <= 768) {
+            // Evitar zoom em inputs
+            const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="password"], textarea');
+            inputs.forEach(input => {
+                if (input.style.fontSize !== '16px') {
+                    input.style.fontSize = '16px';
+                }
+            });
+        }
     </script>
     
     @stack('scripts')

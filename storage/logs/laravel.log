@@ -11939,3 +11939,872 @@
 [2025-09-17 14:03:47] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
 [2025-09-17 14:03:47] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
 [2025-09-17 14:03:47] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 14:05:10] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 14:05:10] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 14:05:10] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 14:54:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 14:54:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 14:54:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 14:56:04] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 14:56:04] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 14:56:04] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 14:56:04] local.INFO: Formulários linkados dinamicamente ao tema Temateste  
+[2025-09-17 14:56:43] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 14:56:43] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 14:56:43] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 14:57:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 14:57:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 14:57:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 14:57:25] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 14:57:25] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 14:57:25] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 14:57:32] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 14:57:32] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 14:57:32] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 14:57:34] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 14:57:34] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 14:57:34] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 14:58:54] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 14:58:54] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 14:58:54] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 14:58:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 14:58:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 14:58:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 14:59:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 14:59:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 14:59:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 14:59:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 14:59:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 14:59:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:01:56] local.INFO: Upload de tema iniciado {"nome_tema":"Finazze","arquivo_zip":"assets.zip","tamanho_arquivo_zip":12008441,"arquivo_paginas":"testes.zip","tamanho_arquivo_paginas":19512,"tem_codigo_head":true,"tem_codigo_nav":true,"tem_codigo_footer":true,"tem_codigo_scripts":true} 
+[2025-09-17 15:01:59] local.INFO: Formulários linkados dinamicamente ao tema Finazze  
+[2025-09-17 15:01:59] local.INFO: Arquivo de rotas dinâmicas salvo com sucesso para tema Finazze  
+[2025-09-17 15:02:00] local.INFO: Rotas dinâmicas recarregadas com sucesso  
+[2025-09-17 15:02:00] local.INFO: Rotas dinâmicas criadas para tema Finazze: contato, sobre, home, testimonial  
+[2025-09-17 15:02:00] local.INFO: Páginas especiais: contato, sobre, home  
+[2025-09-17 15:02:00] local.INFO: Páginas normais: testimonial  
+[2025-09-17 15:02:00] local.INFO: Links HTML substituídos para tema Finazze: 3 links em 2 arquivos  
+[2025-09-17 15:02:00] local.INFO: Tema Finazze registrado no banco de dados  
+[2025-09-17 15:02:00] local.INFO: Configuração inicial criada para página: contato do tema Finazze  
+[2025-09-17 15:02:00] local.INFO: Configuração inicial criada para página: sobre do tema Finazze  
+[2025-09-17 15:02:00] local.INFO: Configuração inicial criada para página: home do tema Finazze  
+[2025-09-17 15:02:00] local.INFO: Configuração inicial criada para página: testimonial do tema Finazze  
+[2025-09-17 15:02:00] local.INFO: Configurações iniciais criadas para 4 páginas do tema Finazze  
+[2025-09-17 15:02:00] local.INFO: Tema Finazze selecionado automaticamente como ativo  
+[2025-09-17 15:02:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:02:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:02:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:02:20] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:02:20] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:02:20] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:02:37] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:02:37] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:02:37] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:02:44] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:02:44] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:02:44] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:02:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:02:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:02:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:02:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:02:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:02:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:02:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:02:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:02:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:06:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:06:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:06:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:07:42] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:07:42] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:07:42] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:08:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:08:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:08:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:09:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:09:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:09:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:09:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:09:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:09:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:09:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:09:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:09:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:10:43] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:10:43] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:10:43] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:11:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:11:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:11:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:11:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:11:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:11:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:11:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:11:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:11:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:11:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:11:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:11:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:12:42] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:12:42] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:12:42] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:15:42] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:15:42] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:15:42] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:16:04] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:16:04] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:16:04] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:16:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:16:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:16:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:16:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:16:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:16:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:16:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:16:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:16:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:17:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:17:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:17:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:18:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:18:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:18:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:18:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:18:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:18:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:20:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:20:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:20:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 15:20:45] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 15:20:45] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 15:20:45] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:37:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:37:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:37:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:38:34] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:38:34] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:38:34] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:39:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:39:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:39:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:39:19] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:39:19] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:39:19] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:39:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:39:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:39:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:40:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:40:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:40:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:41:32] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:41:32] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:41:32] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:47:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:47:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:47:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:47:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:47:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:47:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:50:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:50:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:50:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:50:31] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:50:31] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:50:31] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:52:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:52:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:52:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:52:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:52:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:52:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:52:33] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:52:33] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:52:33] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:53:14] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:53:14] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:53:14] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:53:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:53:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:53:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:53:17] local.ERROR: Undefined variable $currentPage {"view":{"view":"C:\\xampp\\htdocs\\templats-link\\resources\\views\\temas\\Finazze\\inc\\head.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-1875961478 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#376</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1875961478\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","temaAtivo":"<pre class=sf-dump id=sf-dump-389914350 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"7 characters\">Finazze</span>\"
+</pre><script>Sfdump(\"sf-dump-389914350\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Undefined variable $currentPage at C:\\xampp\\htdocs\\templats-link\\resources\\views\\temas\\Finazze\\inc\\head.blade.php:4)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\xampp\\\\htdocs...')
+#1 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#2 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp\\\\htdocs...', Array)
+#3 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(72): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
+#4 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(207): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp\\\\htdocs...', Array)
+#5 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(190): Illuminate\\View\\View->getContents()
+#6 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(159): Illuminate\\View\\View->renderContents()
+#7 C:\\xampp\\htdocs\\templats-link\\resources\\views\\temas\\Finazze\\layouts\\app.blade.php(3): Illuminate\\View\\View->render()
+#8 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\xampp\\\\htdocs...')
+#9 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#10 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp\\\\htdocs...', Array)
+#11 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(72): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
+#12 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(207): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp\\\\htdocs...', Array)
+#13 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(190): Illuminate\\View\\View->getContents()
+#14 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(159): Illuminate\\View\\View->renderContents()
+#15 C:\\xampp\\htdocs\\templats-link\\resources\\views\\temas\\Finazze\\home.blade.php(838): Illuminate\\View\\View->render()
+#16 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\xampp\\\\htdocs...')
+#17 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#18 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp\\\\htdocs...', Array)
+#19 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(72): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
+#20 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(207): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp\\\\htdocs...', Array)
+#21 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(190): Illuminate\\View\\View->getContents()
+#22 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(159): Illuminate\\View\\View->renderContents()
+#23 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#24 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#25 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(918): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#26 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(885): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#27 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#28 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#37 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#44 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#46 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#48 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#49 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#56 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#57 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#58 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#59 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#60 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#61 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#62 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#63 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#64 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#65 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#66 C:\\xampp\\htdocs\\templats-link\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#67 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Undefined variable $currentPage at C:\\xampp\\htdocs\\templats-link\\storage\\framework\\views\\0b71f4652150500a9e6aa8832028253b.php:6)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 6)
+#1 C:\\xampp\\htdocs\\templats-link\\storage\\framework\\views\\0b71f4652150500a9e6aa8832028253b.php(6): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 6)
+#2 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\xampp\\\\htdocs...')
+#3 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp\\\\htdocs...', Array)
+#5 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(72): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
+#6 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(207): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp\\\\htdocs...', Array)
+#7 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(190): Illuminate\\View\\View->getContents()
+#8 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(159): Illuminate\\View\\View->renderContents()
+#9 C:\\xampp\\htdocs\\templats-link\\storage\\framework\\views\\d672942d9ea630e8f2b1ae94615a082c.php(3): Illuminate\\View\\View->render()
+#10 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\xampp\\\\htdocs...')
+#11 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#12 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp\\\\htdocs...', Array)
+#13 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(72): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
+#14 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(207): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp\\\\htdocs...', Array)
+#15 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(190): Illuminate\\View\\View->getContents()
+#16 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(159): Illuminate\\View\\View->renderContents()
+#17 C:\\xampp\\htdocs\\templats-link\\storage\\framework\\views\\9a2506265efb1fb28c76e923b28d14fb.php(838): Illuminate\\View\\View->render()
+#18 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\xampp\\\\htdocs...')
+#19 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#20 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp\\\\htdocs...', Array)
+#21 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(72): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
+#22 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(207): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp\\\\htdocs...', Array)
+#23 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(190): Illuminate\\View\\View->getContents()
+#24 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(159): Illuminate\\View\\View->renderContents()
+#25 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#26 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#27 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(918): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#28 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(885): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#29 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#30 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#39 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#46 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#48 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#49 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#56 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#57 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#58 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#59 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#60 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#61 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#62 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#63 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#64 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#65 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#66 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#67 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#68 C:\\xampp\\htdocs\\templats-link\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#69 {main}
+"} 
+[2025-09-17 17:54:33] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:54:33] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:54:33] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:54:34] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:54:34] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:54:34] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:54:34] local.INFO: DEBUG LAYOUT FINAZZE - Rota atual: 'home'  
+[2025-09-17 17:54:34] local.INFO: DEBUG LAYOUT FINAZZE - Detectou rota 'home' - currentPage = 'home'  
+[2025-09-17 17:54:34] local.INFO: DEBUG LAYOUT FINAZZE - currentPage final: 'home'  
+[2025-09-17 17:54:34] local.INFO: DEBUG HEAD FINAZZE - currentPage: 'home', metaTitle: 'Teste'  
+[2025-09-17 17:55:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:55:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:55:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:55:49] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:55:49] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:55:49] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:55:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:55:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:55:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:55:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:55:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:55:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:55:56] local.ERROR: View [temas.Finazze.auth.login] not found. {"exception":"[object] (InvalidArgumentException(code: 0): View [temas.Finazze.auth.login] not found. at C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('temas.Finazze.a...', Array)
+#1 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(137): Illuminate\\View\\FileViewFinder->find('temas.Finazze.a...')
+#2 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(1020): Illuminate\\View\\Factory->make('temas.Finazze.a...', Array, Array)
+#3 C:\\xampp\\htdocs\\templats-link\\app\\Http\\Controllers\\AuthController.php(18): view('temas.Finazze.a...')
+#4 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\AuthController->showLoginForm()
+#5 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('showLoginForm', Array)
+#6 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\AuthController), 'showLoginForm')
+#7 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(806): Illuminate\\Routing\\Route->run()
+#9 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#18 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#25 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#27 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#46 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\templats-link\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#48 {main}
+"} 
+[2025-09-17 17:56:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:56:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:56:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:56:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:56:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:56:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:56:00] local.ERROR: View [temas.Finazze.auth.login] not found. {"exception":"[object] (InvalidArgumentException(code: 0): View [temas.Finazze.auth.login] not found. at C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('temas.Finazze.a...', Array)
+#1 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(137): Illuminate\\View\\FileViewFinder->find('temas.Finazze.a...')
+#2 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(1020): Illuminate\\View\\Factory->make('temas.Finazze.a...', Array, Array)
+#3 C:\\xampp\\htdocs\\templats-link\\app\\Http\\Controllers\\AuthController.php(18): view('temas.Finazze.a...')
+#4 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\AuthController->showLoginForm()
+#5 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('showLoginForm', Array)
+#6 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\AuthController), 'showLoginForm')
+#7 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(806): Illuminate\\Routing\\Route->run()
+#9 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#18 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#25 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#27 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#46 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\templats-link\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#48 {main}
+"} 
+[2025-09-17 17:56:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:56:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:56:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:56:07] local.ERROR: View [temas.Finazze.auth.login] not found. {"exception":"[object] (InvalidArgumentException(code: 0): View [temas.Finazze.auth.login] not found. at C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('temas.Finazze.a...', Array)
+#1 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(137): Illuminate\\View\\FileViewFinder->find('temas.Finazze.a...')
+#2 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(1020): Illuminate\\View\\Factory->make('temas.Finazze.a...', Array, Array)
+#3 C:\\xampp\\htdocs\\templats-link\\app\\Http\\Controllers\\AuthController.php(18): view('temas.Finazze.a...')
+#4 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\AuthController->showLoginForm()
+#5 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('showLoginForm', Array)
+#6 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\AuthController), 'showLoginForm')
+#7 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(806): Illuminate\\Routing\\Route->run()
+#9 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#18 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#25 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#27 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#46 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\templats-link\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#48 {main}
+"} 
+[2025-09-17 17:56:08] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:56:08] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:56:08] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:56:08] local.ERROR: View [temas.Finazze.auth.login] not found. {"exception":"[object] (InvalidArgumentException(code: 0): View [temas.Finazze.auth.login] not found. at C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('temas.Finazze.a...', Array)
+#1 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(137): Illuminate\\View\\FileViewFinder->find('temas.Finazze.a...')
+#2 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(1020): Illuminate\\View\\Factory->make('temas.Finazze.a...', Array, Array)
+#3 C:\\xampp\\htdocs\\templats-link\\app\\Http\\Controllers\\AuthController.php(18): view('temas.Finazze.a...')
+#4 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\AuthController->showLoginForm()
+#5 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('showLoginForm', Array)
+#6 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\AuthController), 'showLoginForm')
+#7 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(806): Illuminate\\Routing\\Route->run()
+#9 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#18 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#25 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#27 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#46 C:\\xampp\\htdocs\\templats-link\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\templats-link\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#48 {main}
+"} 
+[2025-09-17 17:58:38] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:58:38] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:58:38] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:58:38] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:58:38] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:58:38] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:59:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:59:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:59:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:59:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:59:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:59:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 17:59:32] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 17:59:32] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 17:59:32] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:01:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:01:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:01:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:01:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:01:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:01:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:02:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:02:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:02:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:02:10] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:02:10] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:02:10] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:02:12] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:02:12] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:02:12] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:03:12] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:03:12] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:03:12] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:03:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:03:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:03:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:03:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:03:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:03:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:05:25] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:05:25] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:05:25] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:05:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:05:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:05:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:05:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:05:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:05:57] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:06:11] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:06:11] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:06:11] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:06:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:06:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:06:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:06:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:06:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:06:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:08:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:08:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:08:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:08:10] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:08:10] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:08:10] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:08:46] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:08:46] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:08:46] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:08:48] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:08:48] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:08:48] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:09:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:09:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:09:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:09:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:09:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:09:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:09:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:09:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:09:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:09:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:09:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:09:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:09:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:09:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:09:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:09:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:09:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:09:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:09:18] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:09:18] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:09:18] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:09:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:09:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:09:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:09:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:09:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:09:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:09:40] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:09:40] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:09:40] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:10:31] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:10:31] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:10:31] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:10:40] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:10:40] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:10:40] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:11:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:11:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:11:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:11:29] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:11:29] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:11:29] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:11:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:11:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:11:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:11:35] local.INFO: Tentativa de seleção do tema: main-Thema  
+[2025-09-17 18:11:35] local.INFO: Configuração do tema salva com sucesso: main-Thema  
+[2025-09-17 18:11:35] local.INFO: Tema selecionado com sucesso: main-Thema  
+[2025-09-17 18:11:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:11:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:11:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:11:37] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:11:37] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:11:37] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:11:40] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:11:40] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:11:40] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:11:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:11:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:11:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:11:58] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:11:58] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:11:58] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:11:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:11:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:11:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:12:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:12:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:12:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:13:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:13:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:13:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:13:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:13:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:13:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:13:15] local.INFO: Tentativa de seleção do tema: Finazze  
+[2025-09-17 18:13:15] local.INFO: Configuração do tema salva com sucesso: Finazze  
+[2025-09-17 18:13:15] local.INFO: Formulários já estão linkados ao tema Finazze  
+[2025-09-17 18:13:15] local.INFO: Tema selecionado com sucesso: Finazze  
+[2025-09-17 18:13:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:13:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:13:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:13:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:13:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:13:17] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:13:19] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:13:19] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:13:19] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:13:34] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:13:34] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:13:34] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:13:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:13:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:13:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:13:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:13:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:13:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:13:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:13:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:13:35] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:14:03] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:14:03] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:14:03] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:14:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:14:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:14:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:14:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:14:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:14:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:14:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:14:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:14:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:14:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:14:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:14:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:17:44] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:17:44] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:17:44] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:18:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:18:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:18:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:21:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:21:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:21:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:25:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:25:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:25:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:25:50] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:25:50] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:25:50] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:26:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:26:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:26:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:26:33] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:26:33] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:26:33] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:26:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:26:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:26:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:28:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:28:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:28:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:28:13] local.ERROR: Using $this when not in object context {"exception":"[object] (Error(code: 0): Using $this when not in object context at C:\\xampp\\htdocs\\templats-link\\delete_finazze_complete.php:40)
+[stacktrace]
+#0 {main}
+"} 
+[2025-09-17 18:31:06] local.INFO: Upload de tema iniciado {"nome_tema":"Finazze","arquivo_zip":"assets.zip","tamanho_arquivo_zip":12008441,"arquivo_paginas":"testes.zip","tamanho_arquivo_paginas":19512,"tem_codigo_head":true,"tem_codigo_nav":true,"tem_codigo_footer":true,"tem_codigo_scripts":true} 
+[2025-09-17 18:31:09] local.INFO: Formulários linkados dinamicamente ao tema Finazze  
+[2025-09-17 18:31:09] local.INFO: Arquivo de rotas dinâmicas salvo com sucesso para tema Finazze  
+[2025-09-17 18:31:10] local.INFO: Rotas dinâmicas recarregadas com sucesso  
+[2025-09-17 18:31:10] local.INFO: Rotas dinâmicas criadas para tema Finazze: contato, sobre, home, testimonial  
+[2025-09-17 18:31:10] local.INFO: Páginas especiais: contato, sobre, home  
+[2025-09-17 18:31:10] local.INFO: Páginas normais: testimonial  
+[2025-09-17 18:31:10] local.INFO: Links HTML substituídos para tema Finazze: 3 links em 2 arquivos  
+[2025-09-17 18:31:10] local.INFO: Tema Finazze registrado no banco de dados  
+[2025-09-17 18:31:10] local.INFO: Configuração inicial criada para página: contato do tema Finazze  
+[2025-09-17 18:31:10] local.INFO: Configuração inicial criada para página: sobre do tema Finazze  
+[2025-09-17 18:31:10] local.INFO: Configuração inicial criada para página: home do tema Finazze  
+[2025-09-17 18:31:10] local.INFO: Configuração inicial criada para página: testimonial do tema Finazze  
+[2025-09-17 18:31:10] local.INFO: Configurações iniciais criadas para 4 páginas do tema Finazze  
+[2025-09-17 18:31:10] local.INFO: Tema Finazze selecionado automaticamente como ativo  
+[2025-09-17 18:31:11] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:31:11] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:31:11] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:31:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:31:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:31:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:31:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:31:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:31:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:31:32] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:31:32] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:31:32] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:31:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:31:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:31:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:31:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:31:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:31:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:31:50] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:31:50] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:31:50] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:31:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:31:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:31:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:31:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:31:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:31:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:31:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:31:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:31:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:32:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:32:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:32:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:34:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:34:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:34:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:36:12] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:36:12] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:36:12] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:36:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:36:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:36:56] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:37:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:37:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:37:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:38:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:38:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:38:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:42:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:42:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:42:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:45:49] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:45:49] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:45:49] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:46:20] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:46:20] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:46:20] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-17 18:49:50] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-17 18:49:50] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-17 18:49:50] local.INFO: Rota dinâmica ignorada para evitar conflito: /  

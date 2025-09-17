@@ -26,7 +26,8 @@ class HeadHelper
                     ->first();
                 
                 // Se não encontrar configurações específicas do tema, buscar configurações globais
-                if (!$configs) {
+                // Mas apenas se o tema ativo for main-Thema
+                if (!$configs && $tema === 'main-Thema') {
                     $configs = DB::table('head_configs')
                         ->where('pagina', $pagina)
                         ->where('tema', 'global')
@@ -35,30 +36,59 @@ class HeadHelper
                 
                 // Se ainda não encontrar, usar configurações padrão
                 if (!$configs) {
-                    $configs = (object) [
-                        'pagina' => $pagina,
-                        'tema' => $tema,
-                        'meta_title' => 'Templats Link - Templates e Desenvolvimento Web',
-                        'meta_description' => 'Plataforma completa para templates, soluções web e desenvolvimento de sites profissionais.',
-                        'meta_keywords' => 'templates, desenvolvimento web, sites, laravel, php',
-                        'favicon' => '',
-                        'logo' => '',
-                        'logo_footer' => '',
-                        'email_contato' => 'contato@templats-link.com',
-                        'telefone' => '+55 (11) 99999-9999',
-                        'whatsapp' => '+5511999999999',
-                        'endereco' => 'Rua das Tecnologias, 123 - Centro, São Paulo - SP',
-                        'horario_atendimento' => 'Segunda a Sexta: 8h às 18h',
-                        'facebook' => '',
-                        'instagram' => '',
-                        'twitter' => '',
-                        'linkedin' => '',
-                        'youtube' => '',
-                        'descricao_footer' => 'Somos especialistas em desenvolvimento web.',
-                        'copyright_footer' => '© {ano} Templats Link. Todos os direitos reservados.',
-                        'gtm_head' => '',
-                        'gtm_body' => '',
-                    ];
+                    // Se for tema personalizado, usar valores específicos do tema
+                    if ($tema !== 'main-Thema') {
+                        $configs = (object) [
+                            'pagina' => $pagina,
+                            'tema' => $tema,
+                            'meta_title' => ucfirst($pagina) . ' - ' . $tema,
+                            'meta_description' => 'Página ' . ucfirst($pagina) . ' do tema ' . $tema . '. Configure as meta tags específicas desta página.',
+                            'meta_keywords' => strtolower($pagina) . ', ' . strtolower($tema) . ', página',
+                            'favicon' => '',
+                            'logo' => '',
+                            'logo_footer' => '',
+                            'email_contato' => 'contato@templats-link.com',
+                            'telefone' => '+55 (11) 99999-9999',
+                            'whatsapp' => '+5511999999999',
+                            'endereco' => 'Rua das Tecnologias, 123 - Centro, São Paulo - SP',
+                            'horario_atendimento' => 'Segunda a Sexta: 8h às 18h',
+                            'facebook' => '',
+                            'instagram' => '',
+                            'twitter' => '',
+                            'linkedin' => '',
+                            'youtube' => '',
+                            'descricao_footer' => 'Somos especialistas em desenvolvimento web.',
+                            'copyright_footer' => '© {ano} Templats Link. Todos os direitos reservados.',
+                            'gtm_head' => '',
+                            'gtm_body' => '',
+                        ];
+                    } else {
+                        // Para main-Thema, usar valores padrão originais
+                        $configs = (object) [
+                            'pagina' => $pagina,
+                            'tema' => $tema,
+                            'meta_title' => 'Templats Link - Templates e Desenvolvimento Web',
+                            'meta_description' => 'Plataforma completa para templates, soluções web e desenvolvimento de sites profissionais.',
+                            'meta_keywords' => 'templates, desenvolvimento web, sites, laravel, php',
+                            'favicon' => '',
+                            'logo' => '',
+                            'logo_footer' => '',
+                            'email_contato' => 'contato@templats-link.com',
+                            'telefone' => '+55 (11) 99999-9999',
+                            'whatsapp' => '+5511999999999',
+                            'endereco' => 'Rua das Tecnologias, 123 - Centro, São Paulo - SP',
+                            'horario_atendimento' => 'Segunda a Sexta: 8h às 18h',
+                            'facebook' => '',
+                            'instagram' => '',
+                            'twitter' => '',
+                            'linkedin' => '',
+                            'youtube' => '',
+                            'descricao_footer' => 'Somos especialistas em desenvolvimento web.',
+                            'copyright_footer' => '© {ano} Templats Link. Todos os direitos reservados.',
+                            'gtm_head' => '',
+                            'gtm_body' => '',
+                        ];
+                    }
                 }
                 
                 self::$configsCache[$cacheKey] = $configs;
@@ -112,21 +142,60 @@ class HeadHelper
         }
     }
     
-    public static function getMetaTitle($pagina = 'global', $fallback = null)
+    public static function getMetaTitle($pagina = 'global', $tema = null, $fallback = null)
     {
-        $configs = self::getConfigs($pagina);
+        // Se não foi passado o tema, usar o tema ativo
+        if (!$tema) {
+            $tema = ThemeHelper::getActiveTheme();
+        }
+        
+        $configs = self::getConfigs($pagina, $tema);
+        
+        // Se o valor está vazio, usar o valor específico do tema
+        if (empty($configs->meta_title)) {
+            if ($tema !== 'main-Thema') {
+                return ucfirst($pagina) . ' - ' . $tema;
+            }
+        }
+        
         return $configs->meta_title ?: $fallback ?: 'Templats Link';
     }
     
-    public static function getMetaDescription($pagina = 'global')
+    public static function getMetaDescription($pagina = 'global', $tema = null)
     {
-        $configs = self::getConfigs($pagina);
+        // Se não foi passado o tema, usar o tema ativo
+        if (!$tema) {
+            $tema = ThemeHelper::getActiveTheme();
+        }
+        
+        $configs = self::getConfigs($pagina, $tema);
+        
+        // Se o valor está vazio, usar o valor específico do tema
+        if (empty($configs->meta_description)) {
+            if ($tema !== 'main-Thema') {
+                return 'Página ' . ucfirst($pagina) . ' do tema ' . $tema . '. Configure as meta tags específicas desta página.';
+            }
+        }
+        
         return $configs->meta_description ?: 'Plataforma completa para templates, soluções web e desenvolvimento de sites profissionais.';
     }
     
-    public static function getMetaKeywords($pagina = 'global')
+    public static function getMetaKeywords($pagina = 'global', $tema = null)
     {
-        $configs = self::getConfigs($pagina);
+        // Se não foi passado o tema, usar o tema ativo
+        if (!$tema) {
+            $tema = ThemeHelper::getActiveTheme();
+        }
+        
+        $configs = self::getConfigs($pagina, $tema);
+        
+        // Se o valor está vazio, usar o valor específico do tema
+        if (empty($configs->meta_keywords)) {
+            if ($tema !== 'main-Thema') {
+                return strtolower($pagina) . ', ' . strtolower($tema) . ', página';
+            }
+        }
+        
         return $configs->meta_keywords ?: 'templates, desenvolvimento web, sites, laravel, php';
     }
     
