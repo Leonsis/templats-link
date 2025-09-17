@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HeadController;
 use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\TemasController;
+use App\Http\Controllers\ThemePageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/temas/{nomeTema}/preview/{pagina}', [TemasController::class, 'previewPage'])->name('temas.preview.page');
         Route::post('/temas/{nomeTema}/select', [TemasController::class, 'select'])->name('temas.select');
         Route::delete('/temas/{nomeTema}', [TemasController::class, 'destroy'])->name('temas.destroy');
+        
+        // Rotas das Páginas dos Temas
+        Route::get('/theme-pages', [ThemePageController::class, 'index'])->name('theme-pages');
+        Route::get('/theme-pages/{pagina}', [ThemePageController::class, 'show'])->name('theme-pages.show');
+        Route::put('/theme-pages/{pagina}', [ThemePageController::class, 'update'])->name('theme-pages.update');
         
         // Rotas de edição de páginas dos temas
         Route::get('/temas/home/edit', [TemasController::class, 'editHome'])->name('temas.home.edit');

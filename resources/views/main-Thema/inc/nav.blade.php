@@ -2,11 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
-            @if(\App\Helpers\HeadHelper::getLogo())
-                <img src="{{ \App\Helpers\HeadHelper::getLogo() }}" alt="Logo" class="navbar-logo" style="height: 40px; max-width: 200px;">
-            @else
-                <i class="fas fa-link me-2"></i>Templats-link
-            @endif
+            <i class="fas fa-link me-2"></i>Templats Link
         </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

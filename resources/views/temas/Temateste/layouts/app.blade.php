@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-@include('main-Thema.inc.head')
+@include('temas.Temateste.inc.head')
 @php
     // Detectar página atual baseada na rota
     $currentPage = 'global';
@@ -16,18 +16,20 @@
 @endphp
 
 <body>
-    <!-- Google Tag Manager (noscript) - Mocado -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Google Tag Manager (noscript) -->
+    @if(\App\Helpers\HeadHelper::getGtmBody($currentPage))
+        {!! \App\Helpers\HeadHelper::getGtmBody($currentPage) !!}
+    @endif
     
-    @include('main-Thema.inc.nav')
+    @include('temas.Temateste.inc.nav')
 
     <!-- Main Content -->
     <main>
         @yield('content')
     </main>
 
-    @include('main-Thema.inc.footer')
+    @include('temas.Temateste.inc.footer')
 
-    @include('main-Thema.inc.scripts')
+    @include('temas.Temateste.inc.scripts')
 </body>
 </html>

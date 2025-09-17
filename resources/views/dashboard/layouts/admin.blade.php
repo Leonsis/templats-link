@@ -31,15 +31,26 @@
                 Dashboard
             </a>
             
-            <a href="{{ route('dashboard.head') }}" class="menu-item {{ request()->routeIs('dashboard.head*') ? 'active' : '' }}">
-                <i class="fas fa-heading"></i>
-                Head
-            </a>
+            @php
+                $temaAtivo = \App\Helpers\ThemeHelper::getActiveTheme();
+            @endphp
             
-            <a href="{{ route('dashboard.navbar') }}" class="menu-item {{ request()->routeIs('dashboard.navbar*') ? 'active' : '' }}">
-                <i class="fas fa-bars"></i>
-                Navbar/Footer
-            </a>
+            @if($temaAtivo !== 'main-Thema')
+                <a href="{{ route('dashboard.head') }}" class="menu-item {{ request()->routeIs('dashboard.head*') ? 'active' : '' }}">
+                    <i class="fas fa-heading"></i>
+                    Head
+                </a>
+                
+                <a href="{{ route('dashboard.navbar') }}" class="menu-item {{ request()->routeIs('dashboard.navbar*') ? 'active' : '' }}">
+                    <i class="fas fa-bars"></i>
+                    Navbar/Footer
+                </a>
+                
+                <a href="{{ route('dashboard.theme-pages') }}" class="menu-item {{ request()->routeIs('dashboard.theme-pages*') ? 'active' : '' }}">
+                    <i class="fas fa-file-alt"></i>
+                    Páginas do Tema
+                </a>
+            @endif
             
             <a href="{{ route('dashboard.temas') }}" class="menu-item {{ request()->routeIs('dashboard.temas*') ? 'active' : '' }}">
                 <i class="fas fa-palette"></i>

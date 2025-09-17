@@ -31,15 +31,26 @@
                 Dashboard
             </a>
             
-            <a href="<?php echo e(route('dashboard.head')); ?>" class="menu-item <?php echo e(request()->routeIs('dashboard.head*') ? 'active' : ''); ?>">
-                <i class="fas fa-heading"></i>
-                Head
-            </a>
+            <?php
+                $temaAtivo = \App\Helpers\ThemeHelper::getActiveTheme();
+            ?>
             
-            <a href="<?php echo e(route('dashboard.navbar')); ?>" class="menu-item <?php echo e(request()->routeIs('dashboard.navbar*') ? 'active' : ''); ?>">
-                <i class="fas fa-bars"></i>
-                Navbar/Footer
-            </a>
+            <?php if($temaAtivo !== 'main-Thema'): ?>
+                <a href="<?php echo e(route('dashboard.head')); ?>" class="menu-item <?php echo e(request()->routeIs('dashboard.head*') ? 'active' : ''); ?>">
+                    <i class="fas fa-heading"></i>
+                    Head
+                </a>
+                
+                <a href="<?php echo e(route('dashboard.navbar')); ?>" class="menu-item <?php echo e(request()->routeIs('dashboard.navbar*') ? 'active' : ''); ?>">
+                    <i class="fas fa-bars"></i>
+                    Navbar/Footer
+                </a>
+                
+                <a href="<?php echo e(route('dashboard.theme-pages')); ?>" class="menu-item <?php echo e(request()->routeIs('dashboard.theme-pages*') ? 'active' : ''); ?>">
+                    <i class="fas fa-file-alt"></i>
+                    Páginas do Tema
+                </a>
+            <?php endif; ?>
             
             <a href="<?php echo e(route('dashboard.temas')); ?>" class="menu-item <?php echo e(request()->routeIs('dashboard.temas*') ? 'active' : ''); ?>">
                 <i class="fas fa-palette"></i>

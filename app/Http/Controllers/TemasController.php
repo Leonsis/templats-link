@@ -149,6 +149,9 @@ class TemasController extends Controller
             // Registrar tema no banco de dados
             $this->registrarTemaNoBanco($nomeTema, $request);
             
+            // Criar configurações iniciais para as páginas do tema
+            $this->criarConfiguracoesPaginasTema($nomeTema, $temaViewsPath);
+            
             // Selecionar automaticamente o tema instalado como ativo
             $this->selecionarTemaAutomaticamente($nomeTema);
             
@@ -320,10 +323,10 @@ class TemasController extends Controller
                 abort(404, 'Página não encontrada');
             }
 
-            // Verificar se o tema está ativo
-            $temaAtivo = \App\Helpers\ThemeHelper::getActiveTheme();
-            if ($temaAtivo !== $tema) {
-                abort(404, 'Tema não está ativo');
+            // Verificar se o tema existe (não precisa estar ativo para rotas dinâmicas)
+            $temaExiste = \App\Helpers\ThemeHelper::themeExists($tema);
+            if (!$temaExiste) {
+                abort(404, 'Tema não encontrado');
             }
 
             // Verificar se o arquivo da página existe
@@ -955,16 +958,26 @@ class TemasController extends Controller
                            !str_contains($arquivo->getPathname(), 'layouts');
                 })
                 ->map(function($arquivo) {
-                    return basename($arquivo->getFilename(), '.blade.php');
+                    // Normalizar nome da página para minúsculas
+                    return strtolower(basename($arquivo->getFilename(), '.blade.php'));
                 });
 
             // Mapeamento de rotas especiais (páginas que já têm rotas fixas)
+            // Incluir variações em maiúsculas e minúsculas
             $rotasEspeciais = [
                 'index' => '/',        // Página inicial
                 'about' => '/sobre',   // Página sobre
                 'contact' => '/contato', // Página contato
                 'sobre' => '/sobre',   // Página sobre (nome em português)
-                'contato' => '/contato' // Página contato (nome em português)
+                'contato' => '/contato', // Página contato (nome em português)
+                'home' => '/',         // Página home também mapeia para /
+                // Variações em maiúsculas
+                'Index' => '/',
+                'About' => '/sobre',
+                'Contact' => '/contato',
+                'Sobre' => '/sobre',
+                'Contato' => '/contato',
+                'Home' => '/'
             ];
 
             // Separar páginas especiais das demais
@@ -984,6 +997,9 @@ class TemasController extends Controller
                 // Criar arquivo de rotas dinâmicas (para compatibilidade)
                 $this->criarArquivoRotasDinamicas($nomeTema, $paginas, $rotasEspeciais);
                 
+                // Recarregar rotas dinâmicas
+                $this->recarregarRotasDinamicas();
+                
                 \Log::info("Rotas dinâmicas criadas para tema {$nomeTema}: " . $paginas->implode(', '));
                 \Log::info("Páginas especiais: " . $paginasEspeciais->implode(', '));
                 \Log::info("Páginas normais: " . $paginasNormais->implode(', '));
@@ -1001,26 +1017,29 @@ class TemasController extends Controller
     {
         try {
             foreach ($paginas as $pagina) {
+                // Normalizar nome da página para minúsculas
+                $paginaNormalizada = strtolower($pagina);
+                
                 // Verificar se a rota já existe
                 $rotaExistente = \DB::table('rotas_dinamicas')
                     ->where('tema', $nomeTema)
-                    ->where('pagina', $pagina)
+                    ->where('pagina', $paginaNormalizada)
                     ->first();
 
                 if (!$rotaExistente) {
                     // Determinar a rota baseada no tipo de página
-                    $rota = isset($rotasEspeciais[$pagina]) ? $rotasEspeciais[$pagina] : '/' . $pagina;
-                    $nomeRota = $pagina;
+                    $rota = isset($rotasEspeciais[$pagina]) ? $rotasEspeciais[$pagina] : '/' . $paginaNormalizada;
+                    $nomeRota = $paginaNormalizada;
                     
                     // Para páginas especiais, usar um nome de rota diferente
                     if (isset($rotasEspeciais[$pagina])) {
-                        $nomeRota = $pagina . '_tema';
+                        $nomeRota = $paginaNormalizada . '_tema';
                     }
 
                     // Criar nova rota dinâmica
                     \DB::table('rotas_dinamicas')->insert([
                         'tema' => $nomeTema,
-                        'pagina' => $pagina,
+                        'pagina' => $paginaNormalizada,
                         'rota' => $rota,
                         'nome_rota' => $nomeRota,
                         'controller' => 'TemasController',
@@ -1047,7 +1066,7 @@ class TemasController extends Controller
         $rotasExistentes = [];
         if (File::exists($rotasPath)) {
             try {
-                $conteudo = File::get($rotasPath);
+            $conteudo = File::get($rotasPath);
                 // Verificar se o arquivo contém apenas PHP válido
                 if (strpos($conteudo, '<?php') === 0 && strpos($conteudo, 'return') !== false) {
                     $rotasExistentes = include $rotasPath;
@@ -1063,20 +1082,23 @@ class TemasController extends Controller
 
         // Adicionar novas rotas para o tema
         foreach ($paginas as $pagina) {
+            // Normalizar nome da página para minúsculas
+            $paginaNormalizada = strtolower($pagina);
+            
             // Determinar a rota baseada no tipo de página
-            $rota = isset($rotasEspeciais[$pagina]) ? $rotasEspeciais[$pagina] : '/' . $pagina;
-            $nomeRota = $pagina;
+            $rota = isset($rotasEspeciais[$pagina]) ? $rotasEspeciais[$pagina] : '/' . $paginaNormalizada;
+            $nomeRota = $paginaNormalizada;
             
             // Para páginas especiais, usar um nome de rota diferente
             if (isset($rotasEspeciais[$pagina])) {
-                $nomeRota = $pagina . '_tema';
+                $nomeRota = $paginaNormalizada . '_tema';
             }
             
             // Evitar duplicatas
             if (!isset($rotasExistentes[$nomeTema][$nomeRota])) {
                 $rotasExistentes[$nomeTema][$nomeRota] = [
                     'rota' => $rota,
-                    'pagina' => $pagina,
+                    'pagina' => $paginaNormalizada,
                     'criado_em' => now()->toDateTimeString()
                 ];
             }
@@ -1084,11 +1106,25 @@ class TemasController extends Controller
 
         // Salvar arquivo de rotas
         try {
-            $conteudo = "<?php\n\n// Rotas dinâmicas para temas\nreturn " . var_export($rotasExistentes, true) . ";\n";
-            File::put($rotasPath, $conteudo);
+        $conteudo = "<?php\n\n// Rotas dinâmicas para temas\nreturn " . var_export($rotasExistentes, true) . ";\n";
+        File::put($rotasPath, $conteudo);
             \Log::info("Arquivo de rotas dinâmicas salvo com sucesso para tema {$nomeTema}");
         } catch (\Exception $e) {
             \Log::error("Erro ao salvar arquivo de rotas dinâmicas: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Recarregar rotas dinâmicas
+     */
+    private function recarregarRotasDinamicas()
+    {
+        try {
+            // Executar comando para recarregar rotas dinâmicas
+            \Artisan::call('routes:reload-dynamic');
+            \Log::info("Rotas dinâmicas recarregadas com sucesso");
+        } catch (\Exception $e) {
+            \Log::error("Erro ao recarregar rotas dinâmicas: " . $e->getMessage());
         }
     }
 
@@ -1165,11 +1201,20 @@ class TemasController extends Controller
 
             foreach ($rotasDinamicas as $rotaDinamica) {
                 $nomePagina = $rotaDinamica->pagina;
+                $nomeRota = $rotaDinamica->nome_rota;
                 $rota = $rotaDinamica->rota;
                 
+                // Tentar usar helper route() para rotas dinâmicas, se não existir usar URL direta
+                try {
+                    $rotaFinal = "{{ route('tema.{$nomeTema}.{$nomeRota}') }}";
+                } catch (\Exception $e) {
+                    // Se a rota não existe (conflito com rota principal), usar URL direta
+                    $rotaFinal = $rota;
+                }
+                
                 // Adicionar variações com .html
-                $mapeamento[$nomePagina . '.html'] = $rota;
-                $mapeamento[$nomePagina] = $rota;
+                $mapeamento[$nomePagina . '.html'] = $rotaFinal;
+                $mapeamento[$nomePagina] = $rotaFinal;
             }
         } catch (\Exception $e) {
             \Log::warning("Erro ao buscar rotas dinâmicas: " . $e->getMessage());
@@ -1213,6 +1258,14 @@ class TemasController extends Controller
                 '/href=["\']' . preg_quote($paginaHtml, '/') . '["\']/i',
                 // href='pagina.html'
                 '/href=[\'"]' . preg_quote($paginaHtml, '/') . '[\'"]/i',
+                // href="/pagina" (sem .html)
+                '/href=["\']\/' . preg_quote(str_replace('.html', '', $paginaHtml), '/') . '["\']/i',
+                // href='/pagina' (sem .html)
+                '/href=[\'"]\/' . preg_quote(str_replace('.html', '', $paginaHtml), '/') . '[\'"]/i',
+                // href="http://localhost/pagina" (URL completa)
+                '/href=["\']http:\/\/localhost\/' . preg_quote(str_replace('.html', '', $paginaHtml), '/') . '["\']/i',
+                // href='http://localhost/pagina' (URL completa)
+                '/href=[\'"]http:\/\/localhost\/' . preg_quote(str_replace('.html', '', $paginaHtml), '/') . '[\'"]/i',
             ];
 
             foreach ($padroes as $padrao) {
@@ -1428,6 +1481,55 @@ class TemasController extends Controller
             
         } catch (\Exception $e) {
             \Log::error("Erro ao verificar linkagem dos formulários para o tema {$nomeTema}: " . $e->getMessage());
+        }
+    }
+    
+    /**
+     * Criar configurações iniciais para as páginas do tema
+     */
+    private function criarConfiguracoesPaginasTema($nomeTema, $temaViewsPath)
+    {
+        try {
+            // Obter todas as páginas do tema
+            $paginas = collect(File::files($temaViewsPath))
+                ->filter(function($arquivo) {
+                    $nome = $arquivo->getFilename();
+                    return str_ends_with($nome, '.blade.php') && 
+                           !str_contains($arquivo->getPathname(), 'inc') &&
+                           !str_contains($arquivo->getPathname(), 'layouts') &&
+                           !str_contains($arquivo->getPathname(), 'auth');
+                })
+                ->map(function($arquivo) {
+                    return strtolower(basename($arquivo->getFilename(), '.blade.php'));
+                });
+            
+            foreach ($paginas as $pagina) {
+                // Verificar se já existe configuração para esta página
+                $configExistente = \DB::table('head_configs')
+                    ->where('pagina', $pagina)
+                    ->where('tema', $nomeTema)
+                    ->first();
+                
+                if (!$configExistente) {
+                    // Criar configuração inicial vazia
+                    \DB::table('head_configs')->insert([
+                        'pagina' => $pagina,
+                        'tema' => $nomeTema,
+                        'meta_title' => '',
+                        'meta_description' => '',
+                        'meta_keywords' => '',
+                        'created_at' => now(),
+                        'updated_at' => now(),
+                    ]);
+                    
+                    \Log::info("Configuração inicial criada para página: {$pagina} do tema {$nomeTema}");
+                }
+            }
+            
+            \Log::info("Configurações iniciais criadas para {$paginas->count()} páginas do tema {$nomeTema}");
+            
+        } catch (\Exception $e) {
+            \Log::error("Erro ao criar configurações das páginas do tema: " . $e->getMessage());
         }
     }
 }

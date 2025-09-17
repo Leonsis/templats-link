@@ -26,10 +26,19 @@ class HeadController extends Controller
         // Obter tema ativo
         $temaAtivo = \App\Helpers\ThemeHelper::getActiveTheme();
         
-        // Se não for main-Thema, criar configurações específicas do tema se não existirem
-        if ($temaAtivo !== 'main-Thema') {
-            $this->criarConfiguracoesTemaSeNecessario($temaAtivo);
+        // Verificar se é um tema personalizado (não main-Thema)
+        if ($temaAtivo === 'main-Thema') {
+            return redirect()->route('dashboard.temas')->with('info', 'As configurações de Head são aplicadas apenas aos temas personalizados. O tema principal (main-Thema) usa dados fixos.');
         }
+        
+        // Verificar se o tema personalizado existe
+        $temaViewsPath = resource_path('views/temas/' . $temaAtivo);
+        if (!file_exists($temaViewsPath)) {
+            return redirect()->route('dashboard.temas')->with('error', 'Tema personalizado não encontrado.');
+        }
+        
+        // Criar configurações específicas do tema se não existirem
+        $this->criarConfiguracoesTemaSeNecessario($temaAtivo);
         
         // Buscar todas as configurações de páginas para o tema ativo
         $allConfigs = HeadHelper::getAllConfigs($temaAtivo);
@@ -44,6 +53,12 @@ class HeadController extends Controller
     
     public function update(Request $request)
     {
+        // Verificar se é um tema personalizado
+        $temaAtivo = \App\Helpers\ThemeHelper::getActiveTheme();
+        if ($temaAtivo === 'main-Thema') {
+            return redirect()->route('dashboard.temas')->with('error', 'As configurações de Head são aplicadas apenas aos temas personalizados.');
+        }
+        
         $request->validate([
             'pagina' => 'required|string|max:50',
             'meta_title' => 'nullable|string|max:60',

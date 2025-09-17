@@ -42,8 +42,15 @@ class DynamicRoutesServiceProvider extends ServiceProvider
             foreach ($rotasDinamicas as $rotaDinamica) {
                 // Verificar se a rota não conflita com rotas principais
                 if (!in_array($rotaDinamica->rota, $rotasPrincipais)) {
-                    // Registrar rota dinâmica
-                    Route::get($rotaDinamica->rota, [\App\Http\Controllers\TemasController::class, 'renderizarPaginaDinamica'])
+                    // Registrar rota dinâmica seguindo o padrão Laravel
+                    $rotaCompleta = $rotaDinamica->rota;
+                    
+                    // Se a rota não começar com /, adicionar
+                    if (!str_starts_with($rotaCompleta, '/')) {
+                        $rotaCompleta = '/' . $rotaCompleta;
+                    }
+                    
+                    Route::get($rotaCompleta, [\App\Http\Controllers\TemasController::class, 'renderizarPaginaDinamica'])
                         ->defaults('tema', $rotaDinamica->tema)
                         ->defaults('pagina', $rotaDinamica->pagina)
                         ->name("tema.{$rotaDinamica->tema}.{$rotaDinamica->nome_rota}");

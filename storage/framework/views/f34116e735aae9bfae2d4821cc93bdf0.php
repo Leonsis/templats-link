@@ -16,11 +16,8 @@
 ?>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <?php if(\App\Helpers\HeadHelper::getGtmBody($currentPage)): ?>
-        <?php echo \App\Helpers\HeadHelper::getGtmBody($currentPage); ?>
-
-    <?php endif; ?>
+    <!-- Google Tag Manager (noscript) - Mocado -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <?php echo $__env->make('main-Thema.inc.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
