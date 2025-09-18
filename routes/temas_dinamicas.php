@@ -137,6 +137,7 @@ return array (
       'criado_em' => '2025-09-18 08:03:10',
     ),
   ),
+  4 => 
   array (
     'contato_tema' => 
     array (
@@ -161,6 +162,39 @@ return array (
       'rota' => '/testimonial',
       'pagina' => 'testimonial',
       'criado_em' => '2025-09-18 08:09:59',
+    ),
+  ),
+  'finazze' => 
+  array (
+    'contato_tema' => 
+    array (
+      'rota' => '/contato',
+      'pagina' => 'contato',
+      'criado_em' => '2025-09-18 14:03:11',
+    ),
+    'sobre_tema' => 
+    array (
+      'rota' => '/sobre',
+      'pagina' => 'sobre',
+      'criado_em' => '2025-09-18 14:03:11',
+    ),
+    'home_tema' => 
+    array (
+      'rota' => '/',
+      'pagina' => 'home',
+      'criado_em' => '2025-09-18 14:03:11',
+    ),
+    'testimonial' => 
+    array (
+      'rota' => '/testimonial',
+      'pagina' => 'testimonial',
+      'criado_em' => '2025-09-18 14:03:11',
+    ),
+    'service' => 
+    array (
+      'rota' => '/service',
+      'pagina' => 'service',
+      'criado_em' => '2025-09-18 14:16:06',
     ),
   ),
 );
