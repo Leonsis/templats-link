@@ -12808,3 +12808,258 @@
 [2025-09-17 18:49:50] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
 [2025-09-17 18:49:50] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
 [2025-09-17 18:49:50] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:43:01] local.INFO: Upload de tema iniciado {"nome_tema":"finazze","arquivo_zip":"assets.zip","tamanho_arquivo_zip":12008441,"arquivo_paginas":"testes.zip","tamanho_arquivo_paginas":19512,"tem_codigo_head":true,"tem_codigo_nav":true,"tem_codigo_footer":true,"tem_codigo_scripts":true} 
+[2025-09-18 07:43:05] local.INFO: Formulários linkados dinamicamente ao tema finazze  
+[2025-09-18 07:43:05] local.INFO: Arquivo de rotas dinâmicas salvo com sucesso para tema finazze  
+[2025-09-18 07:43:21] local.INFO: Rotas dinâmicas recarregadas com sucesso  
+[2025-09-18 07:43:21] local.INFO: Rotas dinâmicas criadas para tema finazze: contato, sobre, home, testimonial  
+[2025-09-18 07:43:21] local.INFO: Páginas especiais: contato, sobre, home  
+[2025-09-18 07:43:21] local.INFO: Páginas normais: testimonial  
+[2025-09-18 07:43:21] local.INFO: Links HTML substituídos para tema finazze: 3 links em 2 arquivos  
+[2025-09-18 07:43:21] local.INFO: Tema finazze registrado no banco de dados  
+[2025-09-18 07:43:21] local.INFO: Configuração inicial criada para página: contato do tema finazze  
+[2025-09-18 07:43:21] local.INFO: Configuração inicial criada para página: sobre do tema finazze  
+[2025-09-18 07:43:21] local.INFO: Configuração inicial criada para página: home do tema finazze  
+[2025-09-18 07:43:21] local.INFO: Configuração inicial criada para página: testimonial do tema finazze  
+[2025-09-18 07:43:21] local.INFO: Configurações iniciais criadas para 4 páginas do tema finazze  
+[2025-09-18 07:43:21] local.INFO: Tema finazze selecionado automaticamente como ativo  
+[2025-09-18 07:43:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:43:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:43:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:43:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:43:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:43:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:43:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:43:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:43:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:43:31] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:43:31] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:43:31] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:43:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:43:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:43:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:43:37] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:43:37] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:43:37] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:43:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:43:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:43:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:43:43] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:43:43] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:43:43] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:43:54] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:43:54] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:43:54] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:43:55] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:43:55] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:43:55] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:43:55] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:43:55] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:43:55] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:44:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:44:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:44:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:44:04] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:44:04] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:44:04] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:45:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:45:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:45:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:45:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:45:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:45:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:46:53] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:46:53] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:46:53] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:48:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:48:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:48:06] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:48:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:48:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:48:13] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:48:31] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:48:31] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:48:31] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:48:42] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:48:42] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:48:42] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:49:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:49:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:49:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:49:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:49:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:49:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 07:52:08] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 07:52:08] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 07:52:08] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:00:25] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:00:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:00:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:01:24] local.INFO: Tentativa de seleção do tema: main-Thema  
+[2025-09-18 08:01:24] local.INFO: Configuração do tema salva com sucesso: main-Thema  
+[2025-09-18 08:01:24] local.INFO: Tema selecionado com sucesso: main-Thema  
+[2025-09-18 08:03:06] local.INFO: Upload de tema iniciado {"nome_tema":"Finazze","arquivo_zip":"assets.zip","tamanho_arquivo_zip":12008441,"arquivo_paginas":"testes.zip","tamanho_arquivo_paginas":19512,"tem_codigo_head":true,"tem_codigo_nav":true,"tem_codigo_footer":true,"tem_codigo_scripts":true} 
+[2025-09-18 08:03:10] local.INFO: Formulários linkados dinamicamente ao tema Finazze  
+[2025-09-18 08:03:10] local.INFO: Arquivo de rotas dinâmicas salvo com sucesso para tema Finazze  
+[2025-09-18 08:03:11] local.INFO: Rotas dinâmicas recarregadas com sucesso  
+[2025-09-18 08:03:11] local.INFO: Rotas dinâmicas criadas para tema Finazze: contato, sobre, home, testimonial  
+[2025-09-18 08:03:11] local.INFO: Páginas especiais: contato, sobre, home  
+[2025-09-18 08:03:11] local.INFO: Páginas normais: testimonial  
+[2025-09-18 08:03:11] local.INFO: Links HTML substituídos para tema Finazze: 3 links em 2 arquivos  
+[2025-09-18 08:03:11] local.INFO: Tema Finazze registrado no banco de dados  
+[2025-09-18 08:03:11] local.INFO: Configuração inicial criada para página: contato do tema Finazze  
+[2025-09-18 08:03:11] local.INFO: Configuração inicial criada para página: sobre do tema Finazze  
+[2025-09-18 08:03:11] local.INFO: Configuração inicial criada para página: home do tema Finazze  
+[2025-09-18 08:03:11] local.INFO: Configuração inicial criada para página: testimonial do tema Finazze  
+[2025-09-18 08:03:11] local.INFO: Configurações iniciais criadas para 4 páginas do tema Finazze  
+[2025-09-18 08:03:11] local.INFO: Tema Finazze selecionado automaticamente como ativo  
+[2025-09-18 08:03:11] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:11] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:11] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:03:12] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:12] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:12] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:03:18] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:18] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:18] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:03:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:21] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:03:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:23] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:03:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:24] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:03:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:03:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:27] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:03:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:03:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:36] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:03:37] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:37] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:37] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:03:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:39] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:03:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:03:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:03:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:04:14] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:04:14] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:04:14] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:04:14] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:04:14] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:04:14] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:05:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:05:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:05:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:06:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:06:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:06:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:09:55] local.INFO: Upload de tema iniciado {"nome_tema":"Finazze","arquivo_zip":"assets.zip","tamanho_arquivo_zip":12008441,"arquivo_paginas":"testes.zip","tamanho_arquivo_paginas":19512,"tem_codigo_head":true,"tem_codigo_nav":true,"tem_codigo_footer":true,"tem_codigo_scripts":true} 
+[2025-09-18 08:09:59] local.INFO: Formulários linkados dinamicamente ao tema Finazze  
+[2025-09-18 08:09:59] local.INFO: Arquivo de rotas dinâmicas salvo com sucesso para tema Finazze  
+[2025-09-18 08:09:59] local.INFO: Rotas dinâmicas recarregadas com sucesso  
+[2025-09-18 08:09:59] local.INFO: Rotas dinâmicas criadas para tema Finazze: contato, sobre, home, testimonial  
+[2025-09-18 08:09:59] local.INFO: Páginas especiais: contato, sobre, home  
+[2025-09-18 08:09:59] local.INFO: Páginas normais: testimonial  
+[2025-09-18 08:09:59] local.INFO: Links HTML substituídos para tema Finazze: 3 links em 2 arquivos  
+[2025-09-18 08:09:59] local.INFO: Tema Finazze registrado no banco de dados  
+[2025-09-18 08:09:59] local.INFO: Configuração inicial criada para página: contato do tema Finazze  
+[2025-09-18 08:09:59] local.INFO: Configuração inicial criada para página: sobre do tema Finazze  
+[2025-09-18 08:09:59] local.INFO: Configuração inicial criada para página: home do tema Finazze  
+[2025-09-18 08:09:59] local.INFO: Configuração inicial criada para página: testimonial do tema Finazze  
+[2025-09-18 08:09:59] local.INFO: Configurações iniciais criadas para 4 páginas do tema Finazze  
+[2025-09-18 08:09:59] local.INFO: Tema Finazze selecionado automaticamente como ativo  
+[2025-09-18 08:10:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:01] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:07] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:10] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:10] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:10] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:14] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:14] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:14] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:15] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:16] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:16] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:16] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:18] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:18] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:18] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:25] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:25] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:25] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:26] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:28] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:40] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:40] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:40] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:41] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:43] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:43] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:43] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:44] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:44] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:44] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:51] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:52] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:52] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:52] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:10:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:10:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:10:59] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:11:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:11:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:11:00] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:11:04] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:11:04] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:11:04] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:11:04] local.INFO: Tentativa de seleção do tema: main-Thema  
+[2025-09-18 08:11:04] local.INFO: Configuração do tema salva com sucesso: main-Thema  
+[2025-09-18 08:11:05] local.INFO: Tema selecionado com sucesso: main-Thema  
+[2025-09-18 08:11:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:11:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:11:05] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:11:08] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:11:08] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:11:08] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:11:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:11:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:11:09] local.INFO: Rota dinâmica ignorada para evitar conflito: /  
+[2025-09-18 08:13:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /contato  
+[2025-09-18 08:13:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /sobre  
+[2025-09-18 08:13:30] local.INFO: Rota dinâmica ignorada para evitar conflito: /  

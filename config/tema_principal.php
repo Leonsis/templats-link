@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'tema_principal' => 'Finazze',
-    'selecionado_em' => '2025-09-17 18:31:10',
+    'tema_principal' => 'main-Thema',
+    'selecionado_em' => '2025-09-18 08:11:04',
 ];

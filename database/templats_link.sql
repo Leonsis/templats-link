@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Tempo de geração: 15/09/2025 às 03:18
+-- Tempo de geração: 18/09/2025 às 13:15
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `head_configs` (
   `id` int(11) NOT NULL,
   `pagina` varchar(50) DEFAULT 'global',
+  `tema` varchar(50) DEFAULT 'global',
   `meta_title` varchar(60) DEFAULT NULL,
   `meta_description` varchar(160) DEFAULT NULL,
   `meta_keywords` varchar(255) DEFAULT NULL,
@@ -58,12 +59,12 @@ CREATE TABLE `head_configs` (
 -- Despejando dados para a tabela `head_configs`
 --
 
-INSERT INTO `head_configs` (`id`, `pagina`, `meta_title`, `meta_description`, `meta_keywords`, `favicon`, `youtube`, `linkedin`, `twitter`, `instagram`, `facebook`, `horario_atendimento`, `endereco`, `whatsapp`, `telefone`, `email_contato`, `logo`, `logo_footer`, `descricao_footer`, `copyright_footer`, `gtm_head`, `gtm_body`, `created_at`, `updated_at`) VALUES
-(1, 'global', NULL, NULL, NULL, 'uploads/favicons/logo_1757796839.webp', 'https://www.facebook.com/?locale=pt_BR', 'https://www.facebook.com/?locale=pt_BR', 'https://www.facebook.com/?locale=pt_BR', 'https://www.facebook.com/?locale=pt_BR', 'https://www.facebook.com/?locale=pt_BR', NULL, NULL, NULL, NULL, NULL, 'uploads/logos/logo_1757796839.webp', 'uploads/logos/logo_1757796839.webp', 'Somos uma empresa especializada em desenvolvimento web, oferecendo soluções inovadoras e templates profissionais para impulsionar seu negócio digital.', NULL, NULL, NULL, '2025-09-13 18:22:52', '2025-09-13 22:02:35'),
-(2, 'home', 'Templats-link - Seu sitema de linkagem de Sites', 'Plataforma completa para templates, soluções web e desenvolvimento de sites profissionais.', 'templates, desenvolvimento web, sites, laravel, php', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-13 15:49:42', '2025-09-13 16:15:53'),
-(3, 'sobre', 'Sobre Nós - Templats Link', 'Conheça nossa história, missão e equipe por trás da Templats Link.', 'sobre, empresa, história, missão, equipe', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '2025-09-13 15:49:42', '2025-09-13 15:49:42'),
-(4, 'contato', 'Contato - Templats Link', 'Entre em contato conosco. Estamos aqui para ajudar com suas necessidades de desenvolvimento web.', 'contato, suporte, ajuda, desenvolvimento web', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '2025-09-13 15:49:42', '2025-09-13 15:49:42'),
-(5, 'login', 'Login - Templats Link', 'Faça login em sua conta Templats Link para acessar o painel administrativo.', 'login, acesso, painel, administração', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '2025-09-13 15:49:42', '2025-09-13 15:49:42');
+INSERT INTO `head_configs` (`id`, `pagina`, `tema`, `meta_title`, `meta_description`, `meta_keywords`, `favicon`, `youtube`, `linkedin`, `twitter`, `instagram`, `facebook`, `horario_atendimento`, `endereco`, `whatsapp`, `telefone`, `email_contato`, `logo`, `logo_footer`, `descricao_footer`, `copyright_footer`, `gtm_head`, `gtm_body`, `created_at`, `updated_at`) VALUES
+(22, 'global', 'main-Thema', 'Templats Link - Templates e Desenvolvimento Web Profissional', 'Plataforma completa para templates, soluções web e desenvolvimento de sites profissionais. Templates modernos, responsivos e otimizados para SEO.', 'templates, desenvolvimento web, sites, laravel, php, html, css, javascript, bootstrap, responsivo, seo', 'uploads/favicons/favicon-main.webp', 'https://youtube.com/templatslink', 'https://linkedin.com/company/templatslink', 'https://twitter.com/templatslink', 'https://instagram.com/templatslink', 'https://facebook.com/templatslink', 'Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h', 'Rua das Tecnologias, 123 - Centro, São Paulo - SP, 01234-567', '+5511999999999', '+55 (11) 99999-9999', 'contato@templats-link.com', 'uploads/logos/logo-main.png', 'uploads/logos/logo-footer.png', 'Somos especialistas em desenvolvimento web, oferecendo templates modernos e soluções personalizadas para sua empresa.', '© {ano} Templats Link. Todos os direitos reservados.', '<!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':new Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);})(window,document,\'script\',\'dataLayer\',\'GTM-XXXXXXX\');</script><!-- End Google Tag Manager -->', '<!-- Google Tag Manager (noscript) --><noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript><!-- End Google Tag Manager (noscript) -->', '2025-09-17 16:29:48', '2025-09-17 16:29:48'),
+(23, 'home', 'main-Thema', 'Início - Templats Link | Templates e Desenvolvimento Web', 'Bem-vindo ao Templats Link! Encontre os melhores templates para seu projeto web. Desenvolvimento profissional, responsivo e otimizado.', 'templates, home, início, desenvolvimento web, sites profissionais, responsivo', 'uploads/favicons/favicon-main.webp', 'https://youtube.com/templatslink', 'https://linkedin.com/company/templatslink', 'https://twitter.com/templatslink', 'https://instagram.com/templatslink', 'https://facebook.com/templatslink', 'Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h', 'Rua das Tecnologias, 123 - Centro, São Paulo - SP, 01234-567', '+5511999999999', '+55 (11) 99999-9999', 'contato@templats-link.com', 'uploads/logos/logo-main.png', 'uploads/logos/logo-footer.png', 'Somos especialistas em desenvolvimento web, oferecendo templates modernos e soluções personalizadas para sua empresa.', '© {ano} Templats Link. Todos os direitos reservados.', '', '', '2025-09-17 16:29:48', '2025-09-17 16:29:48'),
+(24, 'sobre', 'main-Thema', 'Sobre Nós - Templats Link | Nossa História e Missão', 'Conheça a história do Templats Link. Somos uma empresa especializada em desenvolvimento web com mais de 5 anos de experiência.', 'sobre, empresa, história, missão, desenvolvimento web, experiência', 'uploads/favicons/favicon-main.webp', 'https://youtube.com/templatslink', 'https://linkedin.com/company/templatslink', 'https://twitter.com/templatslink', 'https://instagram.com/templatslink', 'https://facebook.com/templatslink', 'Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h', 'Rua das Tecnologias, 123 - Centro, São Paulo - SP, 01234-567', '+5511999999999', '+55 (11) 99999-9999', 'contato@templats-link.com', 'uploads/logos/logo-main.png', 'uploads/logos/logo-footer.png', 'Somos especialistas em desenvolvimento web, oferecendo templates modernos e soluções personalizadas para sua empresa.', '© {ano} Templats Link. Todos os direitos reservados.', '', '', '2025-09-17 16:29:48', '2025-09-17 16:29:48'),
+(25, 'contato', 'main-Thema', 'Contato - Templats Link | Entre em Contato Conosco', 'Entre em contato com o Templats Link. Estamos prontos para ajudar com seu projeto web. Fale conosco por telefone, email ou WhatsApp.', 'contato, telefone, email, whatsapp, suporte, desenvolvimento web', 'uploads/favicons/favicon-main.webp', 'https://youtube.com/templatslink', 'https://linkedin.com/company/templatslink', 'https://twitter.com/templatslink', 'https://instagram.com/templatslink', 'https://facebook.com/templatslink', 'Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h', 'Rua das Tecnologias, 123 - Centro, São Paulo - SP, 01234-567', '+5511999999999', '+55 (11) 99999-9999', 'contato@templats-link.com', 'uploads/logos/logo-main.png', 'uploads/logos/logo-footer.png', 'Somos especialistas em desenvolvimento web, oferecendo templates modernos e soluções personalizadas para sua empresa.', '© {ano} Templats Link. Todos os direitos reservados.', '', '', '2025-09-17 16:29:48', '2025-09-17 16:29:48'),
+(26, 'login', 'main-Thema', 'Login - Templats Link | Acesso ao Painel Administrativo', 'Faça login no painel administrativo do Templats Link. Acesso seguro e rápido para gerenciar seu site.', 'login, painel, administrativo, acesso, segurança', 'uploads/favicons/favicon-main.webp', 'https://youtube.com/templatslink', 'https://linkedin.com/company/templatslink', 'https://twitter.com/templatslink', 'https://instagram.com/templatslink', 'https://facebook.com/templatslink', 'Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h', 'Rua das Tecnologias, 123 - Centro, São Paulo - SP, 01234-567', '+5511999999999', '+55 (11) 99999-9999', 'contato@templats-link.com', 'uploads/logos/logo-main.png', 'uploads/logos/logo-footer.png', 'Somos especialistas em desenvolvimento web, oferecendo templates modernos e soluções personalizadas para sua empresa.', '© {ano} Templats Link. Todos os direitos reservados.', '', '', '2025-09-17 16:29:48', '2025-09-17 16:29:48');
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,8 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+(1, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(2, '2025_09_16_192656_create_rotas_dinamicas_table', 2);
 
 -- --------------------------------------------------------
 
@@ -106,6 +108,25 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `rotas_dinamicas`
+--
+
+CREATE TABLE `rotas_dinamicas` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tema` varchar(100) NOT NULL,
+  `pagina` varchar(100) NOT NULL,
+  `rota` varchar(255) NOT NULL,
+  `nome_rota` varchar(100) NOT NULL,
+  `controller` varchar(100) NOT NULL DEFAULT 'TemasController',
+  `metodo` varchar(100) NOT NULL DEFAULT 'renderizarPaginaDinamica',
+  `ativo` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `temas`
 --
 
@@ -119,14 +140,6 @@ CREATE TABLE `temas` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `temas`
---
-
-INSERT INTO `temas` (`id`, `nome`, `slug`, `preview_path`, `arquivo_path`, `ativo`, `created_at`, `updated_at`) VALUES
-(1, 'Tema Padrão', 'tema-padrao', NULL, 'main-Thema', 0, '2025-09-13 22:26:35', '2025-09-14 00:35:53'),
-(8, 'finazze', 'finazze', 'temas/previews/finazze_1757815024.png', 'temas/finazze', 0, '2025-09-14 01:57:05', '2025-09-14 01:57:05');
 
 -- --------------------------------------------------------
 
@@ -167,7 +180,7 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tipo`, `ativo`, `email_
 --
 ALTER TABLE `head_configs`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `unique_pagina` (`pagina`);
+  ADD UNIQUE KEY `unique_pagina_tema` (`pagina`,`tema`);
 
 --
 -- Índices de tabela `migrations`
@@ -182,6 +195,15 @@ ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
+-- Índices de tabela `rotas_dinamicas`
+--
+ALTER TABLE `rotas_dinamicas`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `rotas_dinamicas_tema_pagina_unique` (`tema`,`pagina`),
+  ADD KEY `rotas_dinamicas_tema_pagina_index` (`tema`,`pagina`),
+  ADD KEY `rotas_dinamicas_tema_ativo_index` (`tema`,`ativo`);
 
 --
 -- Índices de tabela `temas`
@@ -207,13 +229,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `head_configs`
 --
 ALTER TABLE `head_configs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de tabela `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `personal_access_tokens`
@@ -222,10 +244,16 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `rotas_dinamicas`
+--
+ALTER TABLE `rotas_dinamicas`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+
+--
 -- AUTO_INCREMENT de tabela `temas`
 --
 ALTER TABLE `temas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`

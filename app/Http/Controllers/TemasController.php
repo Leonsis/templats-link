@@ -591,10 +591,7 @@ class TemasController extends Controller
     {
         $nomeTema = $request->input('nome_tema');
         
-        $layout = '<!DOCTYPE html>
-<html lang="pt-BR">
-@include(\'temas.' . $nomeTema . '.inc.head\')
-@php
+        $layout = '@php
     // Detectar página atual baseada na rota
     $currentPage = \'global\';
     
@@ -615,6 +612,10 @@ class TemasController extends Controller
         $currentPage = str_replace(\'tema.' . $nomeTema . '.\', \'\', $routeName);
     }
 @endphp
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+@include(\'temas.' . $nomeTema . '.inc.head\')
 
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -1331,14 +1332,14 @@ class TemasController extends Controller
             // Substituir title estático por dinâmico
             $conteudo = preg_replace(
                 '/<title>.*?<\/title>/s',
-                '<title>{{ \\App\\Helpers\\HeadHelper::getMetaTitle($currentPage ?? \'global\') }}</title>',
+                '<title>{{ \\App\\Helpers\\HeadHelper::getMetaTitle($currentPage ?? \'global\', \'' . $nomeTema . '\') }}</title>',
                 $conteudo
             );
             
             // Adicionar meta tags dinâmicas após o title
             $metaTags = '
-     <meta name="description" content="{{ \\App\\Helpers\\HeadHelper::getMetaDescription($currentPage ?? \'global\') }}">
-     <meta name="keywords" content="{{ \\App\\Helpers\\HeadHelper::getMetaKeywords($currentPage ?? \'global\') }}">';
+     <meta name="description" content="{{ \\App\\Helpers\\HeadHelper::getMetaDescription($currentPage ?? \'global\', \'' . $nomeTema . '\') }}">
+     <meta name="keywords" content="{{ \\App\\Helpers\\HeadHelper::getMetaKeywords($currentPage ?? \'global\', \'' . $nomeTema . '\') }}">';
             
             $conteudo = preg_replace(
                 '/(<title>.*?<\/title>)/s',
