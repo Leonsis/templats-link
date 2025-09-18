@@ -253,7 +253,62 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-end gap-2">
+                
+                <!-- Nova seção para páginas com HTML diferente -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card border-primary">
+                            <div class="card-header bg-primary">
+                                <h6 class="mb-0">
+                                    <i class="fas fa-code me-2"></i>Páginas com HTML Diferente
+                                </h6>
+                                <small>Configure páginas que possuem tags HTML específicas</small>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="tem_paginas_html_diferente" name="tem_paginas_html_diferente" value="1">
+                                        <label class="form-check-label" for="tem_paginas_html_diferente">
+                                            <i class="fas fa-check-square me-1"></i>Este tema possui páginas com tags HTML diferentes
+                                        </label>
+                                    </div>
+                                    <small class="form-text text-muted">
+                                        <i class="fas fa-info-circle me-1"></i>Marque esta opção se algumas páginas do tema precisam de HTML específico
+                                    </small>
+                                </div>
+                                
+                                <!-- Campos dinâmicos (inicialmente ocultos) -->
+                                <div id="campos_paginas_html" style="display: none;">
+                                    <div class="mb-3">
+                                        <label for="numero_paginas_html" class="form-label">
+                                            <i class="fas fa-list-ol me-1"></i>Número de páginas com HTML diferente
+                                        </label>
+                                        <select class="form-control" id="numero_paginas_html" name="numero_paginas_html">
+                                            <option value="">Selecione o número de páginas</option>
+                                            <option value="1">1 página</option>
+                                            <option value="2">2 páginas</option>
+                                            <option value="3">3 páginas</option>
+                                            <option value="4">4 páginas</option>
+                                            <option value="5">5 páginas</option>
+                                            <option value="6">6 páginas</option>
+                                            <option value="7">7 páginas</option>
+                                            <option value="8">8 páginas</option>
+                                            <option value="9">9 páginas</option>
+                                            <option value="10">10 páginas</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Container para os campos dinâmicos -->
+                                    <div id="container_paginas_html">
+                                        <!-- Os campos serão inseridos aqui via JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-end gap-2 mt-4">
                     <button type="button" class="btn btn-outline-secondary" onclick="resetForm()">
                         <i class="fas fa-undo me-2"></i>Limpar
                     </button>
@@ -478,6 +533,83 @@ function resetForm() {
     fileInputs.forEach(input => {
         input.value = '';
     });
+    // Resetar campos dinâmicos
+    resetarCamposDinamicos();
+}
+
+// Função para resetar campos dinâmicos
+function resetarCamposDinamicos() {
+    document.getElementById('campos_paginas_html').style.display = 'none';
+    document.getElementById('container_paginas_html').innerHTML = '';
+    document.getElementById('numero_paginas_html').value = '';
+}
+
+// Função para mostrar/ocultar campos dinâmicos
+function toggleCamposPaginasHtml() {
+    const checkbox = document.getElementById('tem_paginas_html_diferente');
+    const camposDiv = document.getElementById('campos_paginas_html');
+    
+    if (checkbox.checked) {
+        camposDiv.style.display = 'block';
+    } else {
+        camposDiv.style.display = 'none';
+        resetarCamposDinamicos();
+    }
+}
+
+// Função para criar campos dinâmicos
+function criarCamposPaginasHtml(numeroPaginas) {
+    const container = document.getElementById('container_paginas_html');
+    container.innerHTML = '';
+    
+    for (let i = 1; i <= numeroPaginas; i++) {
+        const div = document.createElement('div');
+        div.className = 'card mb-3 border-secondary';
+        div.innerHTML = `
+            <div class="card-header bg-light">
+                <h6 class="mb-0">
+                    <i class="fas fa-file-code me-2"></i>Página ${i}
+                </h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="nome_pagina_${i}" class="form-label">
+                                <i class="fas fa-tag me-1"></i>Nome da Página
+                            </label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="nome_pagina_${i}" 
+                                   name="nome_pagina_${i}" 
+                                   placeholder="Ex: home, sobre, contato"
+                                   required>
+                            <small class="form-text text-muted">
+                                Nome da página (sem extensão)
+                            </small>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="mb-3">
+                            <label for="codigo_html_${i}" class="form-label">
+                                <i class="fas fa-code me-1"></i>Código HTML da Página
+                            </label>
+                            <textarea class="form-control" 
+                                      id="codigo_html_${i}" 
+                                      name="codigo_html_${i}" 
+                                      rows="8" 
+                                      placeholder="Cole aqui o código HTML específico desta página"
+                                      required></textarea>
+                            <small class="form-text text-muted">
+                                Código HTML completo da página
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.appendChild(div);
+    }
 }
 
 // Função para confirmar remoção
@@ -561,6 +693,25 @@ document.addEventListener('DOMContentLoaded', function() {
             toggle: false
         });
     });
+    
+    // Event listeners para campos dinâmicos
+    const checkboxHtmlDiferente = document.getElementById('tem_paginas_html_diferente');
+    const selectNumeroPaginas = document.getElementById('numero_paginas_html');
+    
+    if (checkboxHtmlDiferente) {
+        checkboxHtmlDiferente.addEventListener('change', toggleCamposPaginasHtml);
+    }
+    
+    if (selectNumeroPaginas) {
+        selectNumeroPaginas.addEventListener('change', function() {
+            const numeroPaginas = parseInt(this.value);
+            if (numeroPaginas > 0) {
+                criarCamposPaginasHtml(numeroPaginas);
+            } else {
+                document.getElementById('container_paginas_html').innerHTML = '';
+            }
+        });
+    }
     
     // Adicionar loading ao formulário
     const form = document.getElementById('themeForm');

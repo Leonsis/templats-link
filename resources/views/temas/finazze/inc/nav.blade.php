@@ -33,7 +33,7 @@
                       <nav class="vl-mobile-menu-active">
                           <ul>
                               <li class="has-dropdown">
-                                  <a href="service-left.html#">Home <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
+                                  <a href="service-right.html#">Home <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
                                   <div class="vl-mega-menu">
                                       <div class="vl-home-menu">                    
                                           <div class="row gx-3 row-cols-1 row-cols-md-1 row-cols-lg-5">
@@ -106,7 +106,7 @@
                                   </div>
                               </li>
                               <li class="has-dropdown">
-                                <a href="service-left.html#">Pages <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
+                                <a href="service-right.html#">Pages <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
                                   <ul class="sub-menu">
                                       <li><a href="{{ route('sobre') }}">About Us</a></li>
                                       <li><a href="team.html">Our Team</a></li>
@@ -117,10 +117,10 @@
                                       <li><a href="404.html">404</a></li>
                                   </ul>
                               </li>
-                              <li><a href="service-left.html#">Services <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
+                              <li><a href="service-right.html#">Services <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
                                 <ul class="sub-menu">
                                   <li><a href="{{ route('tema.finazze.service') }}">Our Service</a></li>
-                                  <li><a href="service-left.html#" class="span-arrow">Service Details <span><i class="fa-solid fa-angle-right d-lg-block d-none"></i></span></a>
+                                  <li><a href="service-right.html#" class="span-arrow">Service Details <span><i class="fa-solid fa-angle-right d-lg-block d-none"></i></span></a>
                                     <ul class="sub-menu menu1">
                                       <li><a href="service-left.html">Service Left</a></li>
                                       <li><a href="service-right.html">Service Right</a></li>
@@ -129,10 +129,10 @@
                                   </li>
                               </ul>
                               </li>
-                              <li><a href="service-left.html#">Project <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
+                              <li><a href="service-right.html#">Project <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
                                 <ul class="sub-menu">
                                   <li><a href="project.html">Our Project</a></li>
-                                  <li><a href="service-left.html#" class="span-arrow">Project  Details <span><i class="fa-solid fa-angle-right d-lg-block d-none"></i></span></a>
+                                  <li><a href="service-right.html#" class="span-arrow">Project  Details <span><i class="fa-solid fa-angle-right d-lg-block d-none"></i></span></a>
                                     <ul class="sub-menu menu1">
                                       <li><a href="project-left.html">Project Left</a></li>
                                       <li><a href="project-right.html">Project Right</a></li>
@@ -141,10 +141,10 @@
                                   </li>
                               </ul>
                               </li>
-                              <li><a href="service-left.html#">Blogs <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
+                              <li><a href="service-right.html#">Blogs <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
                                 <ul class="sub-menu">
                                   <li><a href="blog.html">Our Blog</a></li>
-                                  <li><a href="service-left.html#" class="span-arrow">Blog Details <span><i class="fa-solid fa-angle-right d-lg-block d-none"></i></span></a>
+                                  <li><a href="service-right.html#" class="span-arrow">Blog Details <span><i class="fa-solid fa-angle-right d-lg-block d-none"></i></span></a>
                                     <ul class="sub-menu menu1">
                                       <li><a href="blog-left.html">Blog Left</a></li>
                                       <li><a href="blog-right.html">Blog Right</a></li>
@@ -163,7 +163,7 @@
                 <div class="vl-hero-btn d-none d-lg-block text-end">
                   <div class="head-btn">
                     <div class="search-icon header__search header-search-btn">
-                      <a href="service-left.html#"><img src="{{ asset('temas/finazze/assets/img/icons/search1.svg') }}" alt=""></a>
+                      <a href="service-right.html#"><img src="{{ asset('temas/finazze/assets/img/icons/search1.svg') }}" alt=""></a>
                     </div>
                     <span class="vl-btn-wrap text-end">
                      <span class="icons">
@@ -213,18 +213,18 @@
         <div class="vl-offcanvas-info">
             <h3 class="vl-offcanvas-sm-title">Contact Us</h3>
             <div class="space20"></div>
-            <span><a href="service-left.html#"> <i class="fa-regular fa-envelope"></i> +57 9954 6476</a></span>
-            <span><a href="service-left.html#"><i class="fa-solid fa-phone"></i> hello@exdos.com</a></span>
-            <span><a href="service-left.html#"><i class="fa-solid fa-location-dot"></i> Bhemeara,Kushtia</a></span>
+            <span><a href="service-right.html#"> <i class="fa-regular fa-envelope"></i> +57 9954 6476</a></span>
+            <span><a href="service-right.html#"><i class="fa-solid fa-phone"></i> hello@exdos.com</a></span>
+            <span><a href="service-right.html#"><i class="fa-solid fa-location-dot"></i> Bhemeara,Kushtia</a></span>
         </div>
         <div class="space20"></div>
         <div class="vl-offcanvas-social">
             <h3 class="vl-offcanvas-sm-title">Follow Us</h3>
             <div class="space20"></div>
-            <a href="service-left.html#"><i class="fab fa-facebook-f"></i></a>
-            <a href="service-left.html#"><i class="fab fa-twitter"></i></a>
-            <a href="service-left.html#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="service-left.html#"><i class="fab fa-instagram"></i></a>
+            <a href="service-right.html#"><i class="fab fa-facebook-f"></i></a>
+            <a href="service-right.html#"><i class="fab fa-twitter"></i></a>
+            <a href="service-right.html#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="service-right.html#"><i class="fab fa-instagram"></i></a>
          </div>
 
     </div>

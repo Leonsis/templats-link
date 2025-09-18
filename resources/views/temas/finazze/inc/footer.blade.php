@@ -48,9 +48,9 @@
           <h3>Contact Us</h3>
           <ul>
             <li><a href="tel:+11234567890"><img src="{{ asset('temas/finazze/assets/img/icons/phn1.svg') }}" alt="">+1 123 456 7890</a></li>
-            <li><a href="service-left.html#"><img src="{{ asset('temas/finazze/assets/img/icons/location1.svg') }}" alt="">421 Allen, Mexico 4233</a></li>
+            <li><a href="service-right.html#"><img src="{{ asset('temas/finazze/assets/img/icons/location1.svg') }}" alt="">421 Allen, Mexico 4233</a></li>
             <li><a href="https://html.vikinglab.agency/finazze/renevagency@com"><img src="{{ asset('temas/finazze/assets/img/icons/email1.svg') }}" alt="">finazzeconsult@com</a></li>
-            <li><a href="service-left.html#"><img src="{{ asset('temas/finazze/assets/img/icons/global1.svg') }}" alt="">finazzeconsult.com</a></li>
+            <li><a href="service-right.html#"><img src="{{ asset('temas/finazze/assets/img/icons/global1.svg') }}" alt="">finazzeconsult.com</a></li>
           </ul>
         </div>
       </div>
@@ -65,7 +65,7 @@
               <div class="footer-img">
                 <img src="{{ asset('temas/finazze/assets/img/all-images/footer/footer-img1.png') }}" alt="">
                 <div class="icons">
-                  <a href="service-left.html#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="service-right.html#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
             </div>
@@ -74,7 +74,7 @@
               <div class="footer-img">
                 <img src="{{ asset('temas/finazze/assets/img/all-images/footer/footer-img2.png') }}" alt="">
                 <div class="icons">
-                  <a href="service-left.html#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="service-right.html#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
             </div>
@@ -83,7 +83,7 @@
               <div class="footer-img">
                 <img src="{{ asset('temas/finazze/assets/img/all-images/footer/footer-img3.png') }}" alt="">
                 <div class="icons">
-                  <a href="service-left.html#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="service-right.html#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@
               <div class="footer-img">
                 <img src="{{ asset('temas/finazze/assets/img/all-images/footer/footer-img4.png') }}" alt="">
                 <div class="icons">
-                  <a href="service-left.html#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="service-right.html#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@
               <div class="footer-img">
                 <img src="{{ asset('temas/finazze/assets/img/all-images/footer/footer-img5.png') }}" alt="">
                 <div class="icons">
-                  <a href="service-left.html#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="service-right.html#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
             </div>
@@ -110,7 +110,7 @@
               <div class="footer-img">
                 <img src="{{ asset('temas/finazze/assets/img/all-images/footer/footer-img6.png') }}" alt="">
                 <div class="icons">
-                  <a href="service-left.html#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="service-right.html#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
             </div>

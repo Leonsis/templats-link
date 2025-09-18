@@ -30,15 +30,29 @@ class TemasController extends Controller
             'tem_codigo_scripts' => !empty($request->input('codigo_scripts'))
         ]);
 
-        $request->validate([
+        // Preparar regras de validação dinâmicas para páginas HTML
+        $validationRules = [
             'nome_tema' => 'required|string|max:255|regex:/^[a-zA-Z0-9_-]+$/',
             'arquivo_zip' => 'required|file|max:10485760', // 10MB = 10 * 1024 * 1024 bytes
             'arquivo_paginas' => 'nullable|file|max:10485760', // 10MB = 10 * 1024 * 1024 bytes
             'codigo_head' => 'nullable|string|max:10000',
             'codigo_nav' => 'nullable|string',
             'codigo_footer' => 'nullable|string|max:10000',
-            'codigo_scripts' => 'nullable|string|max:10000'
-        ], [
+            'codigo_scripts' => 'nullable|string|max:10000',
+            'tem_paginas_html_diferente' => 'nullable|boolean',
+            'numero_paginas_html' => 'nullable|integer|min:1|max:10'
+        ];
+        
+        // Adicionar validações dinâmicas para páginas HTML
+        if ($request->input('tem_paginas_html_diferente')) {
+            $numeroPaginas = (int) $request->input('numero_paginas_html', 0);
+            for ($i = 1; $i <= $numeroPaginas; $i++) {
+                $validationRules["nome_pagina_{$i}"] = 'required|string|max:100';
+                $validationRules["codigo_html_{$i}"] = 'required|string|max:50000';
+            }
+        }
+        
+        $request->validate($validationRules, [
             'nome_tema.required' => 'O nome do tema é obrigatório.',
             'nome_tema.regex' => 'O nome do tema deve conter apenas letras, números, hífens e underscores.',
             'arquivo_zip.required' => 'O arquivo ZIP dos assets é obrigatório.',
@@ -46,7 +60,10 @@ class TemasController extends Controller
             'arquivo_paginas.max' => 'O arquivo ZIP das páginas não pode ser maior que 10MB.',
             'codigo_head.max' => 'O código do head não pode ter mais que 10.000 caracteres.',
             'codigo_footer.max' => 'O código do footer não pode ter mais que 10.000 caracteres.',
-            'codigo_scripts.max' => 'O código dos scripts não pode ter mais que 10.000 caracteres.'
+            'codigo_scripts.max' => 'O código dos scripts não pode ter mais que 10.000 caracteres.',
+            'numero_paginas_html.required' => 'Selecione o número de páginas com HTML diferente.',
+            'numero_paginas_html.min' => 'O número mínimo de páginas é 1.',
+            'numero_paginas_html.max' => 'O número máximo de páginas é 10.'
         ]);
 
         $nomeTema = $request->input('nome_tema');
@@ -131,6 +148,11 @@ class TemasController extends Controller
             // Sempre criar arquivos blade (replicando estrutura do main-Thema)
             $this->criarArquivosBlade($temaViewsPath, $request);
             
+            // Processar páginas com HTML diferente (se especificadas)
+            if ($request->input('tem_paginas_html_diferente')) {
+                $this->criarPaginasHtmlDiferente($temaViewsPath, $request);
+            }
+            
             // Processar e modificar links nos arquivos do tema
             $this->processarLinksTema($temaPath, $temaViewsPath, $nomeTema);
             
@@ -152,10 +174,10 @@ class TemasController extends Controller
             // Criar configurações iniciais para as páginas do tema
             $this->criarConfiguracoesPaginasTema($nomeTema, $temaViewsPath);
             
-            // Selecionar automaticamente o tema instalado como ativo
-            $this->selecionarTemaAutomaticamente($nomeTema);
+            // Manter main-Thema como ativo (não selecionar automaticamente o tema instalado)
+            \Log::info("Tema {$nomeTema} instalado com sucesso, mantendo main-Thema como ativo");
             
-            $mensagem = 'Tema "' . $nomeTema . '" instalado e selecionado com sucesso! Assets processados, estrutura Blade criada, links .html substituídos pelas rotas corretas, HTML convertido para Blade, formulários linkados dinamicamente, rotas dinâmicas criadas e tema ativado.';
+            $mensagem = 'Tema "' . $nomeTema . '" instalado com sucesso! Assets processados, estrutura Blade criada, links .html substituídos pelas rotas corretas, HTML convertido para Blade, formulários linkados dinamicamente, rotas dinâmicas criadas. O tema main-Thema permanece ativo.';
             if ($arquivoPaginas) {
                 $mensagem .= ' Páginas processadas.';
             }
@@ -287,21 +309,61 @@ class TemasController extends Controller
         }
 
         try {
-            // Remover rotas dinâmicas do banco
-            \DB::table('rotas_dinamicas')->where('tema', $nomeTema)->delete();
+            \Log::info("Iniciando deleção completa do tema: {$nomeTema}");
             
-            // Remover assets do tema
+            // 1. Verificar se o tema deletado é o tema ativo
+            $temaAtivo = \App\Helpers\ThemeHelper::getActiveTheme();
+            $isTemaAtivo = ($temaAtivo === $nomeTema);
+            
+            // 2. Remover configurações do tema da tabela head_configs
+            $configsRemovidas = \DB::table('head_configs')->where('tema', $nomeTema)->delete();
+            \Log::info("Configurações removidas da tabela head_configs: {$configsRemovidas}");
+            
+            // 3. Remover rotas dinâmicas do banco
+            $rotasRemovidas = \DB::table('rotas_dinamicas')->where('tema', $nomeTema)->delete();
+            \Log::info("Rotas dinâmicas removidas do banco: {$rotasRemovidas}");
+            
+            // 4. Remover registro do tema da tabela temas
+            $temaRemovido = \DB::table('temas')->where('slug', $nomeTema)->delete();
+            \Log::info("Registro do tema removido da tabela temas: {$temaRemovido}");
+            
+            // 5. Remover entradas do arquivo de rotas dinâmicas
+            $this->removerTemaDoArquivoRotas($nomeTema);
+            
+            // 6. Remover assets do tema
             if (File::exists($temaPath)) {
                 File::deleteDirectory($temaPath);
+                \Log::info("Assets removidos: {$temaPath}");
             }
             
-            // Remover views do tema
+            // 7. Remover views do tema
             if (File::exists($temaViewsPath)) {
                 File::deleteDirectory($temaViewsPath);
+                \Log::info("Views removidas: {$temaViewsPath}");
             }
             
-            return redirect()->route('dashboard.temas')->with('success', 'Tema "' . $nomeTema . '" removido com sucesso! Assets, views e rotas dinâmicas removidos.');
+            // 8. Se o tema deletado era o ativo, redefinir para main-Thema
+            if ($isTemaAtivo) {
+                $this->redefinirTemaAtivoParaMain();
+            }
+            
+            // 9. Limpar cache do sistema
+            \Artisan::call('config:clear');
+            \Artisan::call('view:clear');
+            \Artisan::call('route:clear');
+            \Log::info("Cache do sistema limpo");
+            
+            \Log::info("Deleção completa do tema {$nomeTema} finalizada com sucesso");
+            
+            $mensagem = 'Tema "' . $nomeTema . '" removido completamente! ';
+            $mensagem .= 'Assets, views, configurações, rotas dinâmicas e registros do banco removidos.';
+            if ($isTemaAtivo) {
+                $mensagem .= ' Tema ativo redefinido para main-Thema.';
+            }
+            
+            return redirect()->route('dashboard.temas')->with('success', $mensagem);
         } catch (\Exception $e) {
+            \Log::error("Erro ao remover tema {$nomeTema}: " . $e->getMessage());
             return back()->withErrors(['tema' => 'Erro ao remover o tema: ' . $e->getMessage()]);
         }
     }
@@ -726,17 +788,31 @@ class TemasController extends Controller
             $conteudo
         );
         
-        // Substituir links de imagens
+        // Substituir links de imagens (assets/)
         $conteudo = preg_replace(
             '/src=["\']assets\/([^"\']+)["\']/',
             'src="{{ asset(\'temas/' . $nomeTema . '/assets/$1\') }}"',
             $conteudo
         );
         
-        // Substituir background-image em CSS inline
+        // Substituir links de imagens (images/) - CORREÇÃO
+        $conteudo = preg_replace(
+            '/src=["\']images\/([^"\']+)["\']/',
+            'src="{{ asset(\'temas/' . $nomeTema . '/assets/images/$1\') }}"',
+            $conteudo
+        );
+        
+        // Substituir background-image em CSS inline (assets/)
         $conteudo = preg_replace(
             '/background-image:\s*url\(["\']?assets\/([^"\']+)["\']?\)/',
             'background-image: url({{ asset(\'temas/' . $nomeTema . '/assets/$1\') }})',
+            $conteudo
+        );
+        
+        // Substituir background-image em CSS inline (images/) - CORREÇÃO
+        $conteudo = preg_replace(
+            '/background-image:\s*url\(["\']?images\/([^"\']+)["\']?\)/',
+            'background-image: url({{ asset(\'temas/' . $nomeTema . '/assets/images/$1\') }})',
             $conteudo
         );
         
@@ -745,7 +821,7 @@ class TemasController extends Controller
 
     private function substituirLinksCss($conteudo, $nomeTema)
     {
-        // Substituir URLs em CSS
+        // Substituir URLs em CSS (assets/)
         $conteudo = preg_replace(
             '/url\(["\']?\.\.\/\.\.\/assets\/([^"\']+)["\']?\)/',
             'url({{ asset(\'temas/' . $nomeTema . '/assets/$1\') }})',
@@ -764,15 +840,41 @@ class TemasController extends Controller
             $conteudo
         );
         
+        // Substituir URLs em CSS (images/) - CORREÇÃO
+        $conteudo = preg_replace(
+            '/url\(["\']?\.\.\/\.\.\/images\/([^"\']+)["\']?\)/',
+            'url({{ asset(\'temas/' . $nomeTema . '/assets/images/$1\') }})',
+            $conteudo
+        );
+        
+        $conteudo = preg_replace(
+            '/url\(["\']?\.\.\/images\/([^"\']+)["\']?\)/',
+            'url({{ asset(\'temas/' . $nomeTema . '/assets/images/$1\') }})',
+            $conteudo
+        );
+        
+        $conteudo = preg_replace(
+            '/url\(["\']?images\/([^"\']+)["\']?\)/',
+            'url({{ asset(\'temas/' . $nomeTema . '/assets/images/$1\') }})',
+            $conteudo
+        );
+        
         return $conteudo;
     }
 
     private function substituirLinksJs($conteudo, $nomeTema)
     {
-        // Substituir URLs em JavaScript
+        // Substituir URLs em JavaScript (assets/)
         $conteudo = preg_replace(
             '/["\']assets\/([^"\']+)["\']/',
             '"{{ asset(\'temas/' . $nomeTema . '/assets/$1\') }}"',
+            $conteudo
+        );
+        
+        // Substituir URLs em JavaScript (images/) - CORREÇÃO
+        $conteudo = preg_replace(
+            '/["\']images\/([^"\']+)["\']/',
+            '"{{ asset(\'temas/' . $nomeTema . '/assets/images/$1\') }}"',
             $conteudo
         );
         
@@ -998,20 +1100,26 @@ class TemasController extends Controller
                 return !array_key_exists($pagina, $rotasEspeciais);
             });
 
-            // Criar rotas dinâmicas para TODAS as páginas (especiais e normais)
+            // Criar rotas dinâmicas APENAS para páginas que NÃO conflitam com rotas principais
             if ($paginas->count() > 0) {
-                // Criar rotas dinâmicas no banco de dados
-                $this->criarRotasDinamicasNoBanco($nomeTema, $paginas, $rotasEspeciais);
+                // Filtrar páginas que conflitam com rotas principais
+                $rotasPrincipais = ['/', '/sobre', '/contato', '/login'];
+                $paginasSemConflito = $paginas->filter(function($pagina) use ($rotasEspeciais, $rotasPrincipais) {
+                    $rota = $rotasEspeciais[$pagina] ?? '/' . $pagina;
+                    return !in_array($rota, $rotasPrincipais);
+                });
+                
+                // Criar rotas dinâmicas no banco de dados (apenas páginas sem conflito)
+                $this->criarRotasDinamicasNoBanco($nomeTema, $paginasSemConflito, $rotasEspeciais);
                 
                 // Criar arquivo de rotas dinâmicas (para compatibilidade)
-                $this->criarArquivoRotasDinamicas($nomeTema, $paginas, $rotasEspeciais);
+                $this->criarArquivoRotasDinamicas($nomeTema, $paginasSemConflito, $rotasEspeciais);
                 
                 // Recarregar rotas dinâmicas
                 $this->recarregarRotasDinamicas();
                 
-                \Log::info("Rotas dinâmicas criadas para tema {$nomeTema}: " . $paginas->implode(', '));
-                \Log::info("Páginas especiais: " . $paginasEspeciais->implode(', '));
-                \Log::info("Páginas normais: " . $paginasNormais->implode(', '));
+                \Log::info("Rotas dinâmicas criadas para tema {$nomeTema}: " . $paginasSemConflito->implode(', '));
+                \Log::info("Páginas com conflito (não criadas): " . $paginas->diff($paginasSemConflito)->implode(', '));
             }
 
         } catch (\Exception $e) {
@@ -1138,6 +1246,112 @@ class TemasController extends Controller
     }
 
     /**
+     * Remover tema do arquivo de rotas dinâmicas
+     */
+    private function removerTemaDoArquivoRotas($nomeTema)
+    {
+        try {
+            $rotasPath = base_path('routes/temas_dinamicas.php');
+            
+            if (!File::exists($rotasPath)) {
+                \Log::info("Arquivo de rotas dinâmicas não existe: {$rotasPath}");
+                return;
+            }
+            
+            // Ler rotas existentes
+            $rotasExistentes = [];
+            try {
+                $conteudo = File::get($rotasPath);
+                if (strpos($conteudo, '<?php') === 0 && strpos($conteudo, 'return') !== false) {
+                    $rotasExistentes = include $rotasPath;
+                }
+            } catch (\Exception $e) {
+                \Log::error("Erro ao ler arquivo de rotas dinâmicas: " . $e->getMessage());
+                return;
+            }
+            
+            // Remover o tema das rotas
+            if (isset($rotasExistentes[$nomeTema])) {
+                unset($rotasExistentes[$nomeTema]);
+                \Log::info("Tema {$nomeTema} removido do arquivo de rotas dinâmicas");
+            }
+            
+            // Salvar arquivo atualizado
+            $conteudo = "<?php\n\n// Rotas dinâmicas para temas\nreturn " . var_export($rotasExistentes, true) . ";\n";
+            File::put($rotasPath, $conteudo);
+            
+            \Log::info("Arquivo de rotas dinâmicas atualizado após remoção do tema {$nomeTema}");
+        } catch (\Exception $e) {
+            \Log::error("Erro ao remover tema {$nomeTema} do arquivo de rotas: " . $e->getMessage());
+        }
+    }
+    
+    /**
+     * Criar páginas com HTML diferente
+     */
+    private function criarPaginasHtmlDiferente($temaViewsPath, $request)
+    {
+        try {
+            $numeroPaginas = (int) $request->input('numero_paginas_html', 0);
+            
+            if ($numeroPaginas <= 0) {
+                return;
+            }
+            
+            \Log::info("Criando {$numeroPaginas} páginas com HTML diferente");
+            
+            for ($i = 1; $i <= $numeroPaginas; $i++) {
+                $nomePagina = $request->input("nome_pagina_{$i}");
+                $codigoHtml = $request->input("codigo_html_{$i}");
+                
+                if (empty($nomePagina) || empty($codigoHtml)) {
+                    continue;
+                }
+                
+                // Normalizar nome da página
+                $nomePagina = strtolower(trim($nomePagina));
+                $nomePagina = preg_replace('/[^a-z0-9_-]/', '', $nomePagina);
+                
+                if (empty($nomePagina)) {
+                    continue;
+                }
+                
+                // Converter HTML para Blade
+                $codigoBlade = $this->converterHtmlParaBlade($codigoHtml, $request->input('nome_tema'));
+                
+                // Criar arquivo Blade
+                $arquivoBlade = $temaViewsPath . '/' . $nomePagina . '.blade.php';
+                File::put($arquivoBlade, $codigoBlade);
+                
+                \Log::info("Página '{$nomePagina}' criada com HTML diferente");
+            }
+            
+            \Log::info("Páginas com HTML diferente criadas com sucesso");
+        } catch (\Exception $e) {
+            \Log::error("Erro ao criar páginas com HTML diferente: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Redefinir tema ativo para main-Thema
+     */
+    private function redefinirTemaAtivoParaMain()
+    {
+        try {
+            $configPath = config_path('tema_principal.php');
+            $configContent = "<?php\n\nreturn [\n    'tema_principal' => 'main-Thema',\n    'selecionado_em' => '" . now() . "',\n];\n";
+            
+            if (File::put($configPath, $configContent)) {
+                \Log::info("Tema ativo redefinido para main-Thema");
+            } else {
+                \Log::error("Erro ao redefinir tema ativo para main-Thema");
+            }
+        } catch (\Exception $e) {
+            \Log::error("Erro ao redefinir tema ativo: " . $e->getMessage());
+        }
+    }
+
+    /**
      * Substituir links .html pelas rotas corretas do Laravel
      */
     private function substituirLinksHtml($nomeTema)
@@ -1185,21 +1399,31 @@ class TemasController extends Controller
      */
     private function getMapeamentoRotas($nomeTema)
     {
-        $mapeamento = [
-            // Rotas principais
-            'index.html' => route('home'),
-            'index' => route('home'),
-            'home.html' => route('home'),
-            'home' => route('home'),
+        $mapeamento = [];
+        
+        // Mapeamento de rotas principais (com verificação de existência)
+        try {
+            if (\Route::has('home')) {
+                $mapeamento['index.html'] = route('home');
+                $mapeamento['index'] = route('home');
+                $mapeamento['home.html'] = route('home');
+                $mapeamento['home'] = route('home');
+            }
             
-            // Rotas especiais
-            'about.html' => route('sobre'),
-            'about' => route('sobre'),
-            'contact.html' => route('contato'),
-            'contact' => route('contato'),
-            'contato.html' => route('contato'),
-            'contato' => route('contato'),
-        ];
+            if (\Route::has('sobre')) {
+                $mapeamento['about.html'] = route('sobre');
+                $mapeamento['about'] = route('sobre');
+            }
+            
+            if (\Route::has('contato')) {
+                $mapeamento['contact.html'] = route('contato');
+                $mapeamento['contact'] = route('contato');
+                $mapeamento['contato.html'] = route('contato');
+                $mapeamento['contato'] = route('contato');
+            }
+        } catch (\Exception $e) {
+            \Log::warning("Erro ao mapear rotas principais: " . $e->getMessage());
+        }
 
         // Buscar rotas dinâmicas do banco de dados
         try {

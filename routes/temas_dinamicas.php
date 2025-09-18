@@ -170,31 +170,31 @@ return array (
     array (
       'rota' => '/contato',
       'pagina' => 'contato',
-      'criado_em' => '2025-09-18 14:03:11',
+      'criado_em' => '2025-09-18 17:09:22',
     ),
     'sobre_tema' => 
     array (
       'rota' => '/sobre',
       'pagina' => 'sobre',
-      'criado_em' => '2025-09-18 14:03:11',
+      'criado_em' => '2025-09-18 17:09:22',
     ),
     'home_tema' => 
     array (
       'rota' => '/',
       'pagina' => 'home',
-      'criado_em' => '2025-09-18 14:03:11',
-    ),
-    'testimonial' => 
-    array (
-      'rota' => '/testimonial',
-      'pagina' => 'testimonial',
-      'criado_em' => '2025-09-18 14:03:11',
+      'criado_em' => '2025-09-18 17:09:22',
     ),
     'service' => 
     array (
       'rota' => '/service',
       'pagina' => 'service',
-      'criado_em' => '2025-09-18 14:16:06',
+      'criado_em' => '2025-09-18 17:09:22',
+    ),
+    'testimonial' => 
+    array (
+      'rota' => '/testimonial',
+      'pagina' => 'testimonial',
+      'criado_em' => '2025-09-18 17:09:22',
     ),
   ),
 );
