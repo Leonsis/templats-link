@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Configurar Página: ' . ucfirst($pagina)); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -176,8 +174,17 @@ unset($__errorArgs, $__bag); ?>
                                 <i class="fas fa-times me-2"></i>Cancelar
                             </a>
                             <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-save me-2"></i>Salvar Configurações
+                                <i class="fas fa-save me-2"></i>Configurar SEO
                             </button>
+                        </div>
+                        
+                        <!-- Botão Criar Formulário de Conteúdo -->
+                        <div class="mt-4 pt-3 border-top">
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-success btn-lg">
+                                    <i class="fas fa-plus-circle me-2"></i>Criar Formulário de Conteúdo
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>

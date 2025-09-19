@@ -50,6 +50,18 @@
                         <div class="mb-3">
                             <label for="arquivo_zip" class="form-label">
                                 <i class="fas fa-file-archive me-1"></i>Arquivo ZIP dos Assets
+                                <i class="fas fa-info-circle text-info ms-2" 
+                                   data-bs-toggle="tooltip" 
+                                   data-bs-placement="top" 
+                                   data-bs-html="true"
+                                   title="<strong>Como preparar o ZIP dos Assets:</strong><br>
+                                   1. Crie uma pasta chamada 'assets'<br>
+                                   2. Dentro da pasta 'assets', coloque as pastas:<br>
+                                   &nbsp;&nbsp;• css (arquivos CSS)<br>
+                                   &nbsp;&nbsp;• js (arquivos JavaScript)<br>
+                                   &nbsp;&nbsp;• images (imagens e ícones)<br>
+                                   3. Verifique se todos os caminhos dos links e imagens estão corretos<br>
+                                   4. Comprima tudo em um arquivo ZIP"></i>
                             </label>
                             <input type="file" 
                                    class="form-control @error('arquivo_zip') is-invalid @enderror" 
@@ -69,6 +81,18 @@
                         <div class="mb-3">
                             <label for="arquivo_paginas" class="form-label">
                                 <i class="fas fa-file-code me-1"></i>Arquivo ZIP das Páginas
+                                <i class="fas fa-info-circle text-info ms-2" 
+                                   data-bs-toggle="tooltip" 
+                                   data-bs-placement="top" 
+                                   data-bs-html="true"
+                                   title="<strong>Como preparar o ZIP das Páginas:</strong><br>
+                                   As páginas têm que ficar somente o conteúdo delas.<br>
+                                   <br>
+                                   <strong>Estrutura recomendada:</strong><br>
+                                   • home.html<br>
+                                   • sobre.html<br>
+                                   • contato.html<br>
+                                   • etc..."></i>
                             </label>
                             <input type="file" 
                                    class="form-control @error('arquivo_paginas') is-invalid @enderror" 
@@ -587,6 +611,12 @@ function linkarPaginas(nomeTema) {
 
 // Inicializar funcionalidades
 document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+    
     // Garantir que todos os accordions funcionem
     var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'));
     var collapseList = collapseElementList.map(function (collapseEl) {

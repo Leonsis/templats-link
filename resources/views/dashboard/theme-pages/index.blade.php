@@ -73,7 +73,7 @@
                                             <a href="{{ route('dashboard.theme-pages.show', $pagina) }}" 
                                                class="btn btn-primary btn-sm w-100">
                                                 <i class="fas fa-cog me-2"></i>
-                                                Configurar SEO
+                                                Configurar Página
                                             </a>
                                         </div>
                                     </div>
