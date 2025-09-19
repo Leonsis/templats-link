@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Tempo de geração: 18/09/2025 às 13:15
+-- Tempo de geração: 19/09/2025 às 11:54
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -64,7 +64,32 @@ INSERT INTO `head_configs` (`id`, `pagina`, `tema`, `meta_title`, `meta_descript
 (23, 'home', 'main-Thema', 'Início - Templats Link | Templates e Desenvolvimento Web', 'Bem-vindo ao Templats Link! Encontre os melhores templates para seu projeto web. Desenvolvimento profissional, responsivo e otimizado.', 'templates, home, início, desenvolvimento web, sites profissionais, responsivo', 'uploads/favicons/favicon-main.webp', 'https://youtube.com/templatslink', 'https://linkedin.com/company/templatslink', 'https://twitter.com/templatslink', 'https://instagram.com/templatslink', 'https://facebook.com/templatslink', 'Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h', 'Rua das Tecnologias, 123 - Centro, São Paulo - SP, 01234-567', '+5511999999999', '+55 (11) 99999-9999', 'contato@templats-link.com', 'uploads/logos/logo-main.png', 'uploads/logos/logo-footer.png', 'Somos especialistas em desenvolvimento web, oferecendo templates modernos e soluções personalizadas para sua empresa.', '© {ano} Templats Link. Todos os direitos reservados.', '', '', '2025-09-17 16:29:48', '2025-09-17 16:29:48'),
 (24, 'sobre', 'main-Thema', 'Sobre Nós - Templats Link | Nossa História e Missão', 'Conheça a história do Templats Link. Somos uma empresa especializada em desenvolvimento web com mais de 5 anos de experiência.', 'sobre, empresa, história, missão, desenvolvimento web, experiência', 'uploads/favicons/favicon-main.webp', 'https://youtube.com/templatslink', 'https://linkedin.com/company/templatslink', 'https://twitter.com/templatslink', 'https://instagram.com/templatslink', 'https://facebook.com/templatslink', 'Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h', 'Rua das Tecnologias, 123 - Centro, São Paulo - SP, 01234-567', '+5511999999999', '+55 (11) 99999-9999', 'contato@templats-link.com', 'uploads/logos/logo-main.png', 'uploads/logos/logo-footer.png', 'Somos especialistas em desenvolvimento web, oferecendo templates modernos e soluções personalizadas para sua empresa.', '© {ano} Templats Link. Todos os direitos reservados.', '', '', '2025-09-17 16:29:48', '2025-09-17 16:29:48'),
 (25, 'contato', 'main-Thema', 'Contato - Templats Link | Entre em Contato Conosco', 'Entre em contato com o Templats Link. Estamos prontos para ajudar com seu projeto web. Fale conosco por telefone, email ou WhatsApp.', 'contato, telefone, email, whatsapp, suporte, desenvolvimento web', 'uploads/favicons/favicon-main.webp', 'https://youtube.com/templatslink', 'https://linkedin.com/company/templatslink', 'https://twitter.com/templatslink', 'https://instagram.com/templatslink', 'https://facebook.com/templatslink', 'Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h', 'Rua das Tecnologias, 123 - Centro, São Paulo - SP, 01234-567', '+5511999999999', '+55 (11) 99999-9999', 'contato@templats-link.com', 'uploads/logos/logo-main.png', 'uploads/logos/logo-footer.png', 'Somos especialistas em desenvolvimento web, oferecendo templates modernos e soluções personalizadas para sua empresa.', '© {ano} Templats Link. Todos os direitos reservados.', '', '', '2025-09-17 16:29:48', '2025-09-17 16:29:48'),
-(26, 'login', 'main-Thema', 'Login - Templats Link | Acesso ao Painel Administrativo', 'Faça login no painel administrativo do Templats Link. Acesso seguro e rápido para gerenciar seu site.', 'login, painel, administrativo, acesso, segurança', 'uploads/favicons/favicon-main.webp', 'https://youtube.com/templatslink', 'https://linkedin.com/company/templatslink', 'https://twitter.com/templatslink', 'https://instagram.com/templatslink', 'https://facebook.com/templatslink', 'Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h', 'Rua das Tecnologias, 123 - Centro, São Paulo - SP, 01234-567', '+5511999999999', '+55 (11) 99999-9999', 'contato@templats-link.com', 'uploads/logos/logo-main.png', 'uploads/logos/logo-footer.png', 'Somos especialistas em desenvolvimento web, oferecendo templates modernos e soluções personalizadas para sua empresa.', '© {ano} Templats Link. Todos os direitos reservados.', '', '', '2025-09-17 16:29:48', '2025-09-17 16:29:48');
+(26, 'login', 'main-Thema', 'Login - Templats Link | Acesso ao Painel Administrativo', 'Faça login no painel administrativo do Templats Link. Acesso seguro e rápido para gerenciar seu site.', 'login, painel, administrativo, acesso, segurança', 'uploads/favicons/favicon-main.webp', 'https://youtube.com/templatslink', 'https://linkedin.com/company/templatslink', 'https://twitter.com/templatslink', 'https://instagram.com/templatslink', 'https://facebook.com/templatslink', 'Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h', 'Rua das Tecnologias, 123 - Centro, São Paulo - SP, 01234-567', '+5511999999999', '+55 (11) 99999-9999', 'contato@templats-link.com', 'uploads/logos/logo-main.png', 'uploads/logos/logo-footer.png', 'Somos especialistas em desenvolvimento web, oferecendo templates modernos e soluções personalizadas para sua empresa.', '© {ano} Templats Link. Todos os direitos reservados.', '', '', '2025-09-17 16:29:48', '2025-09-17 16:29:48'),
+(122, 'Contato', 'Finazze', 'Contato - Finazze', 'Página Contato do tema Finazze. Configure as meta tags específicas desta página.', 'contato, finazze, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(123, 'Sobre', 'Finazze', 'Sobre - Finazze', 'Página Sobre do tema Finazze. Configure as meta tags específicas desta página.', 'sobre, finazze, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(124, 'home', 'Finazze', 'Início - Finazze', 'Bem-vindo ao Finazze. Página inicial com informações sobre nossos serviços.', 'finazze, início, home, página principal', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(125, 'footer', 'Finazze', 'Footer - Finazze', 'Página Footer do tema Finazze. Configure as meta tags específicas desta página.', 'footer, finazze, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(126, 'head', 'Finazze', 'Head - Finazze', 'Página Head do tema Finazze. Configure as meta tags específicas desta página.', 'head, finazze, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(127, 'nav', 'Finazze', 'Nav - Finazze', 'Página Nav do tema Finazze. Configure as meta tags específicas desta página.', 'nav, finazze, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(128, 'scripts', 'Finazze', 'Scripts - Finazze', 'Página Scripts do tema Finazze. Configure as meta tags específicas desta página.', 'scripts, finazze, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(129, 'app', 'Finazze', 'App - Finazze', 'Página App do tema Finazze. Configure as meta tags específicas desta página.', 'app, finazze, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(130, 'service', 'Finazze', 'Service - Finazze', 'Página Service do tema Finazze. Configure as meta tags específicas desta página.', 'service, finazze, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(131, 'testimonial', 'Finazze', 'Testimonial - Finazze', 'Página Testimonial do tema Finazze. Configure as meta tags específicas desta página.', 'testimonial, finazze, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(132, 'global', 'Finazze', 'Finazze - Site Profissional', 'Site profissional do tema Finazze. Descubra nossos serviços e entre em contato.', 'finazze, site, profissional, serviços', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(133, '401', 'Lumialto', '401 - Lumialto', 'Página 401 do tema Lumialto. Configure as meta tags específicas desta página.', '401, lumialto, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(134, '404', 'Lumialto', '404 - Lumialto', 'Página 404 do tema Lumialto. Configure as meta tags específicas desta página.', '404, lumialto, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(135, 'contato', 'Lumialto', 'Contato - Lumialto', 'Entre em contato conosco. Estamos prontos para atender suas necessidades.', 'lumialto, contato, telefone, email, suporte', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(136, 'home', 'Lumialto', 'Início - Lumialto', 'Bem-vindo ao Lumialto. Página inicial com informações sobre nossos serviços.', 'lumialto, início, home, página principal', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:50:31'),
+(137, 'footer', 'Lumialto', 'Footer - Lumialto', 'Página Footer do tema Lumialto. Configure as meta tags específicas desta página.', 'footer, lumialto, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(138, 'head', 'Lumialto', 'Head - Lumialto', 'Página Head do tema Lumialto. Configure as meta tags específicas desta página.', 'head, lumialto, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(139, 'nav', 'Lumialto', 'Nav - Lumialto', 'Página Nav do tema Lumialto. Configure as meta tags específicas desta página.', 'nav, lumialto, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(140, 'scripts', 'Lumialto', 'Scripts - Lumialto', 'Página Scripts do tema Lumialto. Configure as meta tags específicas desta página.', 'scripts, lumialto, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(141, 'lanternagem-e-pintura', 'Lumialto', 'Lanternagem-e-pintura - Lumialto', 'Página Lanternagem-e-pintura do tema Lumialto. Configure as meta tags específicas desta página.', 'lanternagem-e-pintura, lumialto, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(142, 'app', 'Lumialto', 'App - Lumialto', 'Página App do tema Lumialto. Configure as meta tags específicas desta página.', 'app, lumialto, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(143, 'martelinho-de-ouro', 'Lumialto', 'Martelinho-de-ouro - Lumialto', 'Página Martelinho-de-ouro do tema Lumialto. Configure as meta tags específicas desta página.', 'martelinho-de-ouro, lumialto, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(144, 'mecanica-geral', 'Lumialto', 'Mecanica-geral - Lumialto', 'Página Mecanica-geral do tema Lumialto. Configure as meta tags específicas desta página.', 'mecanica-geral, lumialto, página', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(145, 'sobre', 'Lumialto', 'Sobre - Lumialto', 'Conheça mais sobre o Lumialto e nossa história.', 'lumialto, sobre, empresa, história', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(146, 'global', 'Lumialto', 'Lumialto - Site Profissional', 'Site profissional do tema Lumialto. Descubra nossos serviços e entre em contato.', 'lumialto, site, profissional, serviços', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-19 09:49:27', '2025-09-19 09:49:27');
 
 -- --------------------------------------------------------
 
@@ -124,6 +149,19 @@ CREATE TABLE `rotas_dinamicas` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Despejando dados para a tabela `rotas_dinamicas`
+--
+
+INSERT INTO `rotas_dinamicas` (`id`, `tema`, `pagina`, `rota`, `nome_rota`, `controller`, `metodo`, `ativo`, `created_at`, `updated_at`) VALUES
+(182, 'Finazze', 'service', '/service', 'service', 'TemasController', 'renderizarPaginaDinamica', 1, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(183, 'Finazze', 'testimonial', '/testimonial', 'testimonial', 'TemasController', 'renderizarPaginaDinamica', 1, '2025-09-19 09:35:15', '2025-09-19 09:35:15'),
+(184, 'Lumialto', '401', '/401', '401', 'TemasController', 'renderizarPaginaDinamica', 1, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(185, 'Lumialto', '404', '/404', '404', 'TemasController', 'renderizarPaginaDinamica', 1, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(186, 'Lumialto', 'lanternagem-e-pintura', '/lanternagem-e-pintura', 'lanternagem-e-pintura', 'TemasController', 'renderizarPaginaDinamica', 1, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(187, 'Lumialto', 'martelinho-de-ouro', '/martelinho-de-ouro', 'martelinho-de-ouro', 'TemasController', 'renderizarPaginaDinamica', 1, '2025-09-19 09:49:27', '2025-09-19 09:49:27'),
+(188, 'Lumialto', 'mecanica-geral', '/mecanica-geral', 'mecanica-geral', 'TemasController', 'renderizarPaginaDinamica', 1, '2025-09-19 09:49:27', '2025-09-19 09:49:27');
+
 -- --------------------------------------------------------
 
 --
@@ -140,6 +178,14 @@ CREATE TABLE `temas` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `temas`
+--
+
+INSERT INTO `temas` (`id`, `nome`, `slug`, `preview_path`, `arquivo_path`, `ativo`, `created_at`, `updated_at`) VALUES
+(37, 'Finazze', 'finazze', NULL, 'Finazze', 0, '2025-09-19 09:35:16', '2025-09-19 09:35:16'),
+(38, 'Lumialto', 'lumialto', NULL, 'Lumialto', 0, '2025-09-19 09:49:28', '2025-09-19 09:49:28');
 
 -- --------------------------------------------------------
 
@@ -229,13 +275,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `head_configs`
 --
 ALTER TABLE `head_configs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT de tabela `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `personal_access_tokens`
@@ -247,13 +293,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de tabela `rotas_dinamicas`
 --
 ALTER TABLE `rotas_dinamicas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=189;
 
 --
 -- AUTO_INCREMENT de tabela `temas`
 --
 ALTER TABLE `temas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
