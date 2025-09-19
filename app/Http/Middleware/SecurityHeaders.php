@@ -10,6 +10,10 @@ class SecurityHeaders
 {
     /**
      * Handle an incoming request.
+     * 
+     * Este middleware aplica automaticamente headers de segurança em todas as páginas do sistema,
+     * incluindo temas instalados. As tags de segurança são aplicadas globalmente via middleware
+     * registrado no grupo 'web' do Kernel, garantindo proteção em todas as rotas.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
@@ -17,7 +21,7 @@ class SecurityHeaders
     {
         $response = $next($request);
 
-        // CSP (Content Security Policy)
+        // CSP (Content Security Policy) - Atualizado com todas as fontes necessárias
         $csp = "default-src 'self'; "
              . "script-src 'self' https://ajax.googleapis.com https://d3e54v103j8qbb.cloudfront.net https://www.googletagmanager.com https://www.youtube.com https://s.ytimg.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com 'unsafe-inline'; "
              . "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; "

@@ -284,6 +284,10 @@ LOCK TABLES `usuarios` WRITE;
 INSERT INTO `usuarios` VALUES (1,'Administrador do Sistema','admin@templats-link.com','$2y$12$F2LO7MvBwjk.iMteRnE4wushxlpJTf0qOzJYiMnudo/9ex4QLBdIG','admin',1,'2025-09-13 14:28:37',NULL,'2025-09-13 14:28:37','2025-09-13 14:32:20','2025-09-13 14:32:20','2025-09-13 14:32:20'),(2,'Usuário Teste','teste@templats-link.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','usuario',1,'2025-09-13 14:28:37',NULL,'2025-09-13 14:28:37','2025-09-13 14:32:20','2025-09-13 14:32:20','2025-09-13 14:32:20'),(3,'Usuário Demo','demo@templats-link.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','usuario',1,'2025-09-13 14:28:37',NULL,'2025-09-13 14:28:37','2025-09-13 14:32:20','2025-09-13 14:32:20','2025-09-13 14:32:20');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'templats_link'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -294,4 +298,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-19 16:31:55
+-- Dump completed on 2025-09-19 16:56:18
