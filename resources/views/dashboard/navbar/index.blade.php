@@ -10,6 +10,11 @@
                 <h1 class="h3 mb-0 text-gray-800">
                     <i class="fas fa-bars me-2"></i>
                     Configurações da Navbar/Footer
+                    <i class="fas fa-info-circle text-info ms-2" 
+                       data-bs-toggle="tooltip" 
+                       data-bs-placement="top" 
+                       data-bs-html="true"
+                       title="Para que está aba funcione é necessário modificar o código."></i>
                 </h1>
             </div>
 
@@ -60,6 +65,14 @@
                                     <strong>Importante:</strong> Este logo será aplicado no navbar do site. 
                                     Apenas arquivos WebP, máximo 2MB.
                                 </div>
+                                
+                                <div class="alert alert-warning alert-static" data-static="true">
+                                    <i class="fas fa-code me-2"></i>
+                                    <strong>Tag para o código:</strong><br>
+                                    <code class="ms-2">\App\Helpers\NavbarHelper::getLogo()</code><br>
+                                    <small class="text-muted">Adicione as chaves duplas ao redor da tag</small>
+                                </div>
+                                
                                 
                                 <div class="row">
                                     <div class="col-md-6">
@@ -146,6 +159,13 @@
                                     Apenas arquivos WebP, máximo 2MB.
                                 </div>
                                 
+                                <div class="alert alert-warning alert-static" data-static="true">
+                                    <i class="fas fa-code me-2"></i>
+                                    <strong>Tag para o código:</strong><br>
+                                    <code class="ms-2">\App\Helpers\NavbarHelper::getLogoFooter()</code><br>
+                                    <small class="text-muted">Adicione as chaves duplas ao redor da tag</small>
+                                </div>
+                                
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
@@ -230,6 +250,14 @@
                                     <strong>Importante:</strong> Estes dados aparecerão no footer do site, abaixo do logo footer.
                                 </div>
                                 
+                                <div class="alert alert-warning alert-static" data-static="true">
+                                    <i class="fas fa-code me-2"></i>
+                                    <strong>Tags para o código:</strong><br>
+                                    <code class="ms-2">\App\Helpers\NavbarHelper::getDescricaoFooter()</code><br>
+                                    <code class="ms-2">\App\Helpers\NavbarHelper::getCopyrightFooter()</code><br>
+                                    <small class="text-muted">Adicione as chaves duplas ao redor de cada tag</small>
+                                </div>
+                                
                                 <div class="mb-3">
                                     <label for="descricao_footer" class="form-label">
                                         <i class="fas fa-align-left me-1"></i>
@@ -278,6 +306,15 @@
                                 </h5>
                             </div>
                             <div class="card-body">
+                                <div class="alert alert-warning alert-static" data-static="true">
+                                    <i class="fas fa-code me-2"></i>
+                                    <strong>Tags para o código:</strong><br>
+                                    <code class="ms-2">\App\Helpers\NavbarHelper::getEmailContato()</code><br>
+                                    <code class="ms-2">\App\Helpers\NavbarHelper::getTelefone()</code><br>
+                                    <code class="ms-2">\App\Helpers\NavbarHelper::getWhatsapp()</code><br>
+                                    <small class="text-muted">Adicione as chaves duplas ao redor de cada tag</small>
+                                </div>
+                                
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
@@ -369,6 +406,17 @@
                                 </h5>
                             </div>
                             <div class="card-body">
+                                <div class="alert alert-warning alert-static" data-static="true">
+                                    <i class="fas fa-code me-2"></i>
+                                    <strong>Tags para o código:</strong><br>
+                                    <code class="ms-2">\App\Helpers\NavbarHelper::getFacebook()</code><br>
+                                    <code class="ms-2">\App\Helpers\NavbarHelper::getInstagram()</code><br>
+                                    <code class="ms-2">\App\Helpers\NavbarHelper::getTwitter()</code><br>
+                                    <code class="ms-2">\App\Helpers\NavbarHelper::getLinkedin()</code><br>
+                                    <code class="ms-2">\App\Helpers\NavbarHelper::getYoutube()</code><br>
+                                    <small class="text-muted">Adicione as chaves duplas ao redor de cada tag</small>
+                                </div>
+                                
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
@@ -556,7 +604,51 @@
     </div>
 </div>
 
+<style>
+/* Proteger avisos estáticos */
+.alert-static {
+    position: relative !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+</style>
+
 <script>
+// Inicializar tooltips
+document.addEventListener('DOMContentLoaded', function() {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+    
+    // Proteger avisos estáticos de remoção
+    const staticAlerts = document.querySelectorAll('.alert-static[data-static="true"]');
+    staticAlerts.forEach(function(alert) {
+        // Prevenir remoção via JavaScript
+        const originalRemove = alert.remove;
+        alert.remove = function() {
+            console.log('Tentativa de remover aviso estático bloqueada');
+            return false;
+        };
+        
+        // Prevenir ocultação via display
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                    const target = mutation.target;
+                    if (target.style.display === 'none' || target.style.visibility === 'hidden') {
+                        target.style.display = 'block';
+                        target.style.visibility = 'visible';
+                    }
+                }
+            });
+        });
+        
+        observer.observe(alert, { attributes: true, attributeFilter: ['style'] });
+    });
+});
+
 let allImages = [];
 
 // Função para preview do logo

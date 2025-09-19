@@ -57,6 +57,13 @@
                                 Use uma imagem WebP de até 2MB.
                             </div>
                             
+                            <div class="alert alert-warning alert-static" data-static="true">
+                                <i class="fas fa-code me-2"></i>
+                                <strong>Tag para o código:</strong><br>
+                                <code class="ms-2">\App\Helpers\HeadHelper::getFavicon()</code><br>
+                                <small class="text-muted">Adicione as chaves duplas ao redor da tag</small>
+                            </div>
+                            
                             <form action="{{ route('dashboard.head.update') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
@@ -152,6 +159,15 @@
                                 </h5>
                             </div>
                             <div class="card-body">
+                                <div class="alert alert-warning alert-static" data-static="true">
+                                    <i class="fas fa-code me-2"></i>
+                                    <strong>Tags para o código:</strong><br>
+                                    <code class="ms-2">\App\Helpers\HeadHelper::getMetaTitle('{{ $paginaKey }}')</code><br>
+                                    <code class="ms-2">\App\Helpers\HeadHelper::getMetaDescription('{{ $paginaKey }}')</code><br>
+                                    <code class="ms-2">\App\Helpers\HeadHelper::getMetaKeywords('{{ $paginaKey }}')</code><br>
+                                    <small class="text-muted">Adicione as chaves duplas ao redor de cada tag</small>
+                                </div>
+                                
                                 <form action="{{ route('dashboard.head.update') }}" method="POST">
                                     @csrf
                                     @method('PUT')
@@ -240,6 +256,14 @@
                                 <i class="fas fa-info-circle me-2"></i>
                                 <strong>Importante:</strong> O Google Tag Manager será aplicado em todas as páginas do site. 
                                 Configure uma vez e será usado globalmente.
+                            </div>
+                            
+                            <div class="alert alert-warning alert-static" data-static="true">
+                                <i class="fas fa-code me-2"></i>
+                                <strong>Tags para o código:</strong><br>
+                                <code class="ms-2">\App\Helpers\HeadHelper::getGtmHead()</code><br>
+                                <code class="ms-2">\App\Helpers\HeadHelper::getGtmBody()</code><br>
+                                <small class="text-muted">Adicione as chaves duplas ao redor de cada tag</small>
                             </div>
                             
                             <form action="{{ route('dashboard.head.update') }}" method="POST">
@@ -333,7 +357,52 @@
     </div>
 </div>
 
+<style>
+/* Proteger avisos estáticos */
+.alert-static {
+    position: relative !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+</style>
+
 <script>
+// Inicializar tooltips e proteger avisos estáticos
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+    
+    // Proteger avisos estáticos de remoção
+    const staticAlerts = document.querySelectorAll('.alert-static[data-static="true"]');
+    staticAlerts.forEach(function(alert) {
+        // Prevenir remoção via JavaScript
+        const originalRemove = alert.remove;
+        alert.remove = function() {
+            console.log('Tentativa de remover aviso estático bloqueada');
+            return false;
+        };
+        
+        // Prevenir ocultação via display
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                    const target = mutation.target;
+                    if (target.style.display === 'none' || target.style.visibility === 'hidden') {
+                        target.style.display = 'block';
+                        target.style.visibility = 'visible';
+                    }
+                }
+            });
+        });
+        
+        observer.observe(alert, { attributes: true, attributeFilter: ['style'] });
+    });
+});
+
 // Função para preview do favicon
 function previewFavicon(input) {
     if (input.files && input.files[0]) {
