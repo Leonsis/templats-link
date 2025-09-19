@@ -1,8 +1,8 @@
-@extends('temas.finazze.layouts.app')
+@extends('temas.Finazze.layouts.app')
 
 @section('content')
 <!--===== HERO AREA STARTS =======-->
-<div class="inner-pages-section-area" style="background-image: url({{ asset('temas/finazze/assets/img/all-images/bg/hero-bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div class="inner-pages-section-area" style="background-image: url({{ asset('temas/Finazze/assets/img/all-images/bg/hero-bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
   <div class="container">
     <div class="row">
         <div class="col-lg-12 m-auto">
@@ -36,7 +36,7 @@
           <div class="author-images-area">
               <div class="images">
                   <div class="img1">
-                      <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
+                      <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testi-img1.png') }}"" alt="">
                   </div>
                   <div class="text">
                       <a href="team.html">Gabriel Krajcik</a>
@@ -68,7 +68,7 @@
           <div class="author-images-area">
               <div class="images">
                   <div class="img1">
-                      <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img2.png') }}"" alt="">
+                      <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testi-img2.png') }}"" alt="">
                   </div>
                   <div class="text">
                       <a href="team.html">Sylvia Kohler</a>
@@ -100,7 +100,7 @@
           <div class="author-images-area">
               <div class="images">
                   <div class="img1">
-                      <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img3.png') }}"" alt="">
+                      <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testi-img3.png') }}"" alt="">
                   </div>
                   <div class="text">
                       <a href="team.html">Homer Kilback</a>
@@ -132,7 +132,7 @@
           <div class="author-images-area">
               <div class="images">
                   <div class="img1">
-                      <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
+                      <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
                   </div>
                   <div class="text">
                       <a href="team.html">Gerard Becker</a>
@@ -164,7 +164,7 @@
           <div class="author-images-area">
               <div class="images">
                   <div class="img1">
-                      <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img2.png') }}"" alt="">
+                      <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testimonial-img2.png') }}"" alt="">
                   </div>
                   <div class="text">
                       <a href="team.html">Ms. Phil Rath</a>
@@ -196,7 +196,7 @@
           <div class="author-images-area">
               <div class="images">
                   <div class="img1">
-                      <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img3.png') }}"" alt="">
+                      <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testimonial-img3.png') }}"" alt="">
                   </div>
                   <div class="text">
                       <a href="team.html">Don Cummings</a>
@@ -228,7 +228,7 @@
           <div class="author-images-area">
               <div class="images">
                   <div class="img1">
-                      <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img4.png') }}"" alt="">
+                      <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testi-img4.png') }}"" alt="">
                   </div>
                   <div class="text">
                       <a href="team.html">Robin Predovic</a>
@@ -260,7 +260,7 @@
           <div class="author-images-area">
               <div class="images">
                   <div class="img1">
-                      <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img5.png') }}"" alt="">
+                      <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testi-img5.png') }}"" alt="">
                   </div>
                   <div class="text">
                       <a href="team.html">Fannie Kohler</a>
@@ -292,7 +292,7 @@
           <div class="author-images-area">
               <div class="images">
                   <div class="img1">
-                      <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testi-img6.png') }}"" alt="">
+                      <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testi-img6.png') }}"" alt="">
                   </div>
                   <div class="text">
                       <a href="team.html">Ed Hauck</a>
@@ -354,7 +354,7 @@
     </div>
   </div>
   <div class="img1">
-    <img src="{{ asset('temas/finazze/assets/img/all-images/cta/cta-img1.png') }}"" alt="">
+    <img src="{{ asset('temas/Finazze/assets/img/all-images/cta/cta-img1.png') }}"" alt="">
   </div>
 </div>
 <!--===== CTA AREA ENDS =======-->

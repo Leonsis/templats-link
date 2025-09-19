@@ -24,7 +24,7 @@
                       <a href="{{ route('home') }}">@if(\App\Helpers\HeadHelper::getLogo())
                               <img src="{{ \App\Helpers\HeadHelper::getLogo() }}" alt="{{ \App\Helpers\HeadHelper::getMetaTitle('global') }}">
                           @else
-                              <img src="{{ asset('temas/finazze/assets/img/logo/logo1.png') }}" alt="finazze">
+                              <img src="{{ asset('temas/Finazze/assets/img/logo/logo1.png') }}" alt="Finazze">
                           @endif</a>
                   </div>
               </div>
@@ -40,7 +40,7 @@
                                               <div class="col">
                                                       <div class="vl-home-thumb">
                                                           <div class="img1">
-                                                            <img src="{{ asset('temas/finazze/assets/img/all-images/demo/demo-img1.png') }}" alt="">
+                                                            <img src="{{ asset('temas/Finazze/assets/img/all-images/demo/demo-img1.png') }}" alt="">
                                                           </div>
                                                          <a href="{{ route('home') }}">Finazze  - Homepage 01</a>
                                                          <div class="btn-area1">
@@ -53,7 +53,7 @@
                                               <div class="col">
                                                       <div class="vl-home-thumb">
                                                         <div class="img1">
-                                                          <img src="{{ asset('temas/finazze/assets/img/all-images/demo/demo-img2.png') }}" alt="">
+                                                          <img src="{{ asset('temas/Finazze/assets/img/all-images/demo/demo-img2.png') }}" alt="">
                                                         </div>
                                                         <a href="index2.html">Finazze  - Homepage 02</a>
                                                         <div class="btn-area1">
@@ -66,7 +66,7 @@
                                               <div class="col ">
                                                       <div class="vl-home-thumb">
                                                         <div class="img1">
-                                                          <img src="{{ asset('temas/finazze/assets/img/all-images/demo/demo-img3.png') }}" alt="">
+                                                          <img src="{{ asset('temas/Finazze/assets/img/all-images/demo/demo-img3.png') }}" alt="">
                                                         </div>
                                                         <a href="index3.html">Finazze  - Homepage 03</a>
                                                         <div class="btn-area1">
@@ -79,7 +79,7 @@
                                               <div class="col ">
                                                       <div class="vl-home-thumb">
                                                         <div class="img1">
-                                                          <img src="{{ asset('temas/finazze/assets/img/all-images/demo/demo-img4.png') }}" alt="">
+                                                          <img src="{{ asset('temas/Finazze/assets/img/all-images/demo/demo-img4.png') }}" alt="">
                                                         </div>
                                                         <a href="index4.html">Finazze  - Homepage 04</a>
                                                         <div class="btn-area1">
@@ -93,7 +93,7 @@
                                               <div class="col ">
                                                     <div class="vl-home-thumb">
                                                       <div class="img1">
-                                                        <img src="{{ asset('temas/finazze/assets/img/all-images/demo/demo-img5.png') }}" alt="">
+                                                        <img src="{{ asset('temas/Finazze/assets/img/all-images/demo/demo-img5.png') }}" alt="">
                                                       </div>
                                                       <a href="index5.html">Finazze  - Homepage 05</a>
                                                       <div class="btn-area1">
@@ -111,7 +111,7 @@
                                       <li><a href="{{ route('sobre') }}">About Us</a></li>
                                       <li><a href="team.html">Our Team</a></li>
                                       <li><a href="pricing.html">Pricing Plan</a></li>
-                                      <li><a href="{{ route('tema.finazze.testimonial') }}">Testimonials</a></li>
+                                      <li><a href="{{ route('tema.Finazze.testimonial') }}">Testimonials</a></li>
                                       <li><a href="{{ route('contato') }}">Contact Us</a></li>
                                       <li><a href="faq.html">FAQ's</a></li>
                                       <li><a href="404.html">404</a></li>
@@ -119,7 +119,7 @@
                               </li>
                               <li><a href="service-right.html#">Services <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
                                 <ul class="sub-menu">
-                                  <li><a href="{{ route('tema.finazze.service') }}">Our Service</a></li>
+                                  <li><a href="{{ route('tema.Finazze.service') }}">Our Service</a></li>
                                   <li><a href="service-right.html#" class="span-arrow">Service Details <span><i class="fa-solid fa-angle-right d-lg-block d-none"></i></span></a>
                                     <ul class="sub-menu menu1">
                                       <li><a href="service-left.html">Service Left</a></li>
@@ -163,11 +163,11 @@
                 <div class="vl-hero-btn d-none d-lg-block text-end">
                   <div class="head-btn">
                     <div class="search-icon header__search header-search-btn">
-                      <a href="service-right.html#"><img src="{{ asset('temas/finazze/assets/img/icons/search1.svg') }}" alt=""></a>
+                      <a href="service-right.html#"><img src="{{ asset('temas/Finazze/assets/img/icons/search1.svg') }}" alt=""></a>
                     </div>
                     <span class="vl-btn-wrap text-end">
                      <span class="icons">
-                      <a href="tel:+4909233255"><img src="{{ asset('temas/finazze/assets/img/icons/phone1.svg') }}" alt=""></a>
+                      <a href="tel:+4909233255"><img src="{{ asset('temas/Finazze/assets/img/icons/phone1.svg') }}" alt=""></a>
                      </span>
                      <span class="text">
                       <span>Hotline 24/7</span>
@@ -197,7 +197,7 @@
                 <a href="{{ route('home') }}">@if(\App\Helpers\HeadHelper::getLogo())
                               <img src="{{ \App\Helpers\HeadHelper::getLogo() }}" alt="{{ \App\Helpers\HeadHelper::getMetaTitle('global') }}">
                           @else
-                              <img src="{{ asset('temas/finazze/assets/img/logo/logo1.png') }}" alt="finazze">
+                              <img src="{{ asset('temas/Finazze/assets/img/logo/logo1.png') }}" alt="Finazze">
                           @endif</a>
             </div>
             <div class="vl-offcanvas-close">
@@ -239,7 +239,7 @@
   <div class="header-search-container">
       <form role="search" class="search-form">
       <input type="search"  class="search-field" placeholder="Search …" value="" name="s">
-      <button type="submit" class="search-submit"><img src="{{ asset('temas/finazze/assets/img/icons/search1.svg') }}" alt=""></button>
+      <button type="submit" class="search-submit"><img src="{{ asset('temas/Finazze/assets/img/icons/search1.svg') }}" alt=""></button>
       </form>
   </div>
 </div>

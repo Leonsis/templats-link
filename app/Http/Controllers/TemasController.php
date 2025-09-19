@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB;
 use ZipArchive;
 
 class TemasController extends Controller
@@ -957,12 +958,11 @@ class TemasController extends Controller
             $conteudo
         );
         
-        // Converter formulários para usar CSRF
-        $conteudo = preg_replace(
-            '/<form([^>]*)>/',
-            '<form$1>@csrf',
-            $conteudo
-        );
+        // Converter formulários para usar CSRF e corrigir method/action
+        $conteudo = $this->corrigirFormulariosExistentes($conteudo);
+        
+        // NOVO: Detectar inputs soltos e criar formulário automaticamente
+        $conteudo = $this->criarFormularioParaInputsSolto($conteudo);
         
         // Converter inputs para usar old() values
         $conteudo = preg_replace(
@@ -979,6 +979,362 @@ class TemasController extends Controller
         );
         
         return $conteudo;
+    }
+
+    /**
+     * Criar configurações de meta tags dinâmicas para páginas do tema
+     */
+    private function criarConfiguracoesMetaTags($nomeTema, $arquivosBlade)
+    {
+        $temaAtivo = $nomeTema;
+        
+        // Lista de páginas padrão para criar configurações
+        $paginasPadrao = [
+            'home' => [
+                'meta_title' => 'Início - ' . ucfirst($nomeTema),
+                'meta_description' => 'Bem-vindo ao ' . ucfirst($nomeTema) . '. Página inicial com informações sobre nossos serviços.',
+                'meta_keywords' => strtolower($nomeTema) . ', início, home, página principal'
+            ],
+            'contato' => [
+                'meta_title' => 'Contato - ' . ucfirst($nomeTema),
+                'meta_description' => 'Entre em contato conosco. Estamos prontos para atender suas necessidades.',
+                'meta_keywords' => strtolower($nomeTema) . ', contato, telefone, email, suporte'
+            ],
+            'sobre' => [
+                'meta_title' => 'Sobre - ' . ucfirst($nomeTema),
+                'meta_description' => 'Conheça mais sobre o ' . ucfirst($nomeTema) . ' e nossa história.',
+                'meta_keywords' => strtolower($nomeTema) . ', sobre, empresa, história'
+            ]
+        ];
+
+        // Detectar páginas existentes nos arquivos blade
+        $paginasDetectadas = [];
+        foreach ($arquivosBlade as $arquivo) {
+            $nomeArquivo = str_replace('.blade.php', '', $arquivo->getFilename());
+            $paginasDetectadas[] = $nomeArquivo;
+        }
+
+        // Criar configurações para páginas detectadas
+        foreach ($paginasDetectadas as $pagina) {
+            // Verificar se já existe configuração para esta página
+            $configExistente = DB::table('head_configs')
+                ->where('pagina', $pagina)
+                ->where('tema', $temaAtivo)
+                ->first();
+
+            if (!$configExistente) {
+                // Usar configuração padrão se disponível, senão criar genérica
+                $configPadrao = $paginasPadrao[$pagina] ?? [
+                    'meta_title' => ucfirst($pagina) . ' - ' . ucfirst($nomeTema),
+                    'meta_description' => 'Página ' . ucfirst($pagina) . ' do tema ' . ucfirst($nomeTema) . '. Configure as meta tags específicas desta página.',
+                    'meta_keywords' => strtolower($pagina) . ', ' . strtolower($nomeTema) . ', página'
+                ];
+
+                DB::table('head_configs')->insert([
+                    'pagina' => $pagina,
+                    'tema' => $temaAtivo,
+                    'meta_title' => $configPadrao['meta_title'],
+                    'meta_description' => $configPadrao['meta_description'],
+                    'meta_keywords' => $configPadrao['meta_keywords'],
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+
+                \Log::info("Configuração de meta tags criada para página: {$pagina} do tema: {$temaAtivo}");
+            }
+        }
+
+        // Criar configuração global se não existir
+        $configGlobalExistente = DB::table('head_configs')
+            ->where('pagina', 'global')
+            ->where('tema', $temaAtivo)
+            ->first();
+
+        if (!$configGlobalExistente) {
+            DB::table('head_configs')->insert([
+                'pagina' => 'global',
+                'tema' => $temaAtivo,
+                'meta_title' => ucfirst($nomeTema) . ' - Site Profissional',
+                'meta_description' => 'Site profissional do tema ' . ucfirst($nomeTema) . '. Descubra nossos serviços e entre em contato.',
+                'meta_keywords' => strtolower($nomeTema) . ', site, profissional, serviços',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+            \Log::info("Configuração global de meta tags criada para tema: {$temaAtivo}");
+        }
+    }
+
+    /**
+     * Corrigir formulários existentes
+     */
+    private function corrigirFormulariosExistentes($conteudo)
+    {
+        // Corrigir method="get" para method="POST"
+        $conteudo = preg_replace(
+            '/<form([^>]*method=["\']get["\'][^>]*)>/i',
+            '<form$1 method="POST">',
+            $conteudo
+        );
+        
+        // Adicionar action se não existir
+        $conteudo = preg_replace_callback(
+            '/<form([^>]*)>/i',
+            function($matches) {
+                $atributos = $matches[1];
+                
+                // Se não tem action, adicionar
+                if (!preg_match('/action=["\'][^"\']*["\']/', $atributos)) {
+                    $atributos .= ' action="{{ route(\'contato.enviar\') }}"';
+                }
+                
+                // Se não tem @csrf, adicionar
+                $formularioCompleto = '<form' . $atributos . '>@csrf';
+                
+                return $formularioCompleto;
+            },
+            $conteudo
+        );
+        
+        // Remover @csrf duplicados
+        $conteudo = preg_replace('/@csrf@csrf/', '@csrf', $conteudo);
+        
+        // Corrigir values duplicados nos inputs
+        $conteudo = preg_replace(
+            '/value="{{ old\([^)]+\) }}" value="{{ old\([^)]+\) }}"/',
+            'value="{{ old(\'$1\') }}"',
+            $conteudo
+        );
+        
+        // Remover values duplicados mais complexos
+        $conteudo = preg_replace(
+            '/value="{{ old\([^)]+\) }}"\s*value="{{ old\([^)]+\) }}"/',
+            'value="{{ old(\'$1\') }}"',
+            $conteudo
+        );
+        
+        // Remover values duplicados simples
+        $conteudo = preg_replace(
+            '/(value="[^"]*")\s*\1/',
+            '$1',
+            $conteudo
+        );
+        
+        return $conteudo;
+    }
+
+    /**
+     * Criar formulário automaticamente para inputs soltos
+     */
+    private function criarFormularioParaInputsSolto($conteudo)
+    {
+        // Verificar se já existe um formulário na página
+        if (preg_match('/<form[^>]*>/i', $conteudo)) {
+            return $conteudo; // Já tem formulário, não fazer nada
+        }
+        
+        // Detectar se há inputs que precisam de um formulário
+        $temInputs = preg_match('/<input[^>]*>/i', $conteudo);
+        $temTextareas = preg_match('/<textarea[^>]*>/i', $conteudo);
+        $temBotaoSubmit = preg_match('/<button[^>]*type=["\']submit["\'][^>]*>/i', $conteudo);
+        
+        if (!$temInputs && !$temTextareas) {
+            return $conteudo; // Não há inputs, não precisa de formulário
+        }
+        
+        // Estratégia 1: Procurar por grupos de inputs com classe "input-area"
+        $pattern1 = '/(<div[^>]*class="[^"]*input-area[^"]*"[^>]*>.*?<\/div>)/s';
+        $conteudo = $this->processarGrupoInputs($conteudo, $pattern1);
+        
+        // Estratégia 2: Procurar por inputs soltos sem div wrapper
+        if (!preg_match('/<form[^>]*>/i', $conteudo)) {
+            $pattern2 = '/(<input[^>]*>.*?<button[^>]*type=["\']submit["\'][^>]*>.*?<\/button>)/s';
+            $conteudo = $this->processarGrupoInputs($conteudo, $pattern2);
+        }
+        
+        // Estratégia 3: Procurar por qualquer grupo de inputs próximos
+        if (!preg_match('/<form[^>]*>/i', $conteudo)) {
+            $pattern3 = '/(<input[^>]*>.*?<textarea[^>]*>.*?<\/textarea>.*?<button[^>]*type=["\']submit["\'][^>]*>.*?<\/button>)/s';
+            $conteudo = $this->processarGrupoInputs($conteudo, $pattern3);
+        }
+        
+        // Estratégia 4: Para casos específicos como o tema finazze (inputs em divs separadas)
+        if (!preg_match('/<form[^>]*>/i', $conteudo)) {
+            $conteudo = $this->processarInputsEmDivsSeparadas($conteudo);
+        }
+        
+        return $conteudo;
+    }
+    
+    /**
+     * Processar grupo de inputs e criar formulário
+     */
+    private function processarGrupoInputs($conteudo, $pattern)
+    {
+        if (preg_match_all($pattern, $conteudo, $matches, PREG_OFFSET_CAPTURE)) {
+            // Processar do último para o primeiro para não afetar os offsets
+            for ($i = count($matches[0]) - 1; $i >= 0; $i--) {
+                $match = $matches[0][$i];
+                $inicioOffset = $match[1];
+                $conteudoMatch = $match[0];
+                $fimOffset = $inicioOffset + strlen($conteudoMatch);
+                
+                // Verificar se já está dentro de um formulário
+                $conteudoAntes = substr($conteudo, 0, $inicioOffset);
+                $conteudoDepois = substr($conteudo, $fimOffset);
+                
+                if (preg_match('/<form[^>]*>.*$/s', $conteudoAntes) && 
+                    preg_match('/^.*<\/form>/s', $conteudoDepois)) {
+                    continue; // Já está dentro de um formulário
+                }
+                
+                // Adicionar atributos name aos inputs que não têm
+                $conteudoMatch = $this->adicionarAtributosName($conteudoMatch);
+                
+                // Criar o formulário completo
+                $formularioCompleto = '<form method="POST" action="{{ route(\'contato.enviar\') }}">@csrf' . "\n" . 
+                                     $conteudoMatch . "\n" . 
+                                     '</form>';
+                
+                // Substituir o conteúdo original pelo formulário
+                $conteudo = substr_replace($conteudo, $formularioCompleto, $inicioOffset, strlen($conteudoMatch));
+                
+                \Log::info("Formulário criado automaticamente para grupo de inputs");
+                break; // Processar apenas o primeiro grupo encontrado
+            }
+        }
+        
+        return $conteudo;
+    }
+    
+    /**
+     * Adicionar atributos name aos inputs que não têm
+     */
+    private function adicionarAtributosName($conteudo)
+    {
+        // Adicionar name aos inputs que não têm
+        $conteudo = preg_replace_callback(
+            '/<input([^>]*type=["\']text["\'][^>]*)>/i',
+            function($matches) {
+                $atributos = $matches[1];
+                if (!preg_match('/name=["\'][^"\']*["\']/', $atributos)) {
+                    $atributos .= ' name="nome"';
+                }
+                return '<input' . $atributos . '>';
+            },
+            $conteudo
+        );
+        
+        $conteudo = preg_replace_callback(
+            '/<input([^>]*type=["\']email["\'][^>]*)>/i',
+            function($matches) {
+                $atributos = $matches[1];
+                if (!preg_match('/name=["\'][^"\']*["\']/', $atributos)) {
+                    $atributos .= ' name="email"';
+                }
+                return '<input' . $atributos . '>';
+            },
+            $conteudo
+        );
+        
+        $conteudo = preg_replace_callback(
+            '/<input([^>]*type=["\']number["\'][^>]*)>/i',
+            function($matches) {
+                $atributos = $matches[1];
+                if (!preg_match('/name=["\'][^"\']*["\']/', $atributos)) {
+                    $atributos .= ' name="telefone"';
+                }
+                return '<input' . $atributos . '>';
+            },
+            $conteudo
+        );
+        
+        $conteudo = preg_replace_callback(
+            '/<textarea([^>]*)>/i',
+            function($matches) {
+                $atributos = $matches[1];
+                if (!preg_match('/name=["\'][^"\']*["\']/', $atributos)) {
+                    $atributos .= ' name="mensagem"';
+                }
+                return '<textarea' . $atributos . '>';
+            },
+            $conteudo
+        );
+        
+        return $conteudo;
+    }
+    
+    /**
+     * Processar inputs que estão em divs separadas (caso específico do tema finazze)
+     */
+    private function processarInputsEmDivsSeparadas($conteudo)
+    {
+        // Estratégia mais simples: encontrar a div.row que contém inputs e botão submit
+        // e envolver apenas essa seção em um formulário
+        
+        // Procurar por div.row que contém inputs e botão submit
+        $pattern = '/(<div class="row">.*?<button[^>]*type=["\']submit["\'][^>]*>.*?<\/button>.*?<\/div>)/s';
+        
+        if (preg_match($pattern, $conteudo, $matches, PREG_OFFSET_CAPTURE)) {
+            $inicioOffset = $matches[0][1];
+            $conteudoFormulario = $matches[0][0];
+            
+            // Adicionar atributos name aos inputs
+            $conteudoFormulario = $this->adicionarAtributosName($conteudoFormulario);
+            
+            // Criar o formulário completo
+            $formularioCompleto = '<form method="POST" action="{{ route(\'contato.enviar\') }}">@csrf' . "\n" . 
+                                 $conteudoFormulario . "\n" . 
+                                 '</form>';
+            
+            // Substituir o conteúdo original pelo formulário
+            $conteudo = substr_replace($conteudo, $formularioCompleto, $inicioOffset, strlen($matches[0][0]));
+            
+            \Log::info("Formulário criado automaticamente para inputs em divs separadas");
+        }
+        
+        return $conteudo;
+    }
+    
+    /**
+     * Encontrar o início do contexto (div pai)
+     */
+    private function encontrarInicioContexto($conteudoAntes)
+    {
+        // Procurar por divs que podem ser o container do formulário
+        $patterns = [
+            '/<div[^>]*class="[^"]*row[^"]*"[^>]*>$/s',
+            '/<div[^>]*class="[^"]*contact-header-area[^"]*"[^>]*>$/s',
+            '/<div[^>]*class="[^"]*col-lg-[^"]*"[^>]*>$/s'
+        ];
+        
+        foreach ($patterns as $pattern) {
+            if (preg_match($pattern, $conteudoAntes, $matches, PREG_OFFSET_CAPTURE)) {
+                return $matches[0][1];
+            }
+        }
+        
+        return 0; // Se não encontrar, usar o início
+    }
+    
+    /**
+     * Encontrar o fim do contexto (div pai)
+     */
+    private function encontrarFimContexto($conteudoDepois)
+    {
+        // Procurar por fechamento de divs que podem ser o container do formulário
+        $patterns = [
+            '/^<\/div>/s',
+            '/^<\/div>\s*<\/div>/s'
+        ];
+        
+        foreach ($patterns as $pattern) {
+            if (preg_match($pattern, $conteudoDepois, $matches, PREG_OFFSET_CAPTURE)) {
+                return strlen($matches[0][0]);
+            }
+        }
+        
+        return 0; // Se não encontrar, usar o fim
     }
 
     private function ajustarAssetsParaBlade($conteudo, $nomeTema)
@@ -1536,6 +1892,10 @@ class TemasController extends Controller
             // Modificar arquivo footer.blade.php
             $this->modificarArquivoFooter($temaViewsPath, $nomeTema);
             
+            // Criar configurações de meta tags dinâmicas para "Páginas do Tema"
+            $arquivosBlade = File::allFiles($temaViewsPath);
+            $this->criarConfiguracoesMetaTags($nomeTema, $arquivosBlade);
+            
             \Log::info("Formulários linkados dinamicamente ao tema {$nomeTema}");
             
         } catch (\Exception $e) {
@@ -1553,17 +1913,29 @@ class TemasController extends Controller
         if (File::exists($headPath)) {
             $conteudo = File::get($headPath);
             
-            // Substituir title estático por dinâmico
-            $conteudo = preg_replace(
-                '/<title>.*?<\/title>/s',
-                '<title>{{ \\App\\Helpers\\HeadHelper::getMetaTitle($currentPage ?? \'global\', \'' . $nomeTema . '\') }}</title>',
-                $conteudo
-            );
+            // Verificar se já foi modificado
+            if (strpos($conteudo, 'HeadHelper') !== false) {
+                \Log::info("Arquivo head.blade.php já foi modificado para o tema {$nomeTema}");
+                return;
+            }
+            
+            // Adicionar title dinâmico se não existir
+            if (strpos($conteudo, '<title>') === false) {
+                $titleTag = '<title>{{ \\App\\Helpers\\HeadHelper::getMetaTitle($currentPage ?? \'global\', \'' . $nomeTema . '\') }}</title>';
+                $conteudo = str_replace('<head>', '<head>' . "\n    " . $titleTag, $conteudo);
+            } else {
+                // Substituir title estático por dinâmico
+                $conteudo = preg_replace(
+                    '/<title>.*?<\/title>/s',
+                    '<title>{{ \\App\\Helpers\\HeadHelper::getMetaTitle($currentPage ?? \'global\', \'' . $nomeTema . '\') }}</title>',
+                    $conteudo
+                );
+            }
             
             // Adicionar meta tags dinâmicas após o title
             $metaTags = '
-     <meta name="description" content="{{ \\App\\Helpers\\HeadHelper::getMetaDescription($currentPage ?? \'global\', \'' . $nomeTema . '\') }}">
-     <meta name="keywords" content="{{ \\App\\Helpers\\HeadHelper::getMetaKeywords($currentPage ?? \'global\', \'' . $nomeTema . '\') }}">';
+    <meta name="description" content="{{ \\App\\Helpers\\HeadHelper::getMetaDescription($currentPage ?? \'global\', \'' . $nomeTema . '\') }}">
+    <meta name="keywords" content="{{ \\App\\Helpers\\HeadHelper::getMetaKeywords($currentPage ?? \'global\', \'' . $nomeTema . '\') }}">';
             
             $conteudo = preg_replace(
                 '/(<title>.*?<\/title>)/s',

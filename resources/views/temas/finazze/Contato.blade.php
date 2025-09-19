@@ -1,8 +1,8 @@
-@extends('temas.finazze.layouts.app')
+@extends('temas.Finazze.layouts.app')
 
 @section('content')
 <!--===== HERO AREA STARTS =======-->
-<div class="inner-pages-section-area" style="background-image: url({{ asset('temas/finazze/assets/img/all-images/bg/hero-bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div class="inner-pages-section-area" style="background-image: url({{ asset('temas/Finazze/assets/img/all-images/bg/hero-bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
   <div class="container">
     <div class="row">
         <div class="col-lg-12 m-auto">
@@ -72,9 +72,11 @@
 
                         <div class="col-lg-12">
                             <div class="space16"></div>
-                            <div class="input-area">
+                            <form method="POST" action="{{ route('contato.enviar') }}">@csrf
+<div class="input-area">
                                 <button type="submit" class="vl-btn1">SEND NOW</button>
                             </div>
+</form>
                         </div>
                     </div>
                 </div>
@@ -167,7 +169,7 @@
     </div>
   </div>
   <div class="img1">
-    <img src="{{ asset('temas/finazze/assets/img/all-images/cta/cta-img1.png') }}"" alt="">
+    <img src="{{ asset('temas/Finazze/assets/img/all-images/cta/cta-img1.png') }}"" alt="">
   </div>
 </div>
 <!--===== CTA AREA ENDS =======-->

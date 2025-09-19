@@ -1,8 +1,8 @@
-@extends('temas.finazze.layouts.app')
+@extends('temas.Finazze.layouts.app')
 
 @section('content')
 <!--===== HERO AREA STARTS =======-->
-<div class="inner-pages-section-area" style="background-image: url({{ asset('temas/finazze/assets/img/all-images/bg/hero-bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div class="inner-pages-section-area" style="background-image: url({{ asset('temas/Finazze/assets/img/all-images/bg/hero-bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
   <div class="container">
     <div class="row">
         <div class="col-lg-12 m-auto">
@@ -24,7 +24,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="service3-single-boxarea">
             <div class="icons">
-              <img src="{{ asset('temas/finazze/assets/img/icons/service19.svg') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/icons/service19.svg') }}"" alt="">
             </div>
             <div class="space24"></div>
             <div class="content">
@@ -40,7 +40,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="service3-single-boxarea">
             <div class="icons">
-              <img src="{{ asset('temas/finazze/assets/img/icons/service20.svg') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/icons/service20.svg') }}"" alt="">
             </div>
             <div class="space24"></div>
             <div class="content">
@@ -56,7 +56,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="service3-single-boxarea">
             <div class="icons">
-              <img src="{{ asset('temas/finazze/assets/img/icons/service21.svg') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/icons/service21.svg') }}"" alt="">
             </div>
             <div class="space24"></div>
             <div class="content">
@@ -72,7 +72,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="service3-single-boxarea">
             <div class="icons">
-              <img src="{{ asset('temas/finazze/assets/img/icons/service22.svg') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/icons/service22.svg') }}"" alt="">
             </div>
             <div class="space24"></div>
             <div class="content">
@@ -88,7 +88,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="service3-single-boxarea">
             <div class="icons">
-              <img src="{{ asset('temas/finazze/assets/img/icons/service23.svg') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/icons/service23.svg') }}"" alt="">
             </div>
             <div class="space24"></div>
             <div class="content">
@@ -104,7 +104,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="service3-single-boxarea">
             <div class="icons">
-              <img src="{{ asset('temas/finazze/assets/img/icons/service24.svg') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/icons/service24.svg') }}"" alt="">
             </div>
             <div class="space24"></div>
             <div class="content">
@@ -120,7 +120,7 @@
         <div class="col-lg-4 col-md-6">
             <div class="service3-single-boxarea">
               <div class="icons">
-                <img src="{{ asset('temas/finazze/assets/img/icons/service25.svg') }}"" alt="">
+                <img src="{{ asset('temas/Finazze/assets/img/icons/service25.svg') }}"" alt="">
               </div>
               <div class="space24"></div>
               <div class="content">
@@ -136,7 +136,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="service3-single-boxarea">
               <div class="icons">
-                <img src="{{ asset('temas/finazze/assets/img/icons/service26.svg') }}"" alt="">
+                <img src="{{ asset('temas/Finazze/assets/img/icons/service26.svg') }}"" alt="">
               </div>
               <div class="space24"></div>
               <div class="content">
@@ -152,7 +152,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="service3-single-boxarea">
               <div class="icons">
-                <img src="{{ asset('temas/finazze/assets/img/icons/service27.svg') }}"" alt="">
+                <img src="{{ asset('temas/Finazze/assets/img/icons/service27.svg') }}"" alt="">
               </div>
               <div class="space24"></div>
               <div class="content">
@@ -210,7 +210,7 @@
     </div>
   </div>
   <div class="img1">
-    <img src="{{ asset('temas/finazze/assets/img/all-images/cta/cta-img1.png') }}"" alt="">
+    <img src="{{ asset('temas/Finazze/assets/img/all-images/cta/cta-img1.png') }}"" alt="">
   </div>
 </div>
 <!--===== CTA AREA ENDS =======-->

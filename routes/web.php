@@ -89,6 +89,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/theme-pages/{pagina}', [ThemePageController::class, 'show'])->name('theme-pages.show');
         Route::put('/theme-pages/{pagina}', [ThemePageController::class, 'update'])->name('theme-pages.update');
         
+        
         // Rotas de edição de páginas dos temas
         Route::get('/temas/home/edit', [TemasController::class, 'editHome'])->name('temas.home.edit');
         Route::get('/temas/about/edit', [TemasController::class, 'editAbout'])->name('temas.about.edit');

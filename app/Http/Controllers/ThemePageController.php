@@ -69,6 +69,14 @@ class ThemePageController extends Controller
         // Obter configuração da página
         $configuracao = HeadHelper::getConfigs($pagina, $temaAtivo);
         
+        // Converter datas para Carbon se necessário
+        if ($configuracao && $configuracao->created_at) {
+            $configuracao->created_at = \Carbon\Carbon::parse($configuracao->created_at);
+        }
+        if ($configuracao && $configuracao->updated_at) {
+            $configuracao->updated_at = \Carbon\Carbon::parse($configuracao->updated_at);
+        }
+        
         return view('dashboard.theme-pages.show', compact('pagina', 'configuracao', 'temaAtivo'));
     }
     
@@ -143,10 +151,16 @@ class ThemePageController extends Controller
         $paginas = collect(\File::files($temaViewsPath))
             ->filter(function($arquivo) {
                 $nome = $arquivo->getFilename();
+                $caminho = $arquivo->getPathname();
+                
+                // Incluir apenas arquivos .blade.php que não estão em subdiretórios
                 return str_ends_with($nome, '.blade.php') && 
-                       !str_contains($arquivo->getPathname(), 'inc') &&
-                       !str_contains($arquivo->getPathname(), 'layouts') &&
-                       !str_contains($arquivo->getPathname(), 'auth');
+                       !str_contains($caminho, 'inc') &&
+                       !str_contains($caminho, 'layouts') &&
+                       !str_contains($caminho, 'auth') &&
+                       !str_contains($caminho, '\\inc\\') &&
+                       !str_contains($caminho, '\\layouts\\') &&
+                       !str_contains($caminho, '\\auth\\');
             })
             ->map(function($arquivo) {
                 return strtolower(basename($arquivo->getFilename(), '.blade.php'));

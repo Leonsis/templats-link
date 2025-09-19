@@ -1,8 +1,8 @@
-@extends('temas.finazze.layouts.app')
+@extends('temas.Finazze.layouts.app')
 
 @section('content')
 <!--===== HERO AREA STARTS =======-->
-<div class="hero1-section-area" style="background-image: url({{ asset('temas/finazze/assets/img/all-images/bg/hero-bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div class="hero1-section-area" style="background-image: url({{ asset('temas/Finazze/assets/img/all-images/bg/hero-bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6">
@@ -14,7 +14,7 @@
           <p data-aos="fade-left" data-aos-duration="1000">We provide expert financial consulting services designed to help businesses all sizes achieve their goals, whether you're looking.</p>
           <div class="space32"></div>
           <div class="btn-area1">
-            <a href="{{ route('tema.finazze.service') }}" class="vl-btn1">Explore Our Services</a>
+            <a href="{{ route('tema.Finazze.service') }}" class="vl-btn1">Explore Our Services</a>
             <a href="{{ route('contato') }}" class="vl-btn1 btn2">Join Us Today</a>
           </div>
         </div>
@@ -22,13 +22,13 @@
       <div class="col-lg-6" data-aos="zoon-in" data-aos-duration="1000">
         <div class="hero-images-area">
           <div class="img1">
-            <img src="{{ asset('temas/finazze/assets/img/all-images/hero/hero-img1.png') }}"" alt="">
+            <img src="{{ asset('temas/Finazze/assets/img/all-images/hero/hero-img1.png') }}"" alt="">
           </div>
-          <img src="{{ asset('temas/finazze/assets/img/elements/elements1.png') }}"" alt="" class="elements1">
-          <img src="{{ asset('temas/finazze/assets/img/elements/elements2.png') }}"" alt="" class="elements2  aniamtion-key-4">
-          <img src="{{ asset('temas/finazze/assets/img/elements/elements3.png') }}"" alt="" class="elements3  aniamtion-key-1">
-          <img src="{{ asset('temas/finazze/assets/img/elements/elements4.png') }}"" alt="" class="elements4  aniamtion-key-2">
-          <img src="{{ asset('temas/finazze/assets/img/elements/elements5.png') }}"" alt="" class="elements5 keyframe5">
+          <img src="{{ asset('temas/Finazze/assets/img/elements/elements1.png') }}"" alt="" class="elements1">
+          <img src="{{ asset('temas/Finazze/assets/img/elements/elements2.png') }}"" alt="" class="elements2  aniamtion-key-4">
+          <img src="{{ asset('temas/Finazze/assets/img/elements/elements3.png') }}"" alt="" class="elements3  aniamtion-key-1">
+          <img src="{{ asset('temas/Finazze/assets/img/elements/elements4.png') }}"" alt="" class="elements4  aniamtion-key-2">
+          <img src="{{ asset('temas/Finazze/assets/img/elements/elements5.png') }}"" alt="" class="elements5 keyframe5">
         </div>
       </div>
     </div>
@@ -44,9 +44,9 @@
       <div class="col-lg-6">
         <div class="about-images-area">
           <div class="img1 reveal">
-            <img src="{{ asset('temas/finazze/assets/img/all-images/about/about-img1.png') }}"" alt="">
+            <img src="{{ asset('temas/Finazze/assets/img/all-images/about/about-img1.png') }}"" alt="">
           </div>
-          <img src="{{ asset('temas/finazze/assets/img/elements/elements6.png') }}"" alt="" class="elements6 aniamtion-key-1">
+          <img src="{{ asset('temas/Finazze/assets/img/elements/elements6.png') }}"" alt="" class="elements6 aniamtion-key-1">
         </div>
       </div>
       <div class="col-lg-5">
@@ -59,10 +59,10 @@
           <div class="space32"></div>
           <div class="pera-box" data-aos="fade-left" data-aos-duration="1000">
             <div class="icons">
-              <img src="{{ asset('temas/finazze/assets/img/icons/about-icon.svg') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/icons/about-icon.svg') }}"" alt="">
             </div>
             <div class="text">
-              <a href="{{ route('tema.finazze.service') }}">Financial Solution</a>
+              <a href="{{ route('tema.Finazze.service') }}">Financial Solution</a>
               <div class="space10"></div>
               <p>From startups established corporations, we offer tailored advice and services designed to navigate.</p>
             </div>
@@ -79,7 +79,7 @@
 <!--===== ABOUT AREA ENDS =======-->
 
 <!--===== SERVICE AREA STARTS =======-->
-<div class="service1-section-area sp1" style="background-image: url({{ asset('temas/finazze/assets/img/all-images/bg/bg2.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div class="service1-section-area sp1" style="background-image: url({{ asset('temas/Finazze/assets/img/all-images/bg/bg2.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
   <div class="container">
     <div class="row">
       <div class="col-lg-5">
@@ -96,14 +96,14 @@
         <div class="service-single-slider owl-carousel">
           <div class="service-boxarea">
             <div class="img1">
-              <img src="{{ asset('temas/finazze/assets/img/all-images/service/service-img1.png') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/all-images/service/service-img1.png') }}"" alt="">
               <div class="arrow">
                 <a href="service-single.html"><i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
             <div class="content-area">
               <div class="icons">
-                <img src="{{ asset('temas/finazze/assets/img/icons/service1.svg') }}"" alt="">
+                <img src="{{ asset('temas/Finazze/assets/img/icons/service1.svg') }}"" alt="">
               </div>
               <div class="space24"></div>
               <a href="service-single.html">Investment Management</a>
@@ -112,14 +112,14 @@
 
           <div class="service-boxarea">
             <div class="img1">
-              <img src="{{ asset('temas/finazze/assets/img/all-images/service/service-img2.png') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/all-images/service/service-img2.png') }}"" alt="">
               <div class="arrow">
                 <a href="service-single.html"><i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
             <div class="content-area">
               <div class="icons">
-                <img src="{{ asset('temas/finazze/assets/img/icons/service2.svg') }}"" alt="">
+                <img src="{{ asset('temas/Finazze/assets/img/icons/service2.svg') }}"" alt="">
               </div>
               <div class="space24"></div>
               <a href="service-single.html">Budgeting And Forecasting </a>
@@ -128,14 +128,14 @@
 
           <div class="service-boxarea">
             <div class="img1">
-              <img src="{{ asset('temas/finazze/assets/img/all-images/service/service-img3.png') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/all-images/service/service-img3.png') }}"" alt="">
               <div class="arrow">
                 <a href="service-single.html"><i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
             <div class="content-area">
               <div class="icons">
-                <img src="{{ asset('temas/finazze/assets/img/icons/service3.svg') }}"" alt="">
+                <img src="{{ asset('temas/Finazze/assets/img/icons/service3.svg') }}"" alt="">
               </div>
               <div class="space24"></div>
               <a href="service-single.html">Financial Growth</a>
@@ -143,14 +143,14 @@
           </div>
           <div class="service-boxarea">
             <div class="img1">
-              <img src="{{ asset('temas/finazze/assets/img/all-images/service/service-img1.png') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/all-images/service/service-img1.png') }}"" alt="">
               <div class="arrow">
                 <a href="service-single.html"><i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
             <div class="content-area">
               <div class="icons">
-                <img src="{{ asset('temas/finazze/assets/img/icons/service3.svg') }}"" alt="">
+                <img src="{{ asset('temas/Finazze/assets/img/icons/service3.svg') }}"" alt="">
               </div>
               <div class="space24"></div>
               <a href="service-single.html">Mergers & Acquisitions </a>
@@ -161,7 +161,7 @@
       <div class="col-lg-12">
         <div class="space48"></div>
         <div class="btn-area1 text-center">
-          <a href="{{ route('tema.finazze.service') }}" class="vl-btn1">View More All Services</a>
+          <a href="{{ route('tema.Finazze.service') }}" class="vl-btn1">View More All Services</a>
         </div>
       </div>
     </div>
@@ -250,9 +250,9 @@
         <div class="all-images">
           <div class="images-area">
             <div class="img1 reveal">
-              <img src="{{ asset('temas/finazze/assets/img/all-images/project/project-img1.png') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/all-images/project/project-img1.png') }}"" alt="">
             </div>
-            <img src="{{ asset('temas/finazze/assets/img/elements/elements7.png') }}"" alt="" class="elements7 aniamtion-key-1">
+            <img src="{{ asset('temas/Finazze/assets/img/elements/elements7.png') }}"" alt="" class="elements7 aniamtion-key-1">
           </div>
         </div>
       </div>
@@ -262,7 +262,7 @@
 <!--===== PROJECT AREA ENDS =======-->
 
 <!--===== TESTIMONIAL AREA STARTS =======-->
-<div class="testimonial1-section-area sp1" style="background-image: url({{ asset('temas/finazze/assets/img/all-images/bg/bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div class="testimonial1-section-area sp1" style="background-image: url({{ asset('temas/Finazze/assets/img/all-images/bg/bg1.png') }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 m-auto">
@@ -286,7 +286,7 @@
                     <li><i class="fa-solid fa-star"></i></li>
                   </ul>
                   <div class="quoto">
-                      <img src="{{ asset('temas/finazze/assets/img/icons/quito1.svg') }}"" alt="">
+                      <img src="{{ asset('temas/Finazze/assets/img/icons/quito1.svg') }}"" alt="">
                   </div>
               </div>
               <div class="space16"></div>
@@ -295,7 +295,7 @@
                 <div class="verical-boxarea">
                   <div class="images-area">
                     <div class="img1">
-                        <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
+                        <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
                     </div>
                     <div class="text">
                         <a href="team.html">Alexy Queen</a>
@@ -329,7 +329,7 @@
                           <li><i class="fa-solid fa-star"></i></li>
                         </ul>
                         <div class="quoto">
-                            <img src="{{ asset('temas/finazze/assets/img/icons/quito1.svg') }}"" alt="">
+                            <img src="{{ asset('temas/Finazze/assets/img/icons/quito1.svg') }}"" alt="">
                         </div>
                     </div>
                     <div class="space16"></div>
@@ -338,7 +338,7 @@
                       <div class="verical-boxarea">
                         <div class="images-area">
                           <div class="img1">
-                              <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img2.png') }}"" alt="">
+                              <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testimonial-img2.png') }}"" alt="">
                           </div>
                           <div class="text">
                               <a href="team.html">Alexy Queen</a>
@@ -372,7 +372,7 @@
                         <li><i class="fa-solid fa-star"></i></li>
                       </ul>
                       <div class="quoto">
-                          <img src="{{ asset('temas/finazze/assets/img/icons/quito1.svg') }}"" alt="">
+                          <img src="{{ asset('temas/Finazze/assets/img/icons/quito1.svg') }}"" alt="">
                       </div>
                   </div>
                   <div class="space16"></div>
@@ -381,7 +381,7 @@
                     <div class="verical-boxarea">
                       <div class="images-area">
                         <div class="img1">
-                            <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img3.png') }}"" alt="">
+                            <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testimonial-img3.png') }}"" alt="">
                         </div>
                         <div class="text">
                             <a href="team.html">Alexy Queen</a>
@@ -415,7 +415,7 @@
                       <li><i class="fa-solid fa-star"></i></li>
                     </ul>
                     <div class="quoto">
-                        <img src="{{ asset('temas/finazze/assets/img/icons/quito1.svg') }}"" alt="">
+                        <img src="{{ asset('temas/Finazze/assets/img/icons/quito1.svg') }}"" alt="">
                     </div>
                 </div>
                 <div class="space16"></div>
@@ -424,7 +424,7 @@
                   <div class="verical-boxarea">
                     <div class="images-area">
                       <div class="img1">
-                          <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
+                          <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
                       </div>
                       <div class="text">
                           <a href="team.html">Alexy Queen</a>
@@ -455,7 +455,7 @@
           <div class="slider-boxarea">
             <div class="slider-box">
               <div class="img1">
-                <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
+                <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
               </div>
               <div class="content">
                 <a href="index.html#">Alex Henderson</a>
@@ -465,7 +465,7 @@
             </div>
             <div class="slider-box">
               <div class="img1">
-                <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img2.png') }}"" alt="">
+                <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testimonial-img2.png') }}"" alt="">
               </div>
               <div class="content">
                 <a href="index.html#">Alexy Queen</a>
@@ -475,7 +475,7 @@
             </div>
             <div class="slider-box">
               <div class="img1">
-                <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img3.png') }}"" alt="">
+                <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testimonial-img3.png') }}"" alt="">
               </div>
               <div class="content">
                 <a href="index.html#">Antonio Rudiger</a>
@@ -486,7 +486,7 @@
   
             <div class="slider-box">
               <div class="img1">
-                <img src="{{ asset('temas/finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
+                <img src="{{ asset('temas/Finazze/assets/img/all-images/testimonial/testimonial-img1.png') }}"" alt="">
               </div>
               <div class="content">
                 <a href="index.html#">Alex Henderson</a>
@@ -527,7 +527,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="800">
         <div class="team-boxarea">
           <div class="img1">
-            <img src="{{ asset('temas/finazze/assets/img/all-images/team/team-img1.png') }}"" alt="">
+            <img src="{{ asset('temas/Finazze/assets/img/all-images/team/team-img1.png') }}"" alt="">
             <ul>
               <li><a href="index.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="index.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -547,7 +547,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="900">
         <div class="team-boxarea">
           <div class="img1">
-            <img src="{{ asset('temas/finazze/assets/img/all-images/team/team-img2.png') }}"" alt="">
+            <img src="{{ asset('temas/Finazze/assets/img/all-images/team/team-img2.png') }}"" alt="">
             <ul>
               <li><a href="index.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="index.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -567,7 +567,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="1000">
         <div class="team-boxarea">
           <div class="img1">
-            <img src="{{ asset('temas/finazze/assets/img/all-images/team/team-img3.png') }}"" alt="">
+            <img src="{{ asset('temas/Finazze/assets/img/all-images/team/team-img3.png') }}"" alt="">
             <ul>
               <li><a href="index.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="index.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -587,7 +587,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="1100">
         <div class="team-boxarea">
           <div class="img1">
-            <img src="{{ asset('temas/finazze/assets/img/all-images/team/team-img4.png') }}"" alt="">
+            <img src="{{ asset('temas/Finazze/assets/img/all-images/team/team-img4.png') }}"" alt="">
             <ul>
               <li><a href="index.html#"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="index.html#"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -735,7 +735,7 @@
       <div class="col-lg-6 col-md-6" data-aos="fade-left" data-aos-duration="900">
         <div class="vl-blog-1-item">
            <div class="vl-blog-1-thumb image-anime">
-              <img src="{{ asset('temas/finazze/assets/img/all-images/blog/blog-img1.png') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/all-images/blog/blog-img1.png') }}"" alt="">
            </div>
            <div class="vl-blog-1-content">
             <div class="vl-blog-meta">
@@ -774,7 +774,7 @@
      <div class="col-lg-6 col-md-6" data-aos="fade-left" data-aos-duration="1000">
         <div class="vl-blog-1-item">
            <div class="vl-blog-1-thumb image-anime">
-              <img src="{{ asset('temas/finazze/assets/img/all-images/blog/blog-img2.png') }}"" alt="">
+              <img src="{{ asset('temas/Finazze/assets/img/all-images/blog/blog-img2.png') }}"" alt="">
            </div>
            <div class="vl-blog-1-content">
             <div class="vl-blog-meta">
@@ -831,7 +831,7 @@
     </div>
   </div>
   <div class="img1">
-    <img src="{{ asset('temas/finazze/assets/img/all-images/cta/cta-img1.png') }}"" alt="">
+    <img src="{{ asset('temas/Finazze/assets/img/all-images/cta/cta-img1.png') }}"" alt="">
   </div>
 </div>
 <!--===== CTA AREA ENDS =======-->
