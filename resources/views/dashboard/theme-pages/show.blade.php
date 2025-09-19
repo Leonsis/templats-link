@@ -128,7 +128,7 @@
                             </div>
                         </div>
                         
-                        <div class="d-flex flex-column flex-sm-row justify-content-end gap-2">
+                        <div class="d-flex flex-column flex-sm-row justify-content-end gap-2 mt-4">
                             <a href="{{ route('dashboard.theme-pages') }}" class="btn btn-outline-secondary">
                                 <i class="fas fa-times me-2"></i>Cancelar
                             </a>
@@ -136,16 +136,35 @@
                                 <i class="fas fa-save me-2"></i>Configurar SEO
                             </button>
                         </div>
-                        
-                        <!-- Botão Criar Formulário de Conteúdo -->
-                        <div class="mt-4 pt-3 border-top">
-                            <div class="d-flex justify-content-center">
-                                <button type="button" class="btn btn-success btn-lg">
-                                    <i class="fas fa-plus-circle me-2"></i>Criar Formulário de Conteúdo
-                                </button>
-                            </div>
-                        </div>
                     </form>
+                </div>
+            </div>
+            
+            <!-- Seção de Formulários de Conteúdo -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-plus-circle me-2"></i>
+                        Formulários de Conteúdo
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <!-- Aviso sobre Requisitos -->
+                    <div class="alert alert-warning alert-static" data-static="true">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>Requisito para Formulários:</strong><br>
+                        Para que seja possível a criação do formulário, cada seção tem que ter uma classe "sec" para que identifique cada seção.
+                        <br><br>
+                        <strong>Exemplo:</strong><br>
+                        <code class="ms-2">&lt;div class="sec"&gt;...&lt;/div&gt;</code> ou <code class="ms-2">&lt;section class="sec"&gt;...&lt;/section&gt;</code>
+                    </div>
+
+                    <!-- Botão Criar Formulário de Conteúdo -->
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-success btn-lg">
+                            <i class="fas fa-plus-circle me-2"></i>Criar Formulário de Conteúdo
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -213,6 +232,47 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar contador
     keywordsInput.dispatchEvent(new Event('input'));
+    
+});
+</script>
+
+<style>
+/* Proteger avisos estáticos */
+.alert-static {
+    position: relative !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+</style>
+
+<script>
+// Proteger avisos estáticos de remoção
+document.addEventListener('DOMContentLoaded', function() {
+    const staticAlerts = document.querySelectorAll('.alert-static[data-static="true"]');
+    staticAlerts.forEach(function(alert) {
+        // Prevenir remoção via JavaScript
+        const originalRemove = alert.remove;
+        alert.remove = function() {
+            console.log('Tentativa de remover aviso estático bloqueada');
+            return false;
+        };
+        
+        // Prevenir ocultação via display
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                    const target = mutation.target;
+                    if (target.style.display === 'none' || target.style.visibility === 'hidden') {
+                        target.style.display = 'block';
+                        target.style.visibility = 'visible';
+                    }
+                }
+            });
+        });
+        
+        observer.observe(alert, { attributes: true, attributeFilter: ['style'] });
+    });
 });
 </script>
 @endsection
