@@ -52,6 +52,11 @@
                 </a>
             @endif
             
+            <a href="{{ route('dashboard.floating-buttons') }}" class="menu-item {{ request()->routeIs('dashboard.floating-buttons*') ? 'active' : '' }}">
+                <i class="fas fa-mobile-alt"></i>
+                Botões Flutuantes
+            </a>
+            
             <a href="{{ route('dashboard.temas') }}" class="menu-item {{ request()->routeIs('dashboard.temas*') ? 'active' : '' }}">
                 <i class="fas fa-palette"></i>
                 Temas

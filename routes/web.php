@@ -10,6 +10,7 @@ use App\Http\Controllers\HeadController;
 use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\TemasController;
 use App\Http\Controllers\ThemePageController;
+use App\Http\Controllers\FloatingButtonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,5 +100,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/servico', function() {
             return redirect()->route('dashboard.temas')->with('info', 'Página de serviços em desenvolvimento.');
         })->name('servico.index');
+        
+        // Rotas dos Botões Flutuantes
+        Route::get('/floating-buttons', [FloatingButtonController::class, 'index'])->name('floating-buttons');
+        Route::put('/floating-buttons', [FloatingButtonController::class, 'update'])->name('floating-buttons.update');
     });
 });

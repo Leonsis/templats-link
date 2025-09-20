@@ -166,17 +166,107 @@ return array (
   ),
   'Finazze' => 
   array (
+    404 => 
+    array (
+      'rota' => '/404',
+      'pagina' => '404',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'blog-left' => 
+    array (
+      'rota' => '/blog-left',
+      'pagina' => 'blog-left',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'blog-right' => 
+    array (
+      'rota' => '/blog-right',
+      'pagina' => 'blog-right',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'blog-single' => 
+    array (
+      'rota' => '/blog-single',
+      'pagina' => 'blog-single',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'blog' => 
+    array (
+      'rota' => '/blog',
+      'pagina' => 'blog',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'faq' => 
+    array (
+      'rota' => '/faq',
+      'pagina' => 'faq',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'pricing' => 
+    array (
+      'rota' => '/pricing',
+      'pagina' => 'pricing',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'project-left' => 
+    array (
+      'rota' => '/project-left',
+      'pagina' => 'project-left',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'project-right' => 
+    array (
+      'rota' => '/project-right',
+      'pagina' => 'project-right',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'project-single' => 
+    array (
+      'rota' => '/project-single',
+      'pagina' => 'project-single',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'project' => 
+    array (
+      'rota' => '/project',
+      'pagina' => 'project',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'service-left' => 
+    array (
+      'rota' => '/service-left',
+      'pagina' => 'service-left',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'service-right' => 
+    array (
+      'rota' => '/service-right',
+      'pagina' => 'service-right',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'service-single' => 
+    array (
+      'rota' => '/service-single',
+      'pagina' => 'service-single',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
     'service' => 
     array (
       'rota' => '/service',
       'pagina' => 'service',
-      'criado_em' => '2025-09-19 07:20:51',
+      'criado_em' => '2025-09-20 10:12:59',
+    ),
+    'team' => 
+    array (
+      'rota' => '/team',
+      'pagina' => 'team',
+      'criado_em' => '2025-09-20 10:12:59',
     ),
     'testimonial' => 
     array (
       'rota' => '/testimonial',
       'pagina' => 'testimonial',
-      'criado_em' => '2025-09-19 07:20:51',
+      'criado_em' => '2025-09-20 10:12:59',
     ),
   ),
 );

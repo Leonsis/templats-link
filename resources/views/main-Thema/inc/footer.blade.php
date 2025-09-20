@@ -29,3 +29,6 @@
         </div>
     </div>
 </footer>
+
+<!-- Floating Action Buttons -->
+@include('floatingButton.index')
