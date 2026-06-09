@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Google Ads Images - CSP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        
+        .log {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        .test-image {
+            width: 1px;
+            height: 1px;
+            position: absolute;
+            left: -9999px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🖼️ Teste de Imagens Google Ads - CSP</h1>
+        <p>Este teste verifica se as imagens de tracking do Google Ads podem ser carregadas sem erros de CSP.</p>
+
+        <div id="status-container">
+            <div class="info">
+                <strong>⏳ Testando imagens do Google Ads...</strong>
+            </div>
+        </div>
+
+        <div>
+            <button onclick="testGoogleImages()">Testar Imagens Google</button>
+            <button onclick="testGoogleBrImages()">Testar Imagens Google Brasil</button>
+            <button onclick="testGoogleAdsImages()">Testar Imagens Google Ads</button>
+            <button onclick="clearLog()">Limpar Log</button>
+        </div>
+
+        <div class="log" id="log">
+            <strong>📋 Log de Testes de Imagens:</strong><br> Aguardando testes...<br>
+        </div>
+    </div>
+
+    <script>
+        // Função para adicionar log
+        function addLog(message, type = 'info') {
+            const log = document.getElementById('log');
+            const timestamp = new Date().toLocaleTimeString();
+            const color = type === 'error' ? '#dc3545' : type === 'success' ? '#28a745' : '#007bff';
+            log.innerHTML += `<br><span style="color: ${color}">[${timestamp}] ${message}</span>`;
+            log.scrollTop = log.scrollHeight;
+        }
+
+        // Função para atualizar status
+        function updateStatus(message, type = 'info') {
+            const container = document.getElementById('status-container');
+            const className = type === 'error' ? 'error' : type === 'success' ? 'success' : 'info';
+            container.innerHTML = `<div class="${className}">${message}</div>`;
+        }
+
+        // Teste imagens do Google.com
+        function testGoogleImages() {
+            addLog('🧪 Testando imagens do Google.com...');
+            try {
+                const img = document.createElement('img');
+                img.className = 'test-image';
+                img.src = 'https://www.google.com/pagead/1p-user-list/17597683992/?test=1';
+                img.onload = () => {
+                    addLog('✅ Imagem do Google.com carregada com sucesso', 'success');
+                };
+                img.onerror = () => {
+                    addLog('❌ Erro ao carregar imagem do Google.com', 'error');
+                };
+                document.body.appendChild(img);
+            } catch (e) {
+                addLog('❌ Erro: ' + e.message, 'error');
+            }
+        }
+
+        // Teste imagens do Google.com.br
+        function testGoogleBrImages() {
+            addLog('🧪 Testando imagens do Google.com.br...');
+            try {
+                const img = document.createElement('img');
+                img.className = 'test-image';
+                img.src = 'https://www.google.com.br/pagead/1p-user-list/17597683992/?test=1';
+                img.onload = () => {
+                    addLog('✅ Imagem do Google.com.br carregada com sucesso', 'success');
+                };
+                img.onerror = () => {
+                    addLog('❌ Erro ao carregar imagem do Google.com.br', 'error');
+                };
+                document.body.appendChild(img);
+            } catch (e) {
+                addLog('❌ Erro: ' + e.message, 'error');
+            }
+        }
+
+        // Teste imagens do Google Ads
+        function testGoogleAdsImages() {
+            addLog('🧪 Testando imagens do Google Ads...');
+            try {
+                const img = document.createElement('img');
+                img.className = 'test-image';
+                img.src = 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/test.png';
+                img.onload = () => {
+                    addLog('✅ Imagem do Google Ads carregada com sucesso', 'success');
+                };
+                img.onerror = () => {
+                    addLog('❌ Erro ao carregar imagem do Google Ads', 'error');
+                };
+                document.body.appendChild(img);
+            } catch (e) {
+                addLog('❌ Erro: ' + e.message, 'error');
+            }
+        }
+
+        // Limpar log
+        function clearLog() {
+            document.getElementById('log').innerHTML = '<strong>📋 Log de Testes de Imagens:</strong><br>';
+        }
+
+        // Verificar CSP automaticamente
+        document.addEventListener('DOMContentLoaded', function() {
+            addLog('🚀 Iniciando verificação automática de CSP para imagens...');
+
+            // Verificar se há erros de CSP no console
+            const originalError = console.error;
+            console.error = function(...args) {
+                const message = args.join(' ');
+                if (message.includes('Content Security Policy') && message.includes('img-src')) {
+                    addLog('⚠️ Erro de CSP para imagens detectado: ' + message, 'error');
+                    updateStatus('❌ Erros de CSP para imagens detectados!', 'error');
+                }
+                originalError.apply(console, args);
+            };
+
+            // Verificar headers CSP
+            fetch(window.location.href, {
+                    method: 'HEAD'
+                })
+                .then(response => {
+                    const csp = response.headers.get('Content-Security-Policy');
+                    if (csp) {
+                        if (csp.includes('www.google.com') && csp.includes('www.google.com.br')) {
+                            addLog('✅ CSP configurado corretamente para imagens do Google Ads!', 'success');
+                            updateStatus('✅ CSP configurado corretamente para imagens do Google Ads!', 'success');
+                        } else {
+                            addLog('⚠️ CSP não inclui domínios do Google para imagens', 'error');
+                            updateStatus('⚠️ CSP precisa ser atualizado para imagens do Google', 'error');
+                        }
+                    } else {
+                        addLog('⚠️ CSP Header não encontrado', 'error');
+                        updateStatus('⚠️ CSP não configurado', 'error');
+                    }
+                })
+                .catch(e => {
+                    addLog('❌ Erro ao verificar headers: ' + e.message, 'error');
+                });
+        });
+    </script>
+</body>
+
+</html>

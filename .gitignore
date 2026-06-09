@@ -1,0 +1,5 @@
+# Logs
+/storage/logs/*.log
+
+# .env files
+.env

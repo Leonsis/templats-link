@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste do Sistema de Analytics - Templats-Link</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        
+        .error {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        
+        .warning {
+            background-color: #fff3cd;
+            border-color: #ffeaa7;
+        }
+        
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        
+        form {
+            margin: 10px 0;
+        }
+        
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🧪 Teste do Sistema de Analytics - Templats-Link</h1>
+
+    <div class="test-section" id="status-section">
+        <h3>📊 Status do Sistema</h3>
+        <div id="status-content">Carregando...</div>
+    </div>
+
+    <div class="test-section">
+        <h3>🧪 Testes Manuais</h3>
+        <button onclick="testSendCustomEvent()">Testar sendCustomEvent()</button>
+        <button onclick="testCheckStatus()">Verificar Status</button>
+        <button onclick="testFormCapture()">Testar Captura de Formulários</button>
+        <button onclick="simulateSessionData()">Simular Dados da Sessão</button>
+    </div>
+
+    <div class="test-section">
+        <h3>📝 Formulário de Teste</h3>
+        <form id="test-form" action="/contato" method="POST">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="telefone" placeholder="Telefone">
+            <button type="submit">Enviar Formulário</button>
+        </form>
+    </div>
+
+    <div class="test-section">
+        <h3>🔗 Botões de Contato</h3>
+        <a href="tel:+5511999999999" class="contact-button">📞 Ligar</a>
+        <a href="mailto:teste@templats-link.com" class="contact-button">📧 Email</a>
+    </div>
+
+    <div class="test-section">
+        <h3>📋 Logs do Console</h3>
+        <div id="console-logs" style="background: #f8f9fa; padding: 10px; border-radius: 3px; max-height: 300px; overflow-y: auto;">
+            <div>Logs aparecerão aqui...</div>
+        </div>
+    </div>
+
+    <!-- Carregar scripts do sistema -->
+    <script src="/js/analytics.js"></script>
+    <script src="/js/test-analytics.js"></script>
+
+    <script>
+        // Interceptar console.log para mostrar na página
+        const originalLog = console.log;
+        const originalWarn = console.warn;
+        const originalError = console.error;
+
+        function addToLogs(message, type = 'log') {
+            const logsDiv = document.getElementById('console-logs');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.innerHTML = `<strong>[${timestamp}]</strong> <span style="color: ${type === 'error' ? 'red' : type === 'warn' ? 'orange' : 'black'}">${message}</span>`;
+            logsDiv.appendChild(logEntry);
+            logsDiv.scrollTop = logsDiv.scrollHeight;
+        }
+
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addToLogs(args.join(' '), 'log');
+        };
+
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            addToLogs(args.join(' '), 'warn');
+        };
+
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addToLogs(args.join(' '), 'error');
+        };
+
+        // Funções de teste
+        function testSendCustomEvent() {
+            console.log('🧪 Testando sendCustomEvent()...');
+
+            if (typeof sendCustomEvent === 'function') {
+                const testData = {
+                    name: 'João',
+                    surname: 'Silva',
+                    email: 'joao@teste.com',
+                    phone: '+5511999999999',
+                    country: 'Brasil',
+                    cep: '01234-567',
+                    region: 'São Paulo',
+                    city: 'São Paulo',
+                    street: 'Rua Teste, 123',
+                    service: 'test',
+                    source: 'test_page'
+                };
+
+                sendCustomEvent(testData);
+                console.log('✅ Evento de teste enviado');
+            } else {
+                console.error('❌ Função sendCustomEvent não encontrada');
+            }
+        }
+
+        function testCheckStatus() {
+            console.log('🧪 Verificando status do sistema...');
+
+            if (typeof checkAnalyticsStatus === 'function') {
+                const status = checkAnalyticsStatus();
+                console.log('📊 Status:', status);
+            } else {
+                console.error('❌ Função checkAnalyticsStatus não encontrada');
+            }
+        }
+
+        function testFormCapture() {
+            console.log('🧪 Testando captura de formulários...');
+
+            const forms = document.querySelectorAll('form');
+            console.log(`📝 Formulários encontrados: ${forms.length}`);
+
+            forms.forEach((form, index) => {
+                console.log(`Formulário ${index + 1}:`, {
+                    action: form.action,
+                    method: form.method,
+                    hasName: form.querySelector('input[name="nome"], input[name="name"]') ? 'Sim' : 'Não',
+                    hasEmail: form.querySelector('input[name="email"]') ? 'Sim' : 'Não',
+                    hasPhone: form.querySelector('input[name="telefone"], input[name="phone"]') ? 'Sim' : 'Não'
+                });
+            });
+        }
+
+        function simulateSessionData() {
+            console.log('🧪 Simulando dados da sessão...');
+
+            if (typeof sendCustomEvent === 'function') {
+                const mockData = {
+                    name: 'Maria',
+                    surname: 'Santos',
+                    email: 'maria@teste.com',
+                    phone: '+5511888888888',
+                    country: 'Brasil',
+                    cep: '04567-890',
+                    region: 'Rio de Janeiro',
+                    city: 'Rio de Janeiro',
+                    street: 'Avenida Teste, 456',
+                    service: 'contact',
+                    source: 'footer_form'
+                };
+
+                sendCustomEvent(mockData);
+                console.log('✅ Dados simulados enviados');
+            } else {
+                console.error('❌ Função sendCustomEvent não encontrada');
+            }
+        }
+
+        // Executar teste automático quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Página de teste carregada');
+
+            // Verificar status inicial
+            setTimeout(() => {
+                if (typeof testAnalyticsSystem === 'function') {
+                    testAnalyticsSystem();
+                } else {
+                    console.warn('⚠️ Função testAnalyticsSystem não encontrada');
+                }
+
+                // Atualizar seção de status
+                updateStatusSection();
+            }, 1000);
+        });
+
+        function updateStatusSection() {
+            const statusDiv = document.getElementById('status-content');
+            let status = '';
+
+            if (typeof sendCustomEvent === 'function') {
+                status += '<div class="success">✅ Função sendCustomEvent carregada</div>';
+            } else {
+                status += '<div class="error">❌ Função sendCustomEvent não encontrada</div>';
+            }
+
+            if (typeof checkAnalyticsStatus === 'function') {
+                const systemStatus = checkAnalyticsStatus();
+                status += `<div class="${systemStatus.gtm ? 'success' : 'warning'}">${systemStatus.gtm ? '✅' : '⚠️'} GTM: ${systemStatus.gtm ? 'Disponível' : 'Não encontrado'}</div>`;
+                status += `<div class="${systemStatus.ga4 ? 'success' : 'warning'}">${systemStatus.ga4 ? '✅' : '⚠️'} GA4: ${systemStatus.ga4 ? 'Disponível' : 'Não encontrado'}</div>`;
+            } else {
+                status += '<div class="error">❌ Função checkAnalyticsStatus não encontrada</div>';
+            }
+
+            statusDiv.innerHTML = status;
+        }
+    </script>
+</body>
+
+</html>

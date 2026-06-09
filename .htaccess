@@ -1,0 +1,142 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirecionar HTTP para HTTPS (exceto em localhost/desenvolvimento)
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP_HOST} !^localhost [NC]
+    RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
+    RewriteCond %{HTTP_HOST} !^::1 [NC]
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Redirecionar não-www para www (versão canônica com www)
+    # Exceto em localhost/desenvolvimento
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteCond %{HTTP_HOST} !^localhost [NC]
+    RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
+    RewriteCond %{HTTP_HOST} !^::1 [NC]
+    RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Allow direct access to public/storage files (highest priority)
+    RewriteCond %{REQUEST_URI} ^/templats-link/public/storage/
+    RewriteRule ^templats-link/public/storage/(.*)$ public/storage/$1 [L]
+
+    # Allow direct access to public/storage files (without templats-link prefix)
+    RewriteCond %{REQUEST_URI} ^/public/storage/
+    RewriteRule ^public/storage/(.*)$ public/storage/$1 [L]
+
+    # Allow direct access to storage files (redirect to public/storage)
+    RewriteCond %{REQUEST_URI} ^/templats-link/storage/
+    RewriteRule ^templats-link/storage/(.*)$ public/storage/$1 [L]
+
+    # Allow direct access to storage files (without templats-link prefix)
+    RewriteCond %{REQUEST_URI} ^/storage/
+    RewriteRule ^storage/(.*)$ public/storage/$1 [L]
+
+    # Allow direct access to existing files
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Configurações de Cache para Arquivos Estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Cache de 1 ano para arquivos que raramente mudam
+    # JavaScript
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    
+    # CSS
+    ExpiresByType text/css "access plus 1 year"
+    
+    # Imagens estáticas (logos, ícones, etc)
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+    
+    # Fontes
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType application/font-ttf "access plus 1 year"
+    
+    # Outros assets
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/json "access plus 0 seconds"
+</IfModule>
+
+# Configurações de Cache-Control (fallback se mod_expires não estiver disponível)
+<IfModule mod_headers.c>
+    # Cache de 1 ano para JavaScript
+    <FilesMatch "\.(js)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Cache de 1 ano para CSS
+    <FilesMatch "\.(css)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Cache de 1 ano para imagens estáticas
+    <FilesMatch "\.(svg|webp|png|jpg|jpeg|gif|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Cache de 1 ano para fontes
+    <FilesMatch "\.(woff|woff2|ttf|otf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Cache curto para HTML (não cachear)
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+    </FilesMatch>
+    
+    # Cache curto para JSON (não cachear)
+    <FilesMatch "\.(json)$">
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# Configurações PHP para upload de temas grandes
+<IfModule mod_php.c>
+    php_value upload_max_filesize 100M
+    php_value post_max_size 120M
+    php_value memory_limit 1024M
+    php_value max_execution_time 0
+    php_value max_input_time 0
+    php_value max_file_uploads 100
+</IfModule>
+
+# Configurações para PHP 8.x (FastCGI)
+<IfModule mod_fcgid.c>
+    FcgidMaxRequestLen 125829120
+    FcgidIOTimeout 0
+    FcgidBusyTimeout 0
+</IfModule>

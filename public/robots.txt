@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard/
+Disallow: /admin/
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /database/
+Disallow: /resources/
+Disallow: /routes/
+Disallow: /app/
+Disallow: /artisan
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /package.json
+Disallow: /webpack.mix.js
+Disallow: /yarn.lock
+Disallow: /node_modules/
+Disallow: /tests/
+Disallow: /phpunit.xml
+Disallow: /storage/
+Disallow: /bootstrap/cache/
+Disallow: /.*
+
+Sitemap: https://localhost/Templats-link/sitemap.xml

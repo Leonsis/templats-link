@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste CSP Debug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        .debug {
+            background: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Teste CSP Debug</h1>
+
+    <div class="debug">
+        <h3>Status do CSP:</h3>
+        <p id="csp-status">Verificando...</p>
+    </div>
+
+    <div class="debug">
+        <h3>Teste de Conexão Google Analytics:</h3>
+        <button onclick="testGoogleAnalytics()">Testar Google Analytics</button>
+        <p id="ga-status">Clique no botão para testar</p>
+    </div>
+
+    <div class="debug">
+        <h3>Teste de Imagem Google Ads:</h3>
+        <button onclick="testGoogleAds()">Testar Google Ads</button>
+        <p id="ads-status">Clique no botão para testar</p>
+    </div>
+
+    <div class="debug">
+        <h3>Headers HTTP:</h3>
+        <p id="headers-status">Carregando...</p>
+    </div>
+
+    <script>
+        // Verificar CSP atual
+        function checkCSP() {
+            const meta = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
+            if (meta) {
+                document.getElementById('csp-status').innerHTML =
+                    '<span class="success">✅ CSP encontrado via meta tag</span><br>' +
+                    '<small>' + meta.content + '</small>';
+            } else {
+                // Verificar via headers HTTP
+                fetch(window.location.href, {
+                        method: 'HEAD'
+                    })
+                    .then(response => {
+                        const csp = response.headers.get('Content-Security-Policy');
+                        if (csp) {
+                            document.getElementById('csp-status').innerHTML =
+                                '<span class="success">✅ CSP encontrado via headers HTTP</span><br>' +
+                                '<small>' + csp + '</small>';
+                        } else {
+                            document.getElementById('csp-status').innerHTML =
+                                '<span class="error">❌ CSP não encontrado</span>';
+                        }
+                    })
+                    .catch(error => {
+                        document.getElementById('csp-status').innerHTML =
+                            '<span class="error">❌ Erro ao verificar CSP: ' + error.message + '</span>';
+                    });
+            }
+        }
+
+        // Testar Google Analytics
+        function testGoogleAnalytics() {
+            document.getElementById('ga-status').innerHTML = 'Testando...';
+
+            // Tentar fazer uma requisição para analytics.google.com
+            fetch('https://analytics.google.com/g/collect', {
+                    method: 'POST',
+                    mode: 'no-cors'
+                })
+                .then(() => {
+                    document.getElementById('ga-status').innerHTML =
+                        '<span class="success">✅ Conexão com Google Analytics funcionando</span>';
+                })
+                .catch(error => {
+                    document.getElementById('ga-status').innerHTML =
+                        '<span class="error">❌ Erro na conexão: ' + error.message + '</span>';
+                });
+        }
+
+        // Testar Google Ads
+        function testGoogleAds() {
+            document.getElementById('ads-status').innerHTML = 'Testando...';
+
+            // Tentar carregar uma imagem do Google Ads
+            const img = new Image();
+            img.onload = function() {
+                document.getElementById('ads-status').innerHTML =
+                    '<span class="success">✅ Imagem do Google Ads carregada com sucesso</span>';
+            };
+            img.onerror = function() {
+                document.getElementById('ads-status').innerHTML =
+                    '<span class="error">❌ Erro ao carregar imagem do Google Ads</span>';
+            };
+            img.src = 'https://www.googleadservices.com/ccm/conversion/test.png';
+        }
+
+        // Verificar headers
+        function checkHeaders() {
+            fetch(window.location.href, {
+                    method: 'HEAD'
+                })
+                .then(response => {
+                    let headers = '<strong>Headers HTTP:</strong><br>';
+                    for (let [key, value] of response.headers.entries()) {
+                        if (key.toLowerCase().includes('content-security') ||
+                            key.toLowerCase().includes('cache-control')) {
+                            headers += '<strong>' + key + ':</strong> ' + value + '<br>';
+                        }
+                    }
+                    document.getElementById('headers-status').innerHTML = headers;
+                })
+                .catch(error => {
+                    document.getElementById('headers-status').innerHTML =
+                        '<span class="error">❌ Erro ao verificar headers: ' + error.message + '</span>';
+                });
+        }
+
+        // Executar verificações ao carregar
+        window.onload = function() {
+            checkCSP();
+            checkHeaders();
+        };
+    </script>
+</body>
+
+</html>

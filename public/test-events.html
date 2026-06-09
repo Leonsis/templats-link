@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Eventos Customizados - Templats-Link</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PBD52KCG');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBD52KCG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <h1>Teste de Eventos Customizados</h1>
+
+    <div id="status" style="padding: 20px; background: #f0f0f0; margin: 20px 0;">
+        <h3>Status do Sistema:</h3>
+        <div id="status-content">Carregando...</div>
+    </div>
+
+    <div style="padding: 20px; background: #e8f4fd; margin: 20px 0;">
+        <h3>Teste de Evento Customizado:</h3>
+        <button onclick="testCustomEvent()" style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Enviar Evento de Teste
+        </button>
+    </div>
+
+    <div id="console" style="padding: 20px; background: #f8f9fa; margin: 20px 0; font-family: monospace; white-space: pre-wrap; max-height: 300px; overflow-y: auto;">
+        <h3>Console de Eventos:</h3>
+        <div id="console-content"></div>
+    </div>
+
+    <!-- Analytics System -->
+    <script src="js/analytics.js"></script>
+
+    <script>
+        // Função para testar evento customizado
+        function testCustomEvent() {
+            const eventData = {
+                name: 'João',
+                surname: 'Silva',
+                email: 'joao@teste.com',
+                phone: '11999999999',
+                country: 'Brasil',
+                cep: '01234-567',
+                region: 'SP',
+                city: 'São Paulo',
+                street: 'Rua Teste, 123',
+                service: 'teste',
+                source: 'test_page'
+            };
+
+            console.log('Enviando evento de teste:', eventData);
+            addToConsole('Enviando evento de teste: ' + JSON.stringify(eventData, null, 2));
+
+            if (typeof sendCustomEvent === 'function') {
+                sendCustomEvent(eventData);
+                addToConsole('✅ Função sendCustomEvent chamada com sucesso');
+            } else {
+                addToConsole('❌ Função sendCustomEvent não encontrada');
+            }
+        }
+
+        // Função para adicionar ao console
+        function addToConsole(message) {
+            const consoleContent = document.getElementById('console-content');
+            const timestamp = new Date().toLocaleTimeString();
+            consoleContent.innerHTML += `[${timestamp}] ${message}\n`;
+            consoleContent.scrollTop = consoleContent.scrollHeight;
+        }
+
+        // Verificar status do sistema
+        function checkSystemStatus() {
+            const statusContent = document.getElementById('status-content');
+            let status = [];
+
+            // Verificar dataLayer
+            if (typeof dataLayer !== 'undefined') {
+                status.push('✅ dataLayer disponível');
+            } else {
+                status.push('❌ dataLayer não encontrado');
+            }
+
+            // Verificar gtag
+            if (typeof gtag !== 'undefined') {
+                status.push('✅ gtag disponível');
+            } else {
+                status.push('❌ gtag não encontrado');
+            }
+
+            // Verificar sendCustomEvent
+            if (typeof sendCustomEvent === 'function') {
+                status.push('✅ sendCustomEvent disponível');
+            } else {
+                status.push('❌ sendCustomEvent não encontrado');
+            }
+
+            // Verificar analytics.js
+            if (typeof advancedAnalytics !== 'undefined') {
+                status.push('✅ advancedAnalytics disponível');
+            } else {
+                status.push('❌ advancedAnalytics não encontrado');
+            }
+
+            statusContent.innerHTML = status.join('<br>');
+        }
+
+        // Executar quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            addToConsole('🚀 Página carregada');
+            checkSystemStatus();
+
+            // Aguardar um pouco para o analytics.js carregar
+            setTimeout(() => {
+                addToConsole('⏰ Verificando sistema após 2 segundos...');
+                checkSystemStatus();
+            }, 2000);
+        });
+
+        // Interceptar eventos do dataLayer
+        if (typeof dataLayer !== 'undefined') {
+            const originalPush = dataLayer.push;
+            dataLayer.push = function() {
+                addToConsole('📊 Evento enviado para dataLayer: ' + JSON.stringify(arguments[0], null, 2));
+                return originalPush.apply(dataLayer, arguments);
+            };
+        }
+    </script>
+</body>
+
+</html>
